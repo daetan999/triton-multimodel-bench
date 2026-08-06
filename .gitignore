@@ -1,0 +1,22 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Generated model binaries are reproducible and can be large.
+model_repository/*/1/*.onnx
+model_repository/*/1/*.json
+model_repository/*/1/*.ubj
+
+# Raw benchmark data is intentionally committed only after validation.
+results/raw/*.csv
+results/gpu/*.csv
+
+# Local credentials and environment files must never be committed.
+.env
+*.pem
+*.key
+service-account*.json
