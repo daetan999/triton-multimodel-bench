@@ -220,3 +220,23 @@ Deploy and verify the first paid Secure Cloud L4 Pod.
 ### Next step
 
 Push the compatibility commits and publish image `0.1.1`. Verify its immutable digest before any formal 100-pair benchmark run.
+
+## 2026-10-01 - Session 9
+
+### Goal
+
+Preserve the live L4 smoke-test evidence and end the paid Pod session safely.
+
+### Result
+
+- Captured Triton logs, the model repository index, package and GPU details, the
+  generated model manifest, and a fresh paired ONNX/FIL inference result.
+- Verified that all transferred files match the SHA-256 hashes generated on the
+  Pod.
+- Confirmed 20 READY models and matching paired inference outputs.
+- Scanned the saved evidence for common credential markers; none were found.
+- Terminated RunPod Pod `1fp0q1qajk3f0t`; a follow-up lookup returned HTTP 404.
+
+### Next step
+
+Push the complete change set and publish the corrected Pod image as `0.1.1`.

@@ -1,0 +1,207 @@
+I1001 04:24:41.584550 1284 pinned_memory_manager.cc:277] "Pinned memory pool is created at '0x7c9708000000' with size 268435456"
+I1001 04:24:41.587631 1284 cuda_memory_manager.cc:107] "CUDA memory pool is created on device 0 with size 67108864"
+I1001 04:24:41.595829 1284 model_lifecycle.cc:473] "loading: fil_model_000:1"
+I1001 04:24:41.595878 1284 model_lifecycle.cc:473] "loading: fil_model_001:1"
+I1001 04:24:41.595910 1284 model_lifecycle.cc:473] "loading: fil_model_002:1"
+I1001 04:24:41.595944 1284 model_lifecycle.cc:473] "loading: fil_model_003:1"
+I1001 04:24:41.595978 1284 model_lifecycle.cc:473] "loading: fil_model_004:1"
+I1001 04:24:41.596004 1284 model_lifecycle.cc:473] "loading: fil_model_005:1"
+I1001 04:24:41.596033 1284 model_lifecycle.cc:473] "loading: fil_model_006:1"
+I1001 04:24:41.596061 1284 model_lifecycle.cc:473] "loading: fil_model_007:1"
+I1001 04:24:41.596095 1284 model_lifecycle.cc:473] "loading: fil_model_008:1"
+I1001 04:24:41.596124 1284 model_lifecycle.cc:473] "loading: fil_model_009:1"
+I1001 04:24:41.596154 1284 model_lifecycle.cc:473] "loading: onnx_model_000:1"
+I1001 04:24:41.596182 1284 model_lifecycle.cc:473] "loading: onnx_model_001:1"
+I1001 04:24:41.596210 1284 model_lifecycle.cc:473] "loading: onnx_model_002:1"
+I1001 04:24:41.596238 1284 model_lifecycle.cc:473] "loading: onnx_model_003:1"
+I1001 04:24:41.596265 1284 model_lifecycle.cc:473] "loading: onnx_model_004:1"
+I1001 04:24:41.596292 1284 model_lifecycle.cc:473] "loading: onnx_model_005:1"
+I1001 04:24:41.596323 1284 model_lifecycle.cc:473] "loading: onnx_model_006:1"
+I1001 04:24:41.596351 1284 model_lifecycle.cc:473] "loading: onnx_model_007:1"
+I1001 04:24:41.596377 1284 model_lifecycle.cc:473] "loading: onnx_model_008:1"
+I1001 04:24:41.596406 1284 model_lifecycle.cc:473] "loading: onnx_model_009:1"
+I1001 04:24:41.599313 1284 initialize.hpp:43] "TRITONBACKEND_Initialize: fil"
+I1001 04:24:41.599329 1284 backend.hpp:47] "Triton TRITONBACKEND API version: 1.19"
+I1001 04:24:41.599334 1284 backend.hpp:52] "'fil' TRITONBACKEND API version: 1.19"
+I1001 04:24:41.609347 1284 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_000 (version 1)"
+I1001 04:24:41.609550 1284 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_002 (version 1)"
+I1001 04:24:41.610043 1284 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:24:41.610056 1284 model_lifecycle.cc:654] "failed to load 'fil_model_000' version 1: Invalid argument: Required parameter output_class not found in config"
+I1001 04:24:41.610070 1284 model_lifecycle.cc:789] "failed to load 'fil_model_000'"
+I1001 04:24:41.610261 1284 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:24:41.610285 1284 model_lifecycle.cc:654] "failed to load 'fil_model_002' version 1: Invalid argument: Required parameter output_class not found in config"
+I1001 04:24:41.610302 1284 model_lifecycle.cc:789] "failed to load 'fil_model_002'"
+I1001 04:24:41.610615 1284 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_001 (version 1)"
+I1001 04:24:41.610810 1284 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_003 (version 1)"
+I1001 04:24:41.611430 1284 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:24:41.611464 1284 model_lifecycle.cc:654] "failed to load 'fil_model_001' version 1: Invalid argument: Required parameter output_class not found in config"
+I1001 04:24:41.611484 1284 model_lifecycle.cc:789] "failed to load 'fil_model_001'"
+I1001 04:24:41.611634 1284 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:24:41.611657 1284 model_lifecycle.cc:654] "failed to load 'fil_model_003' version 1: Invalid argument: Required parameter output_class not found in config"
+I1001 04:24:41.611676 1284 model_lifecycle.cc:789] "failed to load 'fil_model_003'"
+I1001 04:24:41.619518 1284 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_004 (version 1)"
+I1001 04:24:41.619854 1284 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:24:41.619872 1284 model_lifecycle.cc:654] "failed to load 'fil_model_004' version 1: Invalid argument: Required parameter output_class not found in config"
+I1001 04:24:41.619882 1284 model_lifecycle.cc:789] "failed to load 'fil_model_004'"
+I1001 04:24:41.620804 1284 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_005 (version 1)"
+I1001 04:24:41.621363 1284 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:24:41.621384 1284 model_lifecycle.cc:654] "failed to load 'fil_model_005' version 1: Invalid argument: Required parameter output_class not found in config"
+I1001 04:24:41.621400 1284 model_lifecycle.cc:789] "failed to load 'fil_model_005'"
+I1001 04:24:41.622366 1284 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_006 (version 1)"
+I1001 04:24:41.622925 1284 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:24:41.622942 1284 model_lifecycle.cc:654] "failed to load 'fil_model_006' version 1: Invalid argument: Required parameter output_class not found in config"
+I1001 04:24:41.622960 1284 model_lifecycle.cc:789] "failed to load 'fil_model_006'"
+I1001 04:24:41.623103 1284 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_007 (version 1)"
+I1001 04:24:41.623739 1284 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:24:41.623756 1284 model_lifecycle.cc:654] "failed to load 'fil_model_007' version 1: Invalid argument: Required parameter output_class not found in config"
+I1001 04:24:41.623774 1284 model_lifecycle.cc:789] "failed to load 'fil_model_007'"
+I1001 04:24:41.625854 1284 onnxruntime.cc:2914] "TRITONBACKEND_Initialize: onnxruntime"
+I1001 04:24:41.625879 1284 onnxruntime.cc:2924] "Triton TRITONBACKEND API version: 1.19"
+I1001 04:24:41.625889 1284 onnxruntime.cc:2930] "'onnxruntime' TRITONBACKEND API version: 1.19"
+I1001 04:24:41.625897 1284 onnxruntime.cc:2960] "backend configuration:\n{\"cmdline\":{\"auto-complete-config\":\"true\",\"backend-directory\":\"/opt/tritonserver/backends\",\"min-compute-capability\":\"6.000000\",\"default-max-batch-size\":\"4\"}}"
+I1001 04:24:41.627234 1284 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_008 (version 1)"
+I1001 04:24:41.627751 1284 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:24:41.627768 1284 model_lifecycle.cc:654] "failed to load 'fil_model_008' version 1: Invalid argument: Required parameter output_class not found in config"
+I1001 04:24:41.627784 1284 model_lifecycle.cc:789] "failed to load 'fil_model_008'"
+I1001 04:24:41.627951 1284 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_009 (version 1)"
+I1001 04:24:41.628472 1284 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:24:41.628493 1284 model_lifecycle.cc:654] "failed to load 'fil_model_009' version 1: Invalid argument: Required parameter output_class not found in config"
+I1001 04:24:41.628509 1284 model_lifecycle.cc:789] "failed to load 'fil_model_009'"
+I1001 04:24:41.658698 1284 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_000 (version 1)"
+I1001 04:24:41.659166 1284 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_000': inputs and outputs already specified"
+I1001 04:24:41.659959 1284 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_000_0_0 (GPU device 0)"
+I1001 04:24:41.660119 1284 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_001 (version 1)"
+I1001 04:24:41.660471 1284 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_002 (version 1)"
+I1001 04:24:41.660563 1284 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_001': inputs and outputs already specified"
+I1001 04:24:41.660669 1284 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_003 (version 1)"
+I1001 04:24:41.660854 1284 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_003': inputs and outputs already specified"
+I1001 04:24:41.660862 1284 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_002': inputs and outputs already specified"
+I1001 04:24:41.661562 1284 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_003_0_0 (GPU device 0)"
+I1001 04:24:41.661651 1284 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_001_0_0 (GPU device 0)"
+I1001 04:24:41.661926 1284 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_002_0_0 (GPU device 0)"
+I1001 04:24:41.772321 1284 model_lifecycle.cc:849] "successfully loaded 'onnx_model_000'"
+I1001 04:24:41.775366 1284 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_004 (version 1)"
+I1001 04:24:41.775616 1284 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_004': inputs and outputs already specified"
+I1001 04:24:41.776071 1284 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_004_0_0 (GPU device 0)"
+I1001 04:24:41.831647 1284 model_lifecycle.cc:849] "successfully loaded 'onnx_model_001'"
+I1001 04:24:41.834659 1284 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_005 (version 1)"
+I1001 04:24:41.834953 1284 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_005': inputs and outputs already specified"
+I1001 04:24:41.835672 1284 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_005_0_0 (GPU device 0)"
+I1001 04:24:41.931622 1284 model_lifecycle.cc:849] "successfully loaded 'onnx_model_003'"
+I1001 04:24:41.934856 1284 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_006 (version 1)"
+I1001 04:24:41.935467 1284 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_006': inputs and outputs already specified"
+I1001 04:24:41.936750 1284 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_006_0_0 (GPU device 0)"
+I1001 04:24:42.032369 1284 model_lifecycle.cc:849] "successfully loaded 'onnx_model_002'"
+I1001 04:24:42.035500 1284 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_007 (version 1)"
+I1001 04:24:42.035794 1284 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_007': inputs and outputs already specified"
+I1001 04:24:42.128374 1284 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_007_0_0 (GPU device 0)"
+I1001 04:24:42.139101 1284 model_lifecycle.cc:849] "successfully loaded 'onnx_model_004'"
+I1001 04:24:42.142110 1284 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_008 (version 1)"
+I1001 04:24:42.227479 1284 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_008': inputs and outputs already specified"
+I1001 04:24:42.228747 1284 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_008_0_0 (GPU device 0)"
+I1001 04:24:42.240545 1284 model_lifecycle.cc:849] "successfully loaded 'onnx_model_005'"
+I1001 04:24:42.325452 1284 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_009 (version 1)"
+I1001 04:24:42.325799 1284 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_009': inputs and outputs already specified"
+I1001 04:24:42.326685 1284 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_009_0_0 (GPU device 0)"
+I1001 04:24:42.425788 1284 model_lifecycle.cc:849] "successfully loaded 'onnx_model_006'"
+I1001 04:24:42.526531 1284 model_lifecycle.cc:849] "successfully loaded 'onnx_model_007'"
+I1001 04:24:42.624391 1284 model_lifecycle.cc:849] "successfully loaded 'onnx_model_008'"
+I1001 04:24:42.726170 1284 model_lifecycle.cc:849] "successfully loaded 'onnx_model_009'"
+I1001 04:24:42.726347 1284 server.cc:611] 
++------------------+------+
+| Repository Agent | Path |
++------------------+------+
++------------------+------+
+
+I1001 04:24:42.726410 1284 server.cc:638] 
++-------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Backend     | Path                                                            | Config                                                                                                                                                        |
++-------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| fil         | /opt/tritonserver/backends/fil/libtriton_fil.so                 | {"cmdline":{"auto-complete-config":"true","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}} |
+| onnxruntime | /opt/tritonserver/backends/onnxruntime/libtriton_onnxruntime.so | {"cmdline":{"auto-complete-config":"true","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}} |
++-------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I1001 04:24:42.726596 1284 server.cc:681] 
++----------------+---------+------------------------------------------------------------------------------------+
+| Model          | Version | Status                                                                             |
++----------------+---------+------------------------------------------------------------------------------------+
+| fil_model_000  | 1       | UNAVAILABLE: Invalid argument: Required parameter output_class not found in config |
+| fil_model_001  | 1       | UNAVAILABLE: Invalid argument: Required parameter output_class not found in config |
+| fil_model_002  | 1       | UNAVAILABLE: Invalid argument: Required parameter output_class not found in config |
+| fil_model_003  | 1       | UNAVAILABLE: Invalid argument: Required parameter output_class not found in config |
+| fil_model_004  | 1       | UNAVAILABLE: Invalid argument: Required parameter output_class not found in config |
+| fil_model_005  | 1       | UNAVAILABLE: Invalid argument: Required parameter output_class not found in config |
+| fil_model_006  | 1       | UNAVAILABLE: Invalid argument: Required parameter output_class not found in config |
+| fil_model_007  | 1       | UNAVAILABLE: Invalid argument: Required parameter output_class not found in config |
+| fil_model_008  | 1       | UNAVAILABLE: Invalid argument: Required parameter output_class not found in config |
+| fil_model_009  | 1       | UNAVAILABLE: Invalid argument: Required parameter output_class not found in config |
+| onnx_model_000 | 1       | READY                                                                              |
+| onnx_model_001 | 1       | READY                                                                              |
+| onnx_model_002 | 1       | READY                                                                              |
+| onnx_model_003 | 1       | READY                                                                              |
+| onnx_model_004 | 1       | READY                                                                              |
+| onnx_model_005 | 1       | READY                                                                              |
+| onnx_model_006 | 1       | READY                                                                              |
+| onnx_model_007 | 1       | READY                                                                              |
+| onnx_model_008 | 1       | READY                                                                              |
+| onnx_model_009 | 1       | READY                                                                              |
++----------------+---------+------------------------------------------------------------------------------------+
+
+I1001 04:24:42.851918 1284 metrics.cc:890] "Collecting metrics for GPU 0: NVIDIA L4"
+I1001 04:24:42.857679 1284 metrics.cc:783] "Collecting CPU metrics"
+I1001 04:24:42.857864 1284 tritonserver.cc:2598] 
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Option                           | Value                                                                                                                                                                                                           |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| server_id                        | triton                                                                                                                                                                                                          |
+| server_version                   | 2.59.0                                                                                                                                                                                                          |
+| server_extensions                | classification sequence model_repository model_repository(unload_dependents) schedule_policy model_configuration system_shared_memory cuda_shared_memory binary_tensor_data parameters statistics trace logging |
+| model_repository_path[0]         | /workspace/model_repository                                                                                                                                                                                     |
+| model_control_mode               | MODE_NONE                                                                                                                                                                                                       |
+| strict_model_config              | 0                                                                                                                                                                                                               |
+| model_config_name                |                                                                                                                                                                                                                 |
+| rate_limit                       | OFF                                                                                                                                                                                                             |
+| pinned_memory_pool_byte_size     | 268435456                                                                                                                                                                                                       |
+| cuda_memory_pool_byte_size{0}    | 67108864                                                                                                                                                                                                        |
+| min_supported_compute_capability | 6.0                                                                                                                                                                                                             |
+| strict_readiness                 | 1                                                                                                                                                                                                               |
+| exit_timeout                     | 30                                                                                                                                                                                                              |
+| cache_enabled                    | 0                                                                                                                                                                                                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I1001 04:24:42.857946 1284 server.cc:312] "Waiting for in-flight requests to complete."
+I1001 04:24:42.857962 1284 server.cc:328] "Timeout 30: Found 0 model versions that have in-flight inferences"
+I1001 04:24:42.858554 1284 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:24:42.859014 1284 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:24:42.859057 1284 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:24:42.859076 1284 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:24:42.859114 1284 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:24:42.859161 1284 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:24:42.859172 1284 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:24:42.859299 1284 server.cc:343] "All models are stopped, unloading models"
+I1001 04:24:42.859341 1284 server.cc:352] "Timeout 30: Found 10 live models and 0 in-flight non-inference requests"
+I1001 04:24:42.859604 1284 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:24:42.866988 1284 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:24:42.867048 1284 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_005' version 1"
+I1001 04:24:42.868082 1284 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:24:42.868163 1284 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_007' version 1"
+I1001 04:24:42.869187 1284 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:24:42.869939 1284 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:24:42.869982 1284 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_003' version 1"
+I1001 04:24:42.871564 1284 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:24:42.871623 1284 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_004' version 1"
+I1001 04:24:42.872555 1284 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:24:42.872616 1284 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_000' version 1"
+I1001 04:24:42.873426 1284 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:24:42.873505 1284 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_002' version 1"
+I1001 04:24:42.874422 1284 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:24:42.874473 1284 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_006' version 1"
+I1001 04:24:42.875832 1284 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:24:42.875903 1284 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_001' version 1"
+I1001 04:24:42.876490 1284 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:24:42.877132 1284 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:24:42.877207 1284 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_009' version 1"
+I1001 04:24:42.879182 1284 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:24:42.879220 1284 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_008' version 1"
+I1001 04:24:43.859463 1284 server.cc:352] "Timeout 29: Found 0 live models and 0 in-flight non-inference requests"
+error: creating server: Internal - failed to load all models

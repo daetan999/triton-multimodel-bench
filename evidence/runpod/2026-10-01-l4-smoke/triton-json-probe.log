@@ -1,0 +1,62 @@
+I1001 04:30:24.270312 4084 pinned_memory_manager.cc:277] "Pinned memory pool is created at '0x7ceff4000000' with size 268435456"
+I1001 04:30:24.275909 4084 cuda_memory_manager.cc:107] "CUDA memory pool is created on device 0 with size 67108864"
+I1001 04:30:24.285448 4084 model_lifecycle.cc:473] "loading: fil_json:1"
+I1001 04:30:24.289082 4084 initialize.hpp:43] "TRITONBACKEND_Initialize: fil"
+I1001 04:30:24.289120 4084 backend.hpp:47] "Triton TRITONBACKEND API version: 1.19"
+I1001 04:30:24.289125 4084 backend.hpp:52] "'fil' TRITONBACKEND API version: 1.19"
+I1001 04:30:24.292978 4084 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_json (version 1)"
+I1001 04:30:24.293732 4084 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_json_0_0 (GPU device 0)"
+[04:30:24] /rapids_triton/build/_deps/treelite-src/src/model_loader/detail/xgboost_json/delegated_handler.cc:160: Error: key "cats" is not recognized!
+E1001 04:30:24.296374 4084 backend_model.cc:694] "ERROR: Failed to create instance: [04:30:24] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_json.cc:135: Provided JSON could not be parsed as XGBoost model. Parsing error at offset 154: Terminate parsing due to Handler error.\nture_types\":[],\"gradient_booster\":{\"model\":{\"cats\":{\"enc\":[],\"feature_segments\":[],\"sorted_idx\":[]},\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+I1001 04:30:24.296387 4084 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:30:24.296405 4084 model_lifecycle.cc:654] "failed to load 'fil_json' version 1: Unknown: [04:30:24] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_json.cc:135: Provided JSON could not be parsed as XGBoost model. Parsing error at offset 154: Terminate parsing due to Handler error.\nture_types\":[],\"gradient_booster\":{\"model\":{\"cats\":{\"enc\":[],\"feature_segments\":[],\"sorted_idx\":[]},\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+I1001 04:30:24.296417 4084 model_lifecycle.cc:789] "failed to load 'fil_json'"
+I1001 04:30:24.296461 4084 server.cc:611] 
++------------------+------+
+| Repository Agent | Path |
++------------------+------+
++------------------+------+
+
+I1001 04:30:24.296485 4084 server.cc:638] 
++---------+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Backend | Path                                            | Config                                                                                                                                                        |
++---------+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| fil     | /opt/tritonserver/backends/fil/libtriton_fil.so | {"cmdline":{"auto-complete-config":"true","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}} |
++---------+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I1001 04:30:24.296509 4084 server.cc:681] 
++----------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Model    | Version | Status                                                                                                                                                                                                                                  |
++----------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| fil_json | 1       | UNAVAILABLE: Unknown: [04:30:24] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_json.cc:135: Provided JSON could not be parsed as XGBoost model. Parsing error at offset 154: Terminate parsing due to Handler error. |
+|          |         | ture_types":[],"gradient_booster":{"model":{"cats":{"enc":[],"feature_segments":[],"sorted_idx":[]},                                                                                                                                    |
+|          |         | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                                                                                                    |
++----------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I1001 04:30:24.348235 4084 metrics.cc:890] "Collecting metrics for GPU 0: NVIDIA L4"
+I1001 04:30:24.353946 4084 metrics.cc:783] "Collecting CPU metrics"
+I1001 04:30:24.354142 4084 tritonserver.cc:2598] 
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Option                           | Value                                                                                                                                                                                                           |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| server_id                        | triton                                                                                                                                                                                                          |
+| server_version                   | 2.59.0                                                                                                                                                                                                          |
+| server_extensions                | classification sequence model_repository model_repository(unload_dependents) schedule_policy model_configuration system_shared_memory cuda_shared_memory binary_tensor_data parameters statistics trace logging |
+| model_repository_path[0]         | /workspace/probe_repository                                                                                                                                                                                     |
+| model_control_mode               | MODE_NONE                                                                                                                                                                                                       |
+| strict_model_config              | 0                                                                                                                                                                                                               |
+| model_config_name                |                                                                                                                                                                                                                 |
+| rate_limit                       | OFF                                                                                                                                                                                                             |
+| pinned_memory_pool_byte_size     | 268435456                                                                                                                                                                                                       |
+| cuda_memory_pool_byte_size{0}    | 67108864                                                                                                                                                                                                        |
+| min_supported_compute_capability | 6.0                                                                                                                                                                                                             |
+| strict_readiness                 | 1                                                                                                                                                                                                               |
+| exit_timeout                     | 30                                                                                                                                                                                                              |
+| cache_enabled                    | 0                                                                                                                                                                                                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I1001 04:30:24.354204 4084 server.cc:312] "Waiting for in-flight requests to complete."
+I1001 04:30:24.354211 4084 server.cc:328] "Timeout 30: Found 0 model versions that have in-flight inferences"
+I1001 04:30:24.354266 4084 server.cc:343] "All models are stopped, unloading models"
+I1001 04:30:24.354271 4084 server.cc:352] "Timeout 30: Found 0 live models and 0 in-flight non-inference requests"
+error: creating server: Internal - failed to load all models

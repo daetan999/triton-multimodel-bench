@@ -1,0 +1,237 @@
+I1001 04:28:39.570381 2988 pinned_memory_manager.cc:277] "Pinned memory pool is created at '0x793270000000' with size 268435456"
+I1001 04:28:39.573477 2988 cuda_memory_manager.cc:107] "CUDA memory pool is created on device 0 with size 67108864"
+I1001 04:28:39.581770 2988 model_lifecycle.cc:473] "loading: fil_model_000:1"
+I1001 04:28:39.581815 2988 model_lifecycle.cc:473] "loading: fil_model_001:1"
+I1001 04:28:39.581847 2988 model_lifecycle.cc:473] "loading: fil_model_002:1"
+I1001 04:28:39.581878 2988 model_lifecycle.cc:473] "loading: fil_model_003:1"
+I1001 04:28:39.581913 2988 model_lifecycle.cc:473] "loading: fil_model_004:1"
+I1001 04:28:39.581940 2988 model_lifecycle.cc:473] "loading: fil_model_005:1"
+I1001 04:28:39.581969 2988 model_lifecycle.cc:473] "loading: fil_model_006:1"
+I1001 04:28:39.581999 2988 model_lifecycle.cc:473] "loading: fil_model_007:1"
+I1001 04:28:39.582029 2988 model_lifecycle.cc:473] "loading: fil_model_008:1"
+I1001 04:28:39.582056 2988 model_lifecycle.cc:473] "loading: fil_model_009:1"
+I1001 04:28:39.582085 2988 model_lifecycle.cc:473] "loading: onnx_model_000:1"
+I1001 04:28:39.582119 2988 model_lifecycle.cc:473] "loading: onnx_model_001:1"
+I1001 04:28:39.582145 2988 model_lifecycle.cc:473] "loading: onnx_model_002:1"
+I1001 04:28:39.582170 2988 model_lifecycle.cc:473] "loading: onnx_model_003:1"
+I1001 04:28:39.582196 2988 model_lifecycle.cc:473] "loading: onnx_model_004:1"
+I1001 04:28:39.582223 2988 model_lifecycle.cc:473] "loading: onnx_model_005:1"
+I1001 04:28:39.582253 2988 model_lifecycle.cc:473] "loading: onnx_model_006:1"
+I1001 04:28:39.582282 2988 model_lifecycle.cc:473] "loading: onnx_model_007:1"
+I1001 04:28:39.582308 2988 model_lifecycle.cc:473] "loading: onnx_model_008:1"
+I1001 04:28:39.582336 2988 model_lifecycle.cc:473] "loading: onnx_model_009:1"
+I1001 04:28:39.585619 2988 initialize.hpp:43] "TRITONBACKEND_Initialize: fil"
+I1001 04:28:39.585635 2988 backend.hpp:47] "Triton TRITONBACKEND API version: 1.19"
+I1001 04:28:39.585641 2988 backend.hpp:52] "'fil' TRITONBACKEND API version: 1.19"
+I1001 04:28:39.595235 2988 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_001 (version 1)"
+I1001 04:28:39.595958 2988 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_001_0_0 (GPU device 0)"
+I1001 04:28:39.596296 2988 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_000 (version 1)"
+I1001 04:28:39.596839 2988 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_003 (version 1)"
+I1001 04:28:39.597044 2988 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_000_0_0 (GPU device 0)"
+I1001 04:28:39.597387 2988 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_002 (version 1)"
+I1001 04:28:39.597599 2988 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_003_0_0 (GPU device 0)"
+I1001 04:28:39.598273 2988 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_002_0_0 (GPU device 0)"
+[04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/detail/xgboost_json/delegated_handler.cc:160: Error: key "cats" is not recognized!
+E1001 04:28:39.601364 2988 backend_model.cc:694] "ERROR: Failed to create instance: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.601378 2988 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:28:39.601400 2988 model_lifecycle.cc:654] "failed to load 'fil_model_001' version 1: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.601411 2988 model_lifecycle.cc:789] "failed to load 'fil_model_001'"
+[04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/detail/xgboost_json/delegated_handler.cc:160: Error: key "cats" is not recognized!
+E1001 04:28:39.602066 2988 backend_model.cc:694] "ERROR: Failed to create instance: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.602084 2988 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:28:39.602120 2988 model_lifecycle.cc:654] "failed to load 'fil_model_000' version 1: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.602137 2988 model_lifecycle.cc:789] "failed to load 'fil_model_000'"
+[04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/detail/xgboost_json/delegated_handler.cc:160: Error: key "cats" is not recognized!
+E1001 04:28:39.602759 2988 backend_model.cc:694] "ERROR: Failed to create instance: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.602777 2988 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:28:39.602798 2988 model_lifecycle.cc:654] "failed to load 'fil_model_003' version 1: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.602815 2988 model_lifecycle.cc:789] "failed to load 'fil_model_003'"
+[04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/detail/xgboost_json/delegated_handler.cc:160: Error: key "cats" is not recognized!
+E1001 04:28:39.604122 2988 backend_model.cc:694] "ERROR: Failed to create instance: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.604146 2988 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:28:39.604173 2988 model_lifecycle.cc:654] "failed to load 'fil_model_002' version 1: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.604192 2988 model_lifecycle.cc:789] "failed to load 'fil_model_002'"
+I1001 04:28:39.612245 2988 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_004 (version 1)"
+I1001 04:28:39.612675 2988 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_004_0_0 (GPU device 0)"
+I1001 04:28:39.613499 2988 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_005 (version 1)"
+I1001 04:28:39.614085 2988 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_005_0_0 (GPU device 0)"
+I1001 04:28:39.614219 2988 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_006 (version 1)"
+I1001 04:28:39.614806 2988 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_006_0_0 (GPU device 0)"
+I1001 04:28:39.615110 2988 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_007 (version 1)"
+I1001 04:28:39.615736 2988 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_007_0_0 (GPU device 0)"
+[04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/detail/xgboost_json/delegated_handler.cc:160: Error: key "cats" is not recognized!
+E1001 04:28:39.617755 2988 backend_model.cc:694] "ERROR: Failed to create instance: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.617766 2988 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:28:39.617791 2988 model_lifecycle.cc:654] "failed to load 'fil_model_004' version 1: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.617801 2988 model_lifecycle.cc:789] "failed to load 'fil_model_004'"
+[04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/detail/xgboost_json/delegated_handler.cc:160: Error: key "cats" is not recognized!
+E1001 04:28:39.619423 2988 backend_model.cc:694] "ERROR: Failed to create instance: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.619441 2988 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:28:39.619464 2988 model_lifecycle.cc:654] "failed to load 'fil_model_005' version 1: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.619481 2988 model_lifecycle.cc:789] "failed to load 'fil_model_005'"
+[04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/detail/xgboost_json/delegated_handler.cc:160: Error: key "cats" is not recognized!
+E1001 04:28:39.620316 2988 backend_model.cc:694] "ERROR: Failed to create instance: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.620334 2988 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:28:39.620356 2988 model_lifecycle.cc:654] "failed to load 'fil_model_006' version 1: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.620372 2988 model_lifecycle.cc:789] "failed to load 'fil_model_006'"
+[04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/detail/xgboost_json/delegated_handler.cc:160: Error: key "cats" is not recognized!
+E1001 04:28:39.621419 2988 backend_model.cc:694] "ERROR: Failed to create instance: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.621437 2988 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:28:39.621463 2988 model_lifecycle.cc:654] "failed to load 'fil_model_007' version 1: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.621480 2988 model_lifecycle.cc:789] "failed to load 'fil_model_007'"
+I1001 04:28:39.623095 2988 onnxruntime.cc:2914] "TRITONBACKEND_Initialize: onnxruntime"
+I1001 04:28:39.623125 2988 onnxruntime.cc:2924] "Triton TRITONBACKEND API version: 1.19"
+I1001 04:28:39.623135 2988 onnxruntime.cc:2930] "'onnxruntime' TRITONBACKEND API version: 1.19"
+I1001 04:28:39.623143 2988 onnxruntime.cc:2960] "backend configuration:\n{\"cmdline\":{\"auto-complete-config\":\"true\",\"backend-directory\":\"/opt/tritonserver/backends\",\"min-compute-capability\":\"6.000000\",\"default-max-batch-size\":\"4\"}}"
+I1001 04:28:39.625337 2988 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_008 (version 1)"
+I1001 04:28:39.625701 2988 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_008_0_0 (GPU device 0)"
+I1001 04:28:39.626075 2988 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_009 (version 1)"
+I1001 04:28:39.626644 2988 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_009_0_0 (GPU device 0)"
+[04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/detail/xgboost_json/delegated_handler.cc:160: Error: key "cats" is not recognized!
+E1001 04:28:39.627971 2988 backend_model.cc:694] "ERROR: Failed to create instance: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.627981 2988 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:28:39.627995 2988 model_lifecycle.cc:654] "failed to load 'fil_model_008' version 1: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.628004 2988 model_lifecycle.cc:789] "failed to load 'fil_model_008'"
+[04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/detail/xgboost_json/delegated_handler.cc:160: Error: key "cats" is not recognized!
+E1001 04:28:39.629129 2988 backend_model.cc:694] "ERROR: Failed to create instance: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.629149 2988 model_finalize.hpp:36] "TRITONBACKEND_ModelFinalize: delete model state"
+E1001 04:28:39.629173 2988 model_lifecycle.cc:654] "failed to load 'fil_model_009' version 1: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson): "
+I1001 04:28:39.629189 2988 model_lifecycle.cc:789] "failed to load 'fil_model_009'"
+I1001 04:28:39.657601 2988 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_000 (version 1)"
+I1001 04:28:39.658077 2988 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_000': inputs and outputs already specified"
+I1001 04:28:39.658321 2988 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_002 (version 1)"
+I1001 04:28:39.658766 2988 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_002': inputs and outputs already specified"
+I1001 04:28:39.658872 2988 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_000_0_0 (GPU device 0)"
+I1001 04:28:39.659012 2988 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_001 (version 1)"
+I1001 04:28:39.659214 2988 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_003 (version 1)"
+I1001 04:28:39.659435 2988 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_001': inputs and outputs already specified"
+I1001 04:28:39.659634 2988 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_003': inputs and outputs already specified"
+I1001 04:28:39.659780 2988 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_002_0_0 (GPU device 0)"
+I1001 04:28:39.660273 2988 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_001_0_0 (GPU device 0)"
+I1001 04:28:39.660744 2988 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_003_0_0 (GPU device 0)"
+I1001 04:28:39.771274 2988 model_lifecycle.cc:849] "successfully loaded 'onnx_model_000'"
+I1001 04:28:39.774350 2988 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_004 (version 1)"
+I1001 04:28:39.774596 2988 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_004': inputs and outputs already specified"
+I1001 04:28:39.775186 2988 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_004_0_0 (GPU device 0)"
+I1001 04:28:39.831418 2988 model_lifecycle.cc:849] "successfully loaded 'onnx_model_001'"
+I1001 04:28:39.834525 2988 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_005 (version 1)"
+I1001 04:28:39.834959 2988 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_005': inputs and outputs already specified"
+I1001 04:28:39.835881 2988 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_005_0_0 (GPU device 0)"
+I1001 04:28:39.930780 2988 model_lifecycle.cc:849] "successfully loaded 'onnx_model_002'"
+I1001 04:28:39.933826 2988 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_006 (version 1)"
+I1001 04:28:39.934069 2988 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_006': inputs and outputs already specified"
+I1001 04:28:39.934615 2988 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_006_0_0 (GPU device 0)"
+I1001 04:28:40.034516 2988 model_lifecycle.cc:849] "successfully loaded 'onnx_model_003'"
+I1001 04:28:40.037708 2988 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_007 (version 1)"
+I1001 04:28:40.038006 2988 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_007': inputs and outputs already specified"
+I1001 04:28:40.124698 2988 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_007_0_0 (GPU device 0)"
+I1001 04:28:40.134918 2988 model_lifecycle.cc:849] "successfully loaded 'onnx_model_004'"
+I1001 04:28:40.138034 2988 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_008 (version 1)"
+I1001 04:28:40.138674 2988 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_008': inputs and outputs already specified"
+I1001 04:28:40.226314 2988 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_008_0_0 (GPU device 0)"
+I1001 04:28:40.326057 2988 model_lifecycle.cc:849] "successfully loaded 'onnx_model_005'"
+I1001 04:28:40.329203 2988 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_009 (version 1)"
+I1001 04:28:40.329797 2988 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_009': inputs and outputs already specified"
+I1001 04:28:40.330892 2988 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_009_0_0 (GPU device 0)"
+I1001 04:28:40.425952 2988 model_lifecycle.cc:849] "successfully loaded 'onnx_model_006'"
+I1001 04:28:40.532590 2988 model_lifecycle.cc:849] "successfully loaded 'onnx_model_007'"
+I1001 04:28:40.629275 2988 model_lifecycle.cc:849] "successfully loaded 'onnx_model_008'"
+I1001 04:28:40.731714 2988 model_lifecycle.cc:849] "successfully loaded 'onnx_model_009'"
+I1001 04:28:40.731831 2988 server.cc:611] 
++------------------+------+
+| Repository Agent | Path |
++------------------+------+
++------------------+------+
+
+I1001 04:28:40.731873 2988 server.cc:638] 
++-------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Backend     | Path                                                            | Config                                                                                                                                                        |
++-------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| fil         | /opt/tritonserver/backends/fil/libtriton_fil.so                 | {"cmdline":{"auto-complete-config":"true","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}} |
+| onnxruntime | /opt/tritonserver/backends/onnxruntime/libtriton_onnxruntime.so | {"cmdline":{"auto-complete-config":"true","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}} |
++-------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I1001 04:28:40.731949 2988 server.cc:681] 
++----------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Model          | Version | Status                                                                                                                                                                                                                          |
++----------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| fil_model_000  | 1       | UNAVAILABLE: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson):  |
+| fil_model_001  | 1       | UNAVAILABLE: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson):  |
+| fil_model_002  | 1       | UNAVAILABLE: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson):  |
+| fil_model_003  | 1       | UNAVAILABLE: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson):  |
+| fil_model_004  | 1       | UNAVAILABLE: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson):  |
+| fil_model_005  | 1       | UNAVAILABLE: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson):  |
+| fil_model_006  | 1       | UNAVAILABLE: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson):  |
+| fil_model_007  | 1       | UNAVAILABLE: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson):  |
+| fil_model_008  | 1       | UNAVAILABLE: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson):  |
+| fil_model_009  | 1       | UNAVAILABLE: Unknown: [04:28:39] /rapids_triton/build/_deps/treelite-src/src/model_loader/xgboost_ubjson.cc:64: Check failed: nlohmann::json::sax_parse( input_stream, adapter.get(), nlohmann::json::input_format_t::ubjson):  |
+| onnx_model_000 | 1       | READY                                                                                                                                                                                                                           |
+| onnx_model_001 | 1       | READY                                                                                                                                                                                                                           |
+| onnx_model_002 | 1       | READY                                                                                                                                                                                                                           |
+| onnx_model_003 | 1       | READY                                                                                                                                                                                                                           |
+| onnx_model_004 | 1       | READY                                                                                                                                                                                                                           |
+| onnx_model_005 | 1       | READY                                                                                                                                                                                                                           |
+| onnx_model_006 | 1       | READY                                                                                                                                                                                                                           |
+| onnx_model_007 | 1       | READY                                                                                                                                                                                                                           |
+| onnx_model_008 | 1       | READY                                                                                                                                                                                                                           |
+| onnx_model_009 | 1       | READY                                                                                                                                                                                                                           |
++----------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I1001 04:28:40.849076 2988 metrics.cc:890] "Collecting metrics for GPU 0: NVIDIA L4"
+I1001 04:28:40.854618 2988 metrics.cc:783] "Collecting CPU metrics"
+I1001 04:28:40.854731 2988 tritonserver.cc:2598] 
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Option                           | Value                                                                                                                                                                                                           |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| server_id                        | triton                                                                                                                                                                                                          |
+| server_version                   | 2.59.0                                                                                                                                                                                                          |
+| server_extensions                | classification sequence model_repository model_repository(unload_dependents) schedule_policy model_configuration system_shared_memory cuda_shared_memory binary_tensor_data parameters statistics trace logging |
+| model_repository_path[0]         | /workspace/model_repository                                                                                                                                                                                     |
+| model_control_mode               | MODE_NONE                                                                                                                                                                                                       |
+| strict_model_config              | 0                                                                                                                                                                                                               |
+| model_config_name                |                                                                                                                                                                                                                 |
+| rate_limit                       | OFF                                                                                                                                                                                                             |
+| pinned_memory_pool_byte_size     | 268435456                                                                                                                                                                                                       |
+| cuda_memory_pool_byte_size{0}    | 67108864                                                                                                                                                                                                        |
+| min_supported_compute_capability | 6.0                                                                                                                                                                                                             |
+| strict_readiness                 | 1                                                                                                                                                                                                               |
+| exit_timeout                     | 30                                                                                                                                                                                                              |
+| cache_enabled                    | 0                                                                                                                                                                                                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I1001 04:28:40.854783 2988 server.cc:312] "Waiting for in-flight requests to complete."
+I1001 04:28:40.854795 2988 server.cc:328] "Timeout 30: Found 0 model versions that have in-flight inferences"
+I1001 04:28:40.855469 2988 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:28:40.855864 2988 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:28:40.855907 2988 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:28:40.855946 2988 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:28:40.856232 2988 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:28:40.857180 2988 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:28:40.858776 2988 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:28:40.859160 2988 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:28:40.863291 2988 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:28:40.863349 2988 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_002' version 1"
+I1001 04:28:40.864215 2988 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:28:40.864256 2988 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_005' version 1"
+I1001 04:28:40.865721 2988 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:28:40.865802 2988 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_006' version 1"
+I1001 04:28:40.865934 2988 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:28:40.866703 2988 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:28:40.866742 2988 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_008' version 1"
+I1001 04:28:40.867946 2988 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:28:40.867992 2988 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_000' version 1"
+I1001 04:28:40.868877 2988 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:28:40.868917 2988 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_001' version 1"
+I1001 04:28:40.869236 2988 server.cc:343] "All models are stopped, unloading models"
+I1001 04:28:40.869256 2988 server.cc:352] "Timeout 30: Found 4 live models and 0 in-flight non-inference requests"
+I1001 04:28:40.870678 2988 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:28:40.870715 2988 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_007' version 1"
+I1001 04:28:40.871540 2988 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1001 04:28:40.872107 2988 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:28:40.872192 2988 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_004' version 1"
+I1001 04:28:40.872588 2988 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:28:40.872622 2988 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_003' version 1"
+I1001 04:28:40.874817 2988 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1001 04:28:40.874867 2988 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_009' version 1"
+I1001 04:28:41.869344 2988 server.cc:352] "Timeout 29: Found 0 live models and 0 in-flight non-inference requests"
+error: creating server: Internal - failed to load all models

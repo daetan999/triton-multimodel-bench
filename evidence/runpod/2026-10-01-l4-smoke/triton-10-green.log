@@ -1,0 +1,164 @@
+I1001 04:34:22.152250 5508 pinned_memory_manager.cc:277] "Pinned memory pool is created at '0x7485a8000000' with size 268435456"
+I1001 04:34:22.155326 5508 cuda_memory_manager.cc:107] "CUDA memory pool is created on device 0 with size 67108864"
+I1001 04:34:22.163367 5508 model_lifecycle.cc:473] "loading: fil_model_000:1"
+I1001 04:34:22.163415 5508 model_lifecycle.cc:473] "loading: fil_model_001:1"
+I1001 04:34:22.163447 5508 model_lifecycle.cc:473] "loading: fil_model_002:1"
+I1001 04:34:22.163483 5508 model_lifecycle.cc:473] "loading: fil_model_003:1"
+I1001 04:34:22.163517 5508 model_lifecycle.cc:473] "loading: fil_model_004:1"
+I1001 04:34:22.163543 5508 model_lifecycle.cc:473] "loading: fil_model_005:1"
+I1001 04:34:22.163572 5508 model_lifecycle.cc:473] "loading: fil_model_006:1"
+I1001 04:34:22.163600 5508 model_lifecycle.cc:473] "loading: fil_model_007:1"
+I1001 04:34:22.163629 5508 model_lifecycle.cc:473] "loading: fil_model_008:1"
+I1001 04:34:22.163656 5508 model_lifecycle.cc:473] "loading: fil_model_009:1"
+I1001 04:34:22.163686 5508 model_lifecycle.cc:473] "loading: onnx_model_000:1"
+I1001 04:34:22.163714 5508 model_lifecycle.cc:473] "loading: onnx_model_001:1"
+I1001 04:34:22.163744 5508 model_lifecycle.cc:473] "loading: onnx_model_002:1"
+I1001 04:34:22.163774 5508 model_lifecycle.cc:473] "loading: onnx_model_003:1"
+I1001 04:34:22.163802 5508 model_lifecycle.cc:473] "loading: onnx_model_004:1"
+I1001 04:34:22.163832 5508 model_lifecycle.cc:473] "loading: onnx_model_005:1"
+I1001 04:34:22.163867 5508 model_lifecycle.cc:473] "loading: onnx_model_006:1"
+I1001 04:34:22.163898 5508 model_lifecycle.cc:473] "loading: onnx_model_007:1"
+I1001 04:34:22.163925 5508 model_lifecycle.cc:473] "loading: onnx_model_008:1"
+I1001 04:34:22.163956 5508 model_lifecycle.cc:473] "loading: onnx_model_009:1"
+I1001 04:34:22.166925 5508 initialize.hpp:43] "TRITONBACKEND_Initialize: fil"
+I1001 04:34:22.166958 5508 backend.hpp:47] "Triton TRITONBACKEND API version: 1.19"
+I1001 04:34:22.166964 5508 backend.hpp:52] "'fil' TRITONBACKEND API version: 1.19"
+I1001 04:34:22.176649 5508 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_003 (version 1)"
+I1001 04:34:22.177490 5508 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_003_0_0 (GPU device 0)"
+I1001 04:34:22.177716 5508 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_000 (version 1)"
+I1001 04:34:22.178254 5508 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_002 (version 1)"
+I1001 04:34:22.178544 5508 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_000_0_0 (GPU device 0)"
+I1001 04:34:22.178629 5508 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_001 (version 1)"
+I1001 04:34:22.179109 5508 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_002_0_0 (GPU device 0)"
+I1001 04:34:22.179483 5508 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_001_0_0 (GPU device 0)"
+I1001 04:34:22.217507 5508 model_lifecycle.cc:849] "successfully loaded 'fil_model_003'"
+I1001 04:34:22.217557 5508 model_lifecycle.cc:849] "successfully loaded 'fil_model_002'"
+I1001 04:34:22.217589 5508 model_lifecycle.cc:849] "successfully loaded 'fil_model_001'"
+I1001 04:34:22.217614 5508 model_lifecycle.cc:849] "successfully loaded 'fil_model_000'"
+I1001 04:34:22.227801 5508 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_004 (version 1)"
+I1001 04:34:22.228366 5508 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_004_0_0 (GPU device 0)"
+I1001 04:34:22.228869 5508 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_005 (version 1)"
+I1001 04:34:22.229239 5508 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_006 (version 1)"
+I1001 04:34:22.229384 5508 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_005_0_0 (GPU device 0)"
+I1001 04:34:22.229450 5508 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_007 (version 1)"
+I1001 04:34:22.229707 5508 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_006_0_0 (GPU device 0)"
+I1001 04:34:22.230007 5508 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_007_0_0 (GPU device 0)"
+I1001 04:34:22.235209 5508 model_lifecycle.cc:849] "successfully loaded 'fil_model_004'"
+I1001 04:34:22.236930 5508 model_lifecycle.cc:849] "successfully loaded 'fil_model_005'"
+I1001 04:34:22.237677 5508 model_lifecycle.cc:849] "successfully loaded 'fil_model_006'"
+I1001 04:34:22.237824 5508 model_lifecycle.cc:849] "successfully loaded 'fil_model_007'"
+I1001 04:34:22.238890 5508 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_008 (version 1)"
+I1001 04:34:22.239444 5508 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_008_0_0 (GPU device 0)"
+I1001 04:34:22.242481 5508 model_initialize.hpp:37] "TRITONBACKEND_ModelInitialize: fil_model_009 (version 1)"
+I1001 04:34:22.243002 5508 instance_initialize.hpp:46] "TRITONBACKEND_ModelInstanceInitialize: fil_model_009_0_0 (GPU device 0)"
+I1001 04:34:22.245245 5508 model_lifecycle.cc:849] "successfully loaded 'fil_model_008'"
+I1001 04:34:22.245742 5508 onnxruntime.cc:2914] "TRITONBACKEND_Initialize: onnxruntime"
+I1001 04:34:22.245759 5508 onnxruntime.cc:2924] "Triton TRITONBACKEND API version: 1.19"
+I1001 04:34:22.245766 5508 onnxruntime.cc:2930] "'onnxruntime' TRITONBACKEND API version: 1.19"
+I1001 04:34:22.245772 5508 onnxruntime.cc:2960] "backend configuration:\n{\"cmdline\":{\"auto-complete-config\":\"true\",\"backend-directory\":\"/opt/tritonserver/backends\",\"min-compute-capability\":\"6.000000\",\"default-max-batch-size\":\"4\"}}"
+I1001 04:34:22.246862 5508 model_lifecycle.cc:849] "successfully loaded 'fil_model_009'"
+I1001 04:34:22.278729 5508 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_000 (version 1)"
+I1001 04:34:22.279151 5508 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_000': inputs and outputs already specified"
+I1001 04:34:22.279442 5508 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_001 (version 1)"
+I1001 04:34:22.279796 5508 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_002 (version 1)"
+I1001 04:34:22.279861 5508 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_000_0_0 (GPU device 0)"
+I1001 04:34:22.279999 5508 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_003 (version 1)"
+I1001 04:34:22.280010 5508 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_001': inputs and outputs already specified"
+I1001 04:34:22.280233 5508 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_002': inputs and outputs already specified"
+I1001 04:34:22.280624 5508 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_003': inputs and outputs already specified"
+I1001 04:34:22.281011 5508 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_002_0_0 (GPU device 0)"
+I1001 04:34:22.281046 5508 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_001_0_0 (GPU device 0)"
+I1001 04:34:22.281628 5508 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_003_0_0 (GPU device 0)"
+I1001 04:34:22.398436 5508 model_lifecycle.cc:849] "successfully loaded 'onnx_model_000'"
+I1001 04:34:22.401551 5508 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_004 (version 1)"
+I1001 04:34:22.401961 5508 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_004': inputs and outputs already specified"
+I1001 04:34:22.402625 5508 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_004_0_0 (GPU device 0)"
+I1001 04:34:22.431730 5508 model_lifecycle.cc:849] "successfully loaded 'onnx_model_002'"
+I1001 04:34:22.434799 5508 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_005 (version 1)"
+I1001 04:34:22.435076 5508 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_005': inputs and outputs already specified"
+I1001 04:34:22.441441 5508 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_005_0_0 (GPU device 0)"
+I1001 04:34:22.531061 5508 model_lifecycle.cc:849] "successfully loaded 'onnx_model_001'"
+I1001 04:34:22.534258 5508 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_006 (version 1)"
+I1001 04:34:22.534566 5508 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_006': inputs and outputs already specified"
+I1001 04:34:22.535255 5508 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_006_0_0 (GPU device 0)"
+I1001 04:34:22.630527 5508 model_lifecycle.cc:849] "successfully loaded 'onnx_model_003'"
+I1001 04:34:22.633657 5508 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_007 (version 1)"
+I1001 04:34:22.634280 5508 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_007': inputs and outputs already specified"
+I1001 04:34:22.635380 5508 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_007_0_0 (GPU device 0)"
+I1001 04:34:22.728248 5508 model_lifecycle.cc:849] "successfully loaded 'onnx_model_004'"
+I1001 04:34:22.731354 5508 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_008 (version 1)"
+I1001 04:34:22.731808 5508 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_008': inputs and outputs already specified"
+I1001 04:34:22.732618 5508 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_008_0_0 (GPU device 0)"
+I1001 04:34:22.824448 5508 model_lifecycle.cc:849] "successfully loaded 'onnx_model_005'"
+I1001 04:34:22.827631 5508 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_009 (version 1)"
+I1001 04:34:22.828080 5508 onnxruntime.cc:1014] "skipping model configuration auto-complete for 'onnx_model_009': inputs and outputs already specified"
+I1001 04:34:22.828922 5508 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_009_0_0 (GPU device 0)"
+I1001 04:34:22.936773 5508 model_lifecycle.cc:849] "successfully loaded 'onnx_model_006'"
+I1001 04:34:23.039587 5508 model_lifecycle.cc:849] "successfully loaded 'onnx_model_007'"
+I1001 04:34:23.138078 5508 model_lifecycle.cc:849] "successfully loaded 'onnx_model_008'"
+I1001 04:34:23.229523 5508 model_lifecycle.cc:849] "successfully loaded 'onnx_model_009'"
+I1001 04:34:23.229689 5508 server.cc:611] 
++------------------+------+
+| Repository Agent | Path |
++------------------+------+
++------------------+------+
+
+I1001 04:34:23.229768 5508 server.cc:638] 
++-------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Backend     | Path                                                            | Config                                                                                                                                                        |
++-------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| fil         | /opt/tritonserver/backends/fil/libtriton_fil.so                 | {"cmdline":{"auto-complete-config":"true","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}} |
+| onnxruntime | /opt/tritonserver/backends/onnxruntime/libtriton_onnxruntime.so | {"cmdline":{"auto-complete-config":"true","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}} |
++-------------+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I1001 04:34:23.229916 5508 server.cc:681] 
++----------------+---------+--------+
+| Model          | Version | Status |
++----------------+---------+--------+
+| fil_model_000  | 1       | READY  |
+| fil_model_001  | 1       | READY  |
+| fil_model_002  | 1       | READY  |
+| fil_model_003  | 1       | READY  |
+| fil_model_004  | 1       | READY  |
+| fil_model_005  | 1       | READY  |
+| fil_model_006  | 1       | READY  |
+| fil_model_007  | 1       | READY  |
+| fil_model_008  | 1       | READY  |
+| fil_model_009  | 1       | READY  |
+| onnx_model_000 | 1       | READY  |
+| onnx_model_001 | 1       | READY  |
+| onnx_model_002 | 1       | READY  |
+| onnx_model_003 | 1       | READY  |
+| onnx_model_004 | 1       | READY  |
+| onnx_model_005 | 1       | READY  |
+| onnx_model_006 | 1       | READY  |
+| onnx_model_007 | 1       | READY  |
+| onnx_model_008 | 1       | READY  |
+| onnx_model_009 | 1       | READY  |
++----------------+---------+--------+
+
+I1001 04:34:23.428249 5508 metrics.cc:890] "Collecting metrics for GPU 0: NVIDIA L4"
+I1001 04:34:23.433619 5508 metrics.cc:783] "Collecting CPU metrics"
+I1001 04:34:23.433831 5508 tritonserver.cc:2598] 
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Option                           | Value                                                                                                                                                                                                           |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| server_id                        | triton                                                                                                                                                                                                          |
+| server_version                   | 2.59.0                                                                                                                                                                                                          |
+| server_extensions                | classification sequence model_repository model_repository(unload_dependents) schedule_policy model_configuration system_shared_memory cuda_shared_memory binary_tensor_data parameters statistics trace logging |
+| model_repository_path[0]         | /workspace/model_repository                                                                                                                                                                                     |
+| model_control_mode               | MODE_NONE                                                                                                                                                                                                       |
+| strict_model_config              | 0                                                                                                                                                                                                               |
+| model_config_name                |                                                                                                                                                                                                                 |
+| rate_limit                       | OFF                                                                                                                                                                                                             |
+| pinned_memory_pool_byte_size     | 268435456                                                                                                                                                                                                       |
+| cuda_memory_pool_byte_size{0}    | 67108864                                                                                                                                                                                                        |
+| min_supported_compute_capability | 6.0                                                                                                                                                                                                             |
+| strict_readiness                 | 1                                                                                                                                                                                                               |
+| exit_timeout                     | 30                                                                                                                                                                                                              |
+| cache_enabled                    | 0                                                                                                                                                                                                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I1001 04:34:23.437800 5508 grpc_server.cc:2562] "Started GRPCInferenceService at 0.0.0.0:8001"
+I1001 04:34:23.438084 5508 http_server.cc:4832] "Started HTTPService at 0.0.0.0:8000"
+I1001 04:34:23.502711 5508 http_server.cc:358] "Started Metrics Service at 0.0.0.0:8002"
