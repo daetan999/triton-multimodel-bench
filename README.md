@@ -29,6 +29,12 @@ The manually triggered **Publish Pod image** GitHub Actions workflow builds the 
 3. GPU consolidation cost versus a four-vCPU CPU baseline.
 4. Optional cold-load and GPU-memory measurements.
 
+## Benchmark runner
+
+The runner sends asynchronous gRPC requests on a deterministic Poisson arrival schedule and chooses uniformly across the active models. Warm-up requests remain in the raw CSV but are excluded from measured metrics. Every formal run records per-request latency, target and achieved QPS, errors, one-second GPU telemetry, Triton process CPU/RSS telemetry, the immutable image digest, Git commit, and CPU affinities.
+
+The first formal matrix is 81 ONNX Runtime runs: 1/10/100 models, batching off/2 ms/10 ms, 50/200/500 target QPS, and three repetitions. `scripts/run_matrix.py` writes an immutable matrix manifest and only resumes complete, validated runs.
+
 ## Repository layout
 
 ```text
@@ -36,6 +42,9 @@ configs/            Experiment definitions and Triton configurations
 model_repository/   Generated Triton model repository
 results/raw/        Per-request measurements
 results/gpu/        GPU telemetry
+results/cpu/        Triton process CPU and memory telemetry
+results/summaries/  Validated run metadata and aggregate metrics
+results/server/     Triton logs grouped by server configuration
 results/charts/     Final charts
 scripts/            Model generation, load generation, and analysis
 tests/              Automated checks

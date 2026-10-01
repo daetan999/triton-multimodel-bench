@@ -268,3 +268,31 @@ Publish the corrected, reproducible Pod image as `0.1.1`.
 
 Deploy a fresh L4 Pod from the immutable `0.1.1` digest and run the formal
 100-pair benchmark.
+
+## 2026-10-01 - Session 11
+
+### Goal
+
+Build the reproducible load generator and formal matrix runner before renting another GPU.
+
+### Result
+
+- Added deterministic asynchronous gRPC traffic with Poisson arrivals and uniform model selection.
+- Added batching-off, 2 ms, and 10 ms managed Triton configuration support with a maximum batch size of 8.
+- Added deterministic randomized ordering for the complete 81-run ONNX matrix.
+- Added atomic per-request CSV and JSON summary writes, strict manifests, safe resume checks, and overwrite refusal.
+- Added explicit Triton/load-generator CPU affinity enforcement.
+- Added one-second NVIDIA GPU and Triton process CPU/RSS telemetry.
+- Added a single-run load generator, batching CLI, and full-matrix CLI.
+- Kept saturation results valid while flagging low achieved QPS and high client scheduler delay as warnings; request failures invalidate a run.
+
+### Verification
+
+- All 31 tests pass.
+- Package coverage is above the required 80% threshold.
+- Every CLI imports and displays help successfully on the local Mac.
+- No paid RunPod resource was created; the account remained at zero Pods and zero network volumes at the start of this work.
+
+### Next step
+
+Commit and push the harness, publish image `0.1.2`, verify its immutable digest, then deploy one fresh L4 Pod and run the five-second preflight before starting the formal matrix.

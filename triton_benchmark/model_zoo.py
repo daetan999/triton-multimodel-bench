@@ -16,7 +16,7 @@ from xgboost import Booster, DMatrix, XGBRegressor
 
 
 FEATURE_COUNT = 32
-MAX_BATCH_SIZE = 1024
+MAX_BATCH_SIZE = 8
 ONNX_OPSET = 15
 TRAINING_ROWS = 256
 
@@ -172,9 +172,11 @@ def _validate_pair(repository: Path, entry: dict[str, Any]) -> None:
     if fil_config_path.read_text(encoding="utf-8") != _fil_config(fil_name):
         raise RepositoryValidationError(f"FIL config mismatch for pair {index}")
 
-    samples = np.random.default_rng(entry["seed"] ^ 0x5EED).normal(
-        size=(16, FEATURE_COUNT)
-    ).astype(np.float32)
+    samples = (
+        np.random.default_rng(entry["seed"] ^ 0x5EED)
+        .normal(size=(16, FEATURE_COUNT))
+        .astype(np.float32)
+    )
     session = ort.InferenceSession(
         onnx_path.as_posix(),
         providers=["CPUExecutionProvider"],

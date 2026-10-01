@@ -24,8 +24,10 @@ This is the operating guide for the whole project. Work from top to bottom. Do n
 - [x] Ten-pair Triton smoke gate passed after the live FIL compatibility fixes.
 - [x] Smoke-test evidence copied locally and the first paid Pod terminated.
 - [x] Corrected image `0.1.1` built, smoke-tested, published, and anonymously verified by digest.
+- [x] Asynchronous Poisson gRPC load generator implemented and tested.
+- [x] Crash-safe 81-run matrix runner implemented with per-request, GPU, CPU, and summary artifacts.
 
-The next step is to deploy a fresh Pod from the immutable `0.1.1` digest and run the formal 100-pair benchmark.
+The next step is to publish image `0.1.2`, deploy it by immutable digest, pass a five-second live preflight, and run the formal 100-pair ONNX experiment.
 
 ## How to use this runbook
 
@@ -255,7 +257,7 @@ After the current changes have been pushed:
 2. Select **Actions**.
 3. Select **Publish Pod image**.
 4. Select **Run workflow**.
-5. Enter the intended semantic release tag (current release: `0.1.1`), then run it.
+5. Enter the intended semantic release tag (current release: `0.1.2`), then run it.
 6. Wait for the workflow to finish with a green check.
 7. Open the workflow summary and copy the complete `ghcr.io/...@sha256:...` reference.
 8. Open the new package's **Package settings** and change its visibility to **Public**. Do not add registry credentials to RunPod.
@@ -365,9 +367,9 @@ Every measured condition follows the same order.
 1. Confirm the Pod ID, GPU identity, data center, image digest, model config, and manual cutoff.
 2. Pin Triton and the load generator to disjoint CPU sets.
 3. Verify Triton with one real request before measuring.
-4. Warm up without recording results.
+4. Record warm-up requests separately and exclude them from all measured metrics.
 5. Confirm the load-generator CPU set is not saturated.
-6. Start GPU and CPU telemetry.
+6. Start one-second GPU and Triton-process CPU/RSS telemetry.
 7. Run the local load generator against `127.0.0.1`.
 8. Save one CSV row per request.
 9. Stop telemetry.
@@ -385,9 +387,107 @@ Every measured condition follows the same order.
 | Offered load | Low, medium, high; fixed after calibration |
 | Repetitions | At least 3 |
 | Primary metrics | Throughput, p50, p95, p99, error rate |
-| Supporting metrics | GPU utilisation, GPU memory, CPU utilisation, server queue time |
+| Supporting metrics | GPU utilisation/memory/power, client scheduler delay/CPU, Triton process CPU/RSS |
 
 Never compare conditions produced by different code versions without explicitly recording that difference.
+
+The formal ONNX matrix contains 81 runs: 3 model counts × 3 batching policies × 3 target loads × 3 repetitions. Each run uses 10 seconds of warm-up and 60 seconds of measurement, so the raw traffic windows take 94.5 minutes before model restarts and validation.
+
+## 5.1 Generate and validate the 100-pair repository on the Pod
+
+Run over SSH:
+
+```bash
+mkdir -p /workspace/model_repository /workspace/results
+python3 /opt/triton-benchmark/scripts/gen_models.py \
+  --count 100 \
+  --seed 20260805 \
+  --repository /workspace/model_repository
+python3 /opt/triton-benchmark/scripts/validate_models.py \
+  --count 100 \
+  --repository /workspace/model_repository
+```
+
+**Success looks like:** validation prints `"status": "valid"` with 100 model pairs.
+
+## 5.2 Confirm CPU isolation
+
+```bash
+taskset --cpu-list 0-7 true
+taskset --cpu-list 8-15 true
+```
+
+Both commands must return silently with exit code zero. Triton uses CPUs 0–7; the runner itself must be launched with `taskset` on CPUs 8–15. Do not continue if either CPU set is unavailable.
+
+## 5.3 Run the five-second live preflight
+
+Replace both placeholder values with the exact `0.1.2` image digest and Git commit recorded for this release:
+
+```bash
+export BENCH_IMAGE_DIGEST='ghcr.io/daetan999/triton-multimodel-bench@sha256:REPLACE_ME'
+export BENCH_GIT_COMMIT='REPLACE_ME'
+taskset --cpu-list 8-15 python3 /opt/triton-benchmark/scripts/run_matrix.py \
+  --repository /workspace/model_repository \
+  --results-dir /workspace/results/preflight \
+  --backend onnx \
+  --model-counts 1 \
+  --queue-delays-us off \
+  --target-qps 50 \
+  --repetitions 1 \
+  --warmup-seconds 2 \
+  --duration-seconds 5 \
+  --server-cpus 0-7 \
+  --loadgen-cpus 8-15 \
+  --image-digest "$BENCH_IMAGE_DIGEST" \
+  --git-commit "$BENCH_GIT_COMMIT"
+```
+
+**Success looks like:** the final report says one run completed and the preflight directory contains raw request CSV, GPU CSV, Triton CPU/RSS CSV, JSON summary, matrix manifest, and server log. The JSON summary must say `"status": "valid"` and `"failed_requests": 0`.
+
+## 5.4 Start the formal ONNX matrix
+
+Run it detached so an SSH disconnect does not stop the experiment:
+
+```bash
+mkdir -p /workspace/results/onnx-experiment-a
+setsid taskset --cpu-list 8-15 \
+  python3 /opt/triton-benchmark/scripts/run_matrix.py \
+  --repository /workspace/model_repository \
+  --results-dir /workspace/results/onnx-experiment-a \
+  --backend onnx \
+  --model-counts 1,10,100 \
+  --queue-delays-us off,2000,10000 \
+  --target-qps 50,200,500 \
+  --repetitions 3 \
+  --warmup-seconds 10 \
+  --duration-seconds 60 \
+  --base-seed 20260805 \
+  --server-cpus 0-7 \
+  --loadgen-cpus 8-15 \
+  --image-digest "$BENCH_IMAGE_DIGEST" \
+  --git-commit "$BENCH_GIT_COMMIT" \
+  > /workspace/results/onnx-experiment-a/runner.log 2>&1 \
+  < /dev/null &
+echo $! > /workspace/results/onnx-experiment-a/runner.pid
+```
+
+Monitor without altering the run:
+
+```bash
+tail -f /workspace/results/onnx-experiment-a/runner.log
+```
+
+The runner randomizes server-configuration groups and the runs inside each group deterministically. It refuses to overwrite artifacts. If the process ends between runs, repeat the command with `--resume`. If it stops during a run, preserve the partial files for diagnosis and use a new results directory; do not delete evidence to force a resume.
+
+## 5.5 Validate and copy results before teardown
+
+```bash
+test "$(find /workspace/results/onnx-experiment-a/summaries -name '*.json' | wc -l)" -eq 81
+grep -R '"status": "invalid"' /workspace/results/onnx-experiment-a/summaries && exit 1 || true
+sha256sum $(find /workspace/results -type f | sort) > /workspace/results/SHA256SUMS
+```
+
+Copy `/workspace/results` and the generated model manifest to the Mac. Verify `SHA256SUMS` locally before terminating the Pod. Never terminate first: the 20 GB container disk is disposable.
 
 ---
 

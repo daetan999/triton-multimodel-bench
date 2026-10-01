@@ -13,6 +13,7 @@ model_repository/*
 # Raw benchmark data is intentionally committed only after validation.
 results/raw/*.csv
 results/gpu/*.csv
+results/cpu/*.csv
 
 # Local credentials and environment files must never be committed.
 .env

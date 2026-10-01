@@ -17,12 +17,16 @@ def test_generate_repository_creates_one_complete_model_pair(tmp_path: Path) -> 
 
     assert manifest["count"] == 1
     assert manifest["seed"] == 20260805
+    assert manifest["max_batch_size"] == 8
     assert (repository / "onnx_model_000" / "1" / "model.onnx").is_file()
     assert (repository / "onnx_model_000" / "config.pbtxt").is_file()
     assert (repository / "fil_model_000" / "1" / "xgboost.ubj").is_file()
     assert (repository / "fil_model_000" / "config.pbtxt").is_file()
 
     fil_config = (repository / "fil_model_000" / "config.pbtxt").read_text()
+    onnx_config = (repository / "onnx_model_000" / "config.pbtxt").read_text()
+    assert "max_batch_size: 8" in onnx_config
+    assert "max_batch_size: 8" in fil_config
     assert 'key: "output_class"' in fil_config
     assert 'value: { string_value: "false" }' in fil_config
     assert 'key: "is_classifier"' not in fil_config
