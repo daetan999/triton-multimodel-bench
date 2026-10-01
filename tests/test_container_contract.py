@@ -52,4 +52,6 @@ def test_image_publish_workflow_is_manual_amd64_and_versioned() -> None:
     assert "platforms: linux/amd64" in workflow
     assert "tags: ${{ steps.image.outputs.reference }}" in workflow
     assert ":latest" not in workflow
+    assert "tritonserver --help" in workflow
+    assert "tritonserver --version" not in workflow
     assert "uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262" in workflow

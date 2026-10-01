@@ -114,3 +114,17 @@ Prepare a reproducible and securely accessible Triton Pod image without starting
 ### Next step
 
 Review, commit, and push the repository changes. Then run **Publish Pod image** with tag `0.1.0`, make the resulting GHCR package public, and record its digest before creating a Pod.
+
+## 2026-10-01 - Session 4
+
+### Goal
+
+Diagnose and repair the failed Pod image publication workflow.
+
+### Finding
+
+The image built successfully. The smoke test failed because Triton Server 2.59 does not implement a `--version` option; it printed usage and exited with status 1 before the Python and SSH checks ran.
+
+### Fix
+
+Replaced the unsupported option with `tritonserver --help`, which verifies that the executable is present and runnable. Added a workflow-contract regression assertion that rejects `--version`.

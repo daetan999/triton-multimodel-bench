@@ -64,7 +64,7 @@ jobs:
         run: |
           set -euo pipefail
           docker run --rm --entrypoint /bin/bash "${IMAGE_REFERENCE}" -lc \
-            'tritonserver --version && python3 -c "import onnx, onnxruntime, tritonclient, xgboost"'
+            'tritonserver --help >/dev/null && python3 -c "import onnx, onnxruntime, tritonclient, xgboost"'
           if docker run --rm "${IMAGE_REFERENCE}"; then
             echo "Image started without PUBLIC_KEY" >&2
             exit 1
