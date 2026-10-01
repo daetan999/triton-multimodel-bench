@@ -128,3 +128,17 @@ The image built successfully. The smoke test failed because Triton Server 2.59 d
 ### Fix
 
 Replaced the unsupported option with `tritonserver --help`, which verifies that the executable is present and runnable. Added a workflow-contract regression assertion that rejects `--version`.
+
+## 2026-10-01 - Session 5
+
+### Goal
+
+Repair the follow-up smoke-test failure from workflow run `36808489353`.
+
+### Finding
+
+Triton Server 2.59 prints its usage for `--help` but exits with status 1, so it cannot be used as a successful smoke-test command. The image again built successfully, and publication remained safely skipped.
+
+### Fix
+
+Use `command -v tritonserver` to verify the executable is installed without depending on Triton's CLI exit convention. The contract test now rejects both `--version` and `--help`.
