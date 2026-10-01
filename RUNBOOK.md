@@ -5,15 +5,20 @@ This is the operating guide for the whole project. Work from top to bottom. Do n
 ## Where we are now
 
 - [x] Repository created and cloned.
-- [x] Google Cloud CLI installed.
 - [x] Python 3.12 environment created.
 - [x] Pinned packages installed and checked.
 - [x] scikit-learn and LightGBM ONNX export tests passing.
-- [ ] Google Cloud authentication completed.
-- [ ] Billing project and budget configured.
-- [ ] NVIDIA L4 quota approved.
+- [x] RunPod's official Codex plugin installed.
+- [x] RunPod MCP OAuth completed.
+- [x] Cloud plan changed from Google Cloud to RunPod.
+- [x] RunPod account verified empty: zero Pods and zero network volumes.
+- [x] RunPod account funded with a maximum of US$10 prepaid credit (user-confirmed).
+- [x] Automatic payments disabled (user-confirmed).
+- [x] Ten reproducible model pairs generated and validated locally.
+- [x] Full 100-pair model repository generated and validated locally.
+- [x] Project-specific Triton Pod image and publish workflow prepared locally.
 
-Your next unfinished step is **Phase 1.1 - Sign in**.
+The next step is **Phase 3.2 - Publish the project-specific Pod image** after the current repository changes are reviewed, committed, and pushed. Do not create a Pod yet.
 
 ## How to use this runbook
 
@@ -22,28 +27,29 @@ Your next unfinished step is **Phase 1.1 - Sign in**.
 - Compare your output with **Success looks like** before continuing.
 - If a command fails, copy the complete command and complete error into the working chat.
 - Never substitute invented benchmark values for missing measurements.
-- Never run a paid VM without a runtime limit.
+- Never create a paid Pod without a six-hour termination deadline.
+- Terminate Pods when a session ends; stopping a Pod can leave storage charges running.
 
 ## Fixed project choices
 
 | Item | Choice |
 |---|---|
-| Cloud | Google Cloud |
-| Region | Singapore, `asia-southeast1` |
-| Preferred zone | `asia-southeast1-a` |
-| GPU server | `g2-standard-4`, one NVIDIA L4 |
-| Load generator / CPU baseline | `n2-standard-4` |
-| GPU OS | Google Deep Learning VM, Ubuntu 22.04, CUDA 12.9, NVIDIA 580 |
+| Cloud | RunPod, on-demand; Secure Cloud preferred |
+| Data center | Chosen immediately before launch from live L4 availability |
+| GPU server | One NVIDIA L4 with 24 GB VRAM |
+| Load generator | Same Pod, pinned to reserved CPU cores |
+| CPU baseline | Same Pod CPU, with GPU execution disabled |
+| Persistent storage | 20 GB network volume mounted at `/workspace` |
 | Triton container | `nvcr.io/nvidia/tritonserver:25.06-py3` |
 | ONNX opset | 15 |
-| Maximum VM run | Six hours per start |
-| Maximum project budget | S$35 |
+| Maximum Pod run | Six hours per creation |
+| Maximum project funding | US$10 prepaid credit; automatic payments off |
 
 ---
 
 # Phase 0 - Local setup
 
-Codex has already installed Google Cloud CLI and created the repository scaffold.
+Codex has already created the repository scaffold and verified the local Python environment.
 
 ## 0.1 Open the repository
 
@@ -85,10 +91,11 @@ import xgboost
 print("Local Python environment: READY")
 PY
 python -m pip check
-pytest -q
+coverage run -m pytest -q
+coverage report
 ```
 
-**Success looks like:** `Local Python environment: READY`, `No broken requirements found`, and `2 passed`.
+**Success looks like:** `Local Python environment: READY`, `No broken requirements found`, all tests pass, and total coverage is at least 80%.
 
 ## 0.3 Confirm repository state
 
@@ -96,149 +103,74 @@ pytest -q
 git status --short
 ```
 
-**Success looks like:** the new scaffold files appear. Do not commit or push yet.
+**Success looks like:** no unexpected files appear. Do not commit or push unreviewed changes.
 
 ---
 
-# Phase 1 - Google Cloud account and quota
+# Phase 1 - RunPod account and safety setup
 
-No GPU is created in this phase. This phase should cost nothing.
+No GPU or storage resource is created in this phase.
 
-## 1.1 Sign in
+## 1.1 Authenticate the official Codex plugin
 
-```bash
-gcloud auth login
-```
-
-A browser opens. Sign in with the Google account that owns the billing account.
-
-Verify:
+This step is complete. Verify it at any time:
 
 ```bash
-gcloud auth list --filter=status:ACTIVE --format='value(account)'
+codex mcp list | sed -n '/^Name    Url/,$p'
 ```
 
-**Success looks like:** your Google account email appears once.
+**Success looks like:** `runpod`, `enabled`, and `OAuth` appear on one line.
 
-## 1.2 Choose a globally unique project ID
-
-Start with this value:
+If it says `Not logged in`, run:
 
 ```bash
-export TRITON_PROJECT_ID="dae-triton-bench-2026"
+codex mcp login runpod
 ```
 
-Create the project:
+Approve the page for the `runpod` MCP. Do not use `flash login` for this project setup.
+
+## 1.2 Set the spending boundary
+
+In the RunPod console:
+
+1. Open **Billing**.
+2. Add no more than **US$10 prepaid credit**.
+3. Leave automatic payments disabled.
+4. Do not deploy a Pod from the billing page.
+
+The prepaid balance limits available spend, but it does not replace teardown. A stopped Pod or retained volume can continue to cost money.
+
+## 1.3 Confirm the account is empty
+
+Open a fresh Codex task after OAuth and ask:
+
+> List my RunPod Pods and network volumes. Do not create, start, stop, or delete anything.
+
+**Success looks like:** both lists are empty. Verified on 2026-10-01. Existing resources are not automatically ours; stop and inspect them before continuing.
+
+## 1.4 Register the existing SSH public key
+
+Run on the Mac:
 
 ```bash
-gcloud projects create "$TRITON_PROJECT_ID" \
-  --name="Triton Multi-Model Benchmark"
+test -f "$HOME/.ssh/id_ed25519_runpod.pub"
+pbcopy < "$HOME/.ssh/id_ed25519_runpod.pub"
 ```
 
-If Google says the ID is already in use, append four digits to the value and run the create command again.
+In RunPod, open **Settings > SSH Public Keys**, add a key, and paste it. Register the public `.pub` file only. Never upload or paste the private key at `$HOME/.ssh/id_ed25519_runpod`.
 
-Select it:
+SSH keys must be registered before Pod creation because RunPod injects them when the Pod boots.
 
-```bash
-gcloud config set project "$TRITON_PROJECT_ID"
-gcloud config set compute/region asia-southeast1
-gcloud config set compute/zone asia-southeast1-a
-```
+## 1.5 Phase 1 readiness check
 
-Verify:
+- [x] Official RunPod plugin installed and enabled.
+- [x] RunPod MCP reports OAuth authentication.
+- [x] Account has no unexpected Pods or network volumes.
+- [x] Prepaid balance is at most US$10 (user-confirmed).
+- [x] Automatic payments are disabled (user-confirmed).
+- [x] Dedicated `runpod-triton-benchmark` SSH public key is registered.
 
-```bash
-gcloud config list --format='text(core.project,compute.region,compute.zone)'
-```
-
-**Success looks like:** your project ID, `asia-southeast1`, and `asia-southeast1-a` all appear.
-
-## 1.3 Attach billing
-
-List the billing accounts you can use:
-
-```bash
-gcloud billing accounts list
-```
-
-Copy the billing account ID from the `ACCOUNT_ID` column, then set it:
-
-```bash
-export TRITON_BILLING_ACCOUNT="PASTE_ACCOUNT_ID_HERE"
-gcloud billing projects link "$TRITON_PROJECT_ID" \
-  --billing-account="$TRITON_BILLING_ACCOUNT"
-```
-
-Verify:
-
-```bash
-gcloud billing projects describe "$TRITON_PROJECT_ID" \
-  --format='value(billingEnabled)'
-```
-
-**Success looks like:** `True`.
-
-## 1.4 Enable the required APIs
-
-```bash
-gcloud services enable \
-  compute.googleapis.com \
-  cloudbilling.googleapis.com \
-  serviceusage.googleapis.com
-```
-
-Verify:
-
-```bash
-gcloud services list --enabled \
-  --filter='name:compute.googleapis.com' \
-  --format='value(name)'
-```
-
-**Success looks like:** `compute.googleapis.com`.
-
-## 1.5 Set the budget alert
-
-Open the Google Cloud console:
-
-1. Go to **Billing > Budgets & alerts**.
-2. Create a budget named `triton-benchmark-safety`.
-3. Scope it to this project only.
-4. Set the amount to **S$35**, or the equivalent in your billing currency.
-5. Keep alerts at 50%, 80%, and 100%.
-
-Important: a normal budget sends alerts; it does not stop Compute Engine. Our VM runtime limit is the actual safety control.
-
-## 1.6 Request GPU quota
-
-In Google Cloud Console:
-
-1. Open **IAM & Admin > Quotas & System Limits**.
-2. Filter service to **Compute Engine API**.
-3. Request a limit of `1` for **NVIDIA L4 GPUs** in `asia-southeast1`.
-4. Request a limit of `1` for **GPUs (all regions)** if the current limit is zero.
-5. Submit the request and wait for approval.
-
-Do not create a substitute GPU while approval is pending.
-
-## 1.7 Phase 1 readiness check
-
-```bash
-gcloud auth list --filter=status:ACTIVE --format='value(account)'
-gcloud config get-value project
-gcloud billing projects describe "$TRITON_PROJECT_ID" \
-  --format='value(billingEnabled)'
-```
-
-Check all three:
-
-- [ ] Account email appears.
-- [ ] Correct project ID appears.
-- [ ] Billing prints `True`.
-- [ ] L4 quota request is approved or pending.
-- [ ] S$35 budget alert exists.
-
-**Stop here until the quota is approved.** Continue with model generation while waiting.
+**Stop here. Do not create paid resources until ten model pairs pass Phase 2.**
 
 ---
 
@@ -248,10 +180,10 @@ This phase uses no cloud resources.
 
 ## Goal
 
-Generate reproducible synthetic datasets and 100 model pairs:
+Generate reproducible synthetic datasets and 100 model pairs. Each pair contains two representations of the same trained XGBoost regressor:
 
 - An ONNX model for the ONNX Runtime backend.
-- An XGBoost model for the FIL backend.
+- An XGBoost UBJ model for the FIL backend.
 
 ## Rules
 
@@ -263,7 +195,7 @@ Generate reproducible synthetic datasets and 100 model pairs:
 
 ## Commands
 
-The generation and validation scripts will be added in the next implementation step. When present, the commands will be:
+Run the ten-pair gate first:
 
 ```bash
 source .venv/bin/activate
@@ -278,115 +210,102 @@ python scripts/gen_models.py --count 100 --seed 20260805
 python scripts/validate_models.py --count 100
 ```
 
-**Success looks like:** validation reports exactly 100 ONNX models and 100 FIL-compatible models with no failures.
+Generated model files, manifests, and `config.pbtxt` files are reproducible build artifacts and are ignored by Git.
+
+**Success looks like:** the final JSON report contains `"model_pairs": 100`, `"onnx_models": 100`, `"fil_models": 100`, and `"status": "valid"`.
 
 ---
 
-# Phase 3 - Create the cloud machines
+# Phase 3 - Prepare and create the RunPod environment
 
-Do this only after Phase 2 has ten validated model pairs and L4 quota is approved.
+Do this only after Phase 2 has ten validated model pairs.
 
-## 3.1 Resolve and record the exact GPU image
+## 3.1 Read live L4 availability and price
 
-```bash
-export TRITON_IMAGE="$(gcloud compute images describe-from-family \
-  common-cu129-ubuntu-2204-nvidia-580 \
-  --project=deeplearning-platform-release \
-  --format='value(name)')"
-echo "$TRITON_IMAGE"
+In a fresh Codex task, ask:
+
+> Using RunPod, list current on-demand NVIDIA L4 availability and hourly prices by cloud and data center. Read only; do not create anything.
+
+Choose one L4. Prefer Secure Cloud when available at a reasonable price. Record the exact GPU name, cloud type, data center, hourly price, and retrieval date in `ENVIRONMENT.md`.
+
+Do not substitute an RTX 4090 or another GPU without adding a new decision record. Hardware identity is part of the experiment.
+
+## 3.2 Build the project-specific Pod image
+
+The stock Triton image does not define this project's SSH and startup behavior. This repository contains a `linux/amd64` image derived from:
+
+```text
+nvcr.io/nvidia/tritonserver:25.06-py3
 ```
 
-Copy the result into `ENVIRONMENT.md` before creating the VM.
+The image adds key-only SSH, pinned model-generation dependencies, and the project scripts. The workflow smoke-tests Triton, Python imports, required-key failure, and successful SSH startup before it publishes anything. It never publishes a `latest` tag.
 
-## 3.2 Create the L4 server
+After the current changes have been pushed:
 
-```bash
-gcloud compute instances create triton-l4 \
-  --zone=asia-southeast1-a \
-  --machine-type=g2-standard-4 \
-  --image="$TRITON_IMAGE" \
-  --image-project=deeplearning-platform-release \
-  --boot-disk-size=100GB \
-  --boot-disk-type=pd-balanced \
-  --maintenance-policy=TERMINATE \
-  --max-run-duration=6h \
-  --instance-termination-action=STOP \
-  --labels=project=triton-benchmark,role=server
-```
+1. Open the GitHub repository in your browser.
+2. Select **Actions**.
+3. Select **Publish Pod image**.
+4. Select **Run workflow**.
+5. Leave the image tag as `0.1.0`, then run it.
+6. Wait for the workflow to finish with a green check.
+7. Open the workflow summary and copy the complete `ghcr.io/...@sha256:...` reference.
+8. Open the new package's **Package settings** and change its visibility to **Public**. Do not add registry credentials to RunPod.
+9. Paste the digest-pinned reference into the **Project image digest** row in `ENVIRONMENT.md`.
 
-Do not add firewall rules for ports 8000, 8001, or 8002.
+**Success looks like:** the workflow is green, the summary shows an image reference ending in a 64-character SHA-256 digest, and the package is public.
 
-## 3.3 Create the load-generator and CPU-baseline VM
+If the build fails, do not create a Pod. Copy the failed step and its complete log into the working chat.
 
-```bash
-gcloud compute instances create triton-loadgen \
-  --zone=asia-southeast1-a \
-  --machine-type=n2-standard-4 \
-  --image-family=ubuntu-2204-lts-amd64 \
-  --image-project=ubuntu-os-cloud \
-  --boot-disk-size=50GB \
-  --boot-disk-type=pd-balanced \
-  --max-run-duration=6h \
-  --instance-termination-action=STOP \
-  --labels=project=triton-benchmark,role=loadgen
-```
+## 3.3 Create persistent storage first
 
-## 3.4 Verify the L4
+Create one **20 GB standard network volume** in the selected data center. Name it `triton-benchmark`. It will mount at `/workspace` and hold the checked-out repository, logs, and raw results.
 
-```bash
-gcloud compute ssh triton-l4 --zone=asia-southeast1-a
-```
+Record the volume ID in `ENVIRONMENT.md`. Do not store credentials in the volume or repository.
 
-On the VM:
+## 3.4 Create the L4 Pod
+
+Use these fixed settings:
+
+| Setting | Required value |
+|---|---|
+| Name | `triton-l4` |
+| Compute | 1× NVIDIA L4, on-demand |
+| Cloud | Secure preferred; record actual value |
+| Image | Project image tag and digest from Phase 3.2 |
+| Container disk | 30 GB |
+| Network volume | `triton-benchmark`, mounted at `/workspace` |
+| HTTP ports | None |
+| TCP ports | SSH only |
+| Automatic guard | Terminate after six hours |
+
+Create no public Triton port. Triton HTTP, gRPC, and metrics stay inside the Pod on ports 8000, 8001, and 8002.
+
+Immediately record the Pod ID, creation timestamp, and automatic termination timestamp in `ENVIRONMENT.md` and `LOG.md`.
+
+## 3.5 Verify the real environment
+
+Connect over SSH and run:
 
 ```bash
 nvidia-smi
-docker --version
+tritonserver --version
+git --version
+python3 --version
 ```
 
-**Success looks like:** `NVIDIA L4` appears and Docker reports a version.
+Then record the immutable container digest and the complete `nvidia-smi` output. Do not infer versions from the tag.
 
-## 3.5 Pull and record Triton
-
-On the L4 VM:
-
-```bash
-docker pull nvcr.io/nvidia/tritonserver:25.06-py3
-docker image inspect \
-  --format='{{index .RepoDigests 0}}' \
-  nvcr.io/nvidia/tritonserver:25.06-py3
-```
-
-Copy the digest into `ENVIRONMENT.md`.
-
-Verify GPU access:
-
-```bash
-docker run --rm --gpus=all \
-  nvcr.io/nvidia/tritonserver:25.06-py3 \
-  nvidia-smi
-```
-
-**Success looks like:** the container also reports `NVIDIA L4`.
+**Success looks like:** the GPU is exactly `NVIDIA L4`, Triton reports 2.59.0, and the repository volume is mounted at `/workspace`.
 
 ## 3.6 End every paid session safely
 
-Run from your Mac:
+1. Copy all new code, raw results, telemetry, and logs off the Pod.
+2. Commit only reviewed, non-secret project artifacts.
+3. **Terminate** the Pod; do not merely stop it.
+4. List Pods again and verify `triton-l4` is absent.
+5. Keep the network volume only while another paid session is planned; otherwise delete it too.
 
-```bash
-gcloud compute instances stop triton-l4 triton-loadgen \
-  --zone=asia-southeast1-a
-```
-
-Verify:
-
-```bash
-gcloud compute instances list \
-  --filter='name=(triton-l4 triton-loadgen)' \
-  --format='table(name,status)'
-```
-
-**Success looks like:** both machines show `TERMINATED`. In Google Cloud, `TERMINATED` means stopped, not deleted.
+The six-hour deadline is only a backstop. Manual termination is still required at the end of each session.
 
 ---
 
@@ -411,16 +330,19 @@ The exact model configuration and launch commands will be added after the local 
 
 Every measured condition follows the same order.
 
-1. Start both VMs.
-2. Confirm the VM names, zone, image, container digest, and model config.
-3. Warm up without recording results.
-4. Start GPU telemetry.
-5. Run the load generator from `triton-loadgen`.
-6. Save one CSV row per request.
-7. Stop GPU telemetry.
-8. Repeat at least three times.
-9. Stop both VMs.
-10. Append the session summary to `LOG.md`.
+1. Confirm the Pod ID, GPU identity, data center, image digest, model config, and termination deadline.
+2. Pin Triton and the load generator to disjoint CPU sets.
+3. Verify Triton with one real request before measuring.
+4. Warm up without recording results.
+5. Confirm the load-generator CPU set is not saturated.
+6. Start GPU and CPU telemetry.
+7. Run the local load generator against `127.0.0.1`.
+8. Save one CSV row per request.
+9. Stop telemetry.
+10. Repeat at least three times.
+11. Randomize condition order where practical.
+12. Copy results off the Pod and terminate it.
+13. Append the session summary to `LOG.md`.
 
 ## Experiment matrix
 
@@ -431,7 +353,7 @@ Every measured condition follows the same order.
 | Offered load | Low, medium, high; fixed after calibration |
 | Repetitions | At least 3 |
 | Primary metrics | Throughput, p50, p95, p99, error rate |
-| Supporting metrics | GPU utilisation, GPU memory, server queue time |
+| Supporting metrics | GPU utilisation, GPU memory, CPU utilisation, server queue time |
 
 Never compare conditions produced by different code versions without explicitly recording that difference.
 
@@ -445,8 +367,9 @@ Do not make a performance claim until all boxes are checked.
 - [ ] Every run records its configuration and repetition number.
 - [ ] Warm-up requests are excluded and the exclusion is documented.
 - [ ] Failed and partial runs remain visible but are marked invalid.
-- [ ] A separate load generator was used.
+- [ ] Triton and the load generator used recorded, disjoint CPU affinities.
 - [ ] The load generator was not CPU-saturated.
+- [ ] The single-node load-generation limitation is stated prominently.
 - [ ] Prices include provider, region, currency, and retrieval date.
 - [ ] The README calls this a synthetic analogue.
 - [ ] Results are phrased as applying to this workload, not all Triton workloads.
@@ -458,18 +381,13 @@ Do not make a performance claim until all boxes are checked.
 
 If you are unsure whether anything is still running:
 
-```bash
-gcloud compute instances list \
-  --filter='status=RUNNING' \
-  --format='table(name,zone,machineType,status)'
-```
+1. Open the RunPod **Pods** page.
+2. If `triton-l4` exists, click **Terminate** and confirm.
+3. Open **Storage** and inspect `triton-benchmark`.
+4. Delete the network volume if no further paid session is planned.
+5. Confirm the Pods list is empty.
 
-If either project VM appears, stop it immediately:
-
-```bash
-gcloud compute instances stop triton-l4 triton-loadgen \
-  --zone=asia-southeast1-a --quiet
-```
+Stopping is not the emergency action: terminate the Pod so retained Pod storage cannot continue billing.
 
 # End-of-session log template
 

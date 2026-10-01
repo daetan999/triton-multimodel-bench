@@ -1,0 +1,93 @@
+name: Publish Pod image
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: Semantic image tag, for example 0.1.0
+        required: true
+        default: 0.1.0
+        type: string
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+
+      - name: Validate and compose the image reference
+        id: image
+        shell: bash
+        env:
+          RAW_TAG: ${{ inputs.image_tag }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          if [[ ! "${RAW_TAG}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "image_tag must use MAJOR.MINOR.PATCH format" >&2
+            exit 1
+          fi
+          repository_lowercase="${REPOSITORY,,}"
+          echo "reference=ghcr.io/${repository_lowercase}:${RAW_TAG}" >> "${GITHUB_OUTPUT}"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build the Linux AMD64 image
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8
+        with:
+          context: .
+          platforms: linux/amd64
+          load: true
+          push: false
+          tags: ${{ steps.image.outputs.reference }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Smoke-test Triton, Python, and the SSH entrypoint
+        shell: bash
+        env:
+          IMAGE_REFERENCE: ${{ steps.image.outputs.reference }}
+        run: |
+          set -euo pipefail
+          docker run --rm --entrypoint /bin/bash "${IMAGE_REFERENCE}" -lc \
+            'tritonserver --version && python3 -c "import onnx, onnxruntime, tritonclient, xgboost"'
+          if docker run --rm "${IMAGE_REFERENCE}"; then
+            echo "Image started without PUBLIC_KEY" >&2
+            exit 1
+          fi
+          ssh-keygen -q -t ed25519 -N '' -f /tmp/image-smoke-key
+          container_id="$(docker run --detach \
+            --env PUBLIC_KEY="$(cat /tmp/image-smoke-key.pub)" \
+            "${IMAGE_REFERENCE}")"
+          trap 'docker logs "${container_id}"; docker rm --force "${container_id}"' EXIT
+          sleep 3
+          test "$(docker inspect --format '{{.State.Running}}' "${container_id}")" = "true"
+
+      - name: Publish the tested image
+        shell: bash
+        env:
+          IMAGE_REFERENCE: ${{ steps.image.outputs.reference }}
+        run: |
+          set -euo pipefail
+          docker push "${IMAGE_REFERENCE}" | tee /tmp/docker-push.log
+          digest="$(awk '/digest: sha256:/ {print $2}' /tmp/docker-push.log | tail -1)"
+          if [[ ! "${digest}" =~ ^sha256:[0-9a-f]{64}$ ]]; then
+            echo "Could not read the published image digest" >&2
+            exit 1
+          fi
+          echo "### Published Pod image" >> "${GITHUB_STEP_SUMMARY}"
+          echo "\`${IMAGE_REFERENCE}@${digest}\`" >> "${GITHUB_STEP_SUMMARY}"

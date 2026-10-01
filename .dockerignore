@@ -1,0 +1,22 @@
+.git
+.github
+.venv
+__pycache__
+*.py[cod]
+.pytest_cache
+.coverage
+htmlcov
+.DS_Store
+
+# Generated benchmark artifacts are created on the attached volume.
+model_repository
+results
+
+# Never send local secrets or SSH material to the Docker builder.
+.env
+.env.*
+*.key
+*.pem
+id_rsa*
+id_ed25519*
+service-account*.json
