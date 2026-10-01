@@ -142,3 +142,20 @@ Triton Server 2.59 prints its usage for `--help` but exits with status 1, so it 
 ### Fix
 
 Use `command -v tritonserver` to verify the executable is installed without depending on Triton's CLI exit convention. The contract test now rejects both `--version` and `--help`.
+
+## 2026-10-01 - Session 6
+
+### Goal
+
+Complete image publication and diagnose the final workflow-reporting failure in run `36811835631`.
+
+### Result
+
+- The Linux AMD64 image build passed.
+- Triton presence, Python imports, missing-key rejection, and live SSH startup all passed.
+- GHCR accepted every layer and published tag `0.1.0` with digest `sha256:b49adeeea3707504067b80f360af03952dc59286e5af3771baee7610321b566c`.
+- The workflow was marked failed only after publication because `docker push` wrote its digest line to stderr while the parser captured stdout.
+
+### Fix
+
+Redirect Docker push stderr into stdout before `tee`, and add a contract-test assertion for that behavior. The already-tested and published image does not need to be rebuilt.

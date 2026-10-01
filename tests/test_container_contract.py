@@ -55,4 +55,5 @@ def test_image_publish_workflow_is_manual_amd64_and_versioned() -> None:
     assert "command -v tritonserver" in workflow
     assert "tritonserver --help" not in workflow
     assert "tritonserver --version" not in workflow
+    assert 'docker push "${IMAGE_REFERENCE}" 2>&1 | tee' in workflow
     assert "uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262" in workflow

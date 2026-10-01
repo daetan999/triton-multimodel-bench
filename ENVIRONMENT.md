@@ -36,8 +36,8 @@ Do not fill fields from memory. Copy values from the commands in `RUNBOOK.md`.
 | Field | Value |
 |---|---|
 | Container tag | `nvcr.io/nvidia/tritonserver:25.06-py3` |
-| Project image tag | `ghcr.io/daetan999/triton-multimodel-bench:0.1.0` (pending publication) |
-| Project image digest | Pending successful GitHub Actions build |
+| Project image tag | `ghcr.io/daetan999/triton-multimodel-bench:0.1.0` |
+| Project image digest | `sha256:b49adeeea3707504067b80f360af03952dc59286e5af3771baee7610321b566c` |
 | Triton server | 2.59.0 |
 | CUDA in container | 12.9.1 |
 | ONNX Runtime backend | 1.22.0 |

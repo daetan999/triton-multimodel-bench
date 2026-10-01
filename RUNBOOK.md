@@ -17,8 +17,9 @@ This is the operating guide for the whole project. Work from top to bottom. Do n
 - [x] Ten reproducible model pairs generated and validated locally.
 - [x] Full 100-pair model repository generated and validated locally.
 - [x] Project-specific Triton Pod image and publish workflow prepared locally.
+- [x] Image `0.1.0` built, smoke-tested, and pushed to GHCR by digest.
 
-The next step is **Phase 3.2 - Publish the project-specific Pod image** after the current repository changes are reviewed, committed, and pushed. Do not create a Pod yet.
+The next user-only step is **Phase 3.2 - Make the GHCR package public**. Do not create a Pod yet.
 
 ## How to use this runbook
 
@@ -252,7 +253,13 @@ After the current changes have been pushed:
 8. Open the new package's **Package settings** and change its visibility to **Public**. Do not add registry credentials to RunPod.
 9. Paste the digest-pinned reference into the **Project image digest** row in `ENVIRONMENT.md`.
 
-**Success looks like:** the workflow is green, the summary shows an image reference ending in a 64-character SHA-256 digest, and the package is public.
+For image `0.1.0`, the build, smoke test, and registry push succeeded in run `36811835631`. The run's final reporting command failed after publication because it initially captured Docker's stdout but not stderr. The recorded image is:
+
+```text
+ghcr.io/daetan999/triton-multimodel-bench@sha256:b49adeeea3707504067b80f360af03952dc59286e5af3771baee7610321b566c
+```
+
+**Success looks like:** the package is public and the digest above appears on its package page. Future workflow runs should also end green and print the digest in their summary.
 
 If the build fails, do not create a Pod. Copy the failed step and its complete log into the working chat.
 
