@@ -421,11 +421,11 @@ Both commands must return silently with exit code zero. Triton uses CPUs 0–7; 
 
 ## 5.3 Run the five-second live preflight
 
-Replace both placeholder values with the exact `0.1.2` image digest and Git commit recorded for this release:
+Use the exact `0.1.2` image digest and Git commit recorded for this release:
 
 ```bash
-export BENCH_IMAGE_DIGEST='ghcr.io/daetan999/triton-multimodel-bench@sha256:REPLACE_ME'
-export BENCH_GIT_COMMIT='REPLACE_ME'
+export BENCH_IMAGE_DIGEST='ghcr.io/daetan999/triton-multimodel-bench@sha256:7e62be24c47db9f9fdab8ed217ed93048f8c9a01dca23ec9df58e4661215a8ca'
+export BENCH_GIT_COMMIT='7b881b5bc9039d1462cf07feb0f9348df2794024'
 taskset --cpu-list 8-15 python3 /opt/triton-benchmark/scripts/run_matrix.py \
   --repository /workspace/model_repository \
   --results-dir /workspace/results/preflight \

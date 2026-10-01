@@ -39,14 +39,15 @@ Do not fill fields from memory. Copy values from the commands in `RUNBOOK.md`.
 | Field | Value |
 |---|---|
 | Container tag | `nvcr.io/nvidia/tritonserver:25.06-py3` |
-| Project image tag | `ghcr.io/daetan999/triton-multimodel-bench:0.1.1` |
-| Project image digest | `sha256:ad62d0e0006825b741238007ef364ed63a80a51bc4bd2b27499e8f5e1eaf5ad7` |
-| Live Pod hotfix | Baked into published image `0.1.1` |
+| Project image tag | `ghcr.io/daetan999/triton-multimodel-bench:0.1.2` |
+| Project image digest | `sha256:7e62be24c47db9f9fdab8ed217ed93048f8c9a01dca23ec9df58e4661215a8ca` |
+| Image source commit | `7b881b5bc9039d1462cf07feb0f9348df2794024` |
+| Live Pod hotfix | Baked into published image `0.1.1`; benchmark harness added in `0.1.2` |
 | Triton server | 2.59.0 |
 | CUDA in container | 12.9.1 |
 | ONNX Runtime backend | 1.22.0 |
 | FIL backend | Included |
-| XGBoost | 3.0.2 in published image `0.1.1`; `0.1.0` contained incompatible 3.4.0 |
+| XGBoost | 3.0.2 in published images `0.1.1` and `0.1.2`; `0.1.0` contained incompatible 3.4.0 |
 | NVIDIA driver | 595.91.07; host CUDA 13.2 |
 | ONNX opset | 15 |
 

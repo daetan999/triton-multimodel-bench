@@ -292,7 +292,10 @@ Build the reproducible load generator and formal matrix runner before renting an
 - Package coverage is above the required 80% threshold.
 - Every CLI imports and displays help successfully on the local Mac.
 - No paid RunPod resource was created; the account remained at zero Pods and zero network volumes at the start of this work.
+- Pushed commit `7b881b5bc9039d1462cf07feb0f9348df2794024` after the project pre-push hook passed all 31 tests.
+- GitHub Actions run `36821913070` built, smoke-tested, and published image `0.1.2` successfully.
+- Anonymous GHCR access returned HTTP 200, 42 layers, and immutable digest `sha256:7e62be24c47db9f9fdab8ed217ed93048f8c9a01dca23ec9df58e4661215a8ca`.
 
 ### Next step
 
-Commit and push the harness, publish image `0.1.2`, verify its immutable digest, then deploy one fresh L4 Pod and run the five-second preflight before starting the formal matrix.
+Deploy one fresh L4 Pod from the verified `0.1.2` digest and run the five-second preflight before starting the formal matrix.
