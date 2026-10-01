@@ -48,13 +48,42 @@ def build_triton_command(
         "/opt/tritonserver/bin/tritonserver",
         f"--model-repository={repository_path}",
         "--model-control-mode=explicit",
+        "--model-load-thread-count=4",
         "--strict-model-config=true",
         "--http-port=8000",
         "--grpc-port=8001",
         "--metrics-port=8002",
     ]
+    if backend == "onnx":
+        command.extend(
+            (
+                "--backend-config=onnxruntime,enable-global-threadpool=1",
+                "--backend-config=onnxruntime,"
+                f"intra_op_thread_count={_cpu_count(server_cpus)}",
+                "--backend-config=onnxruntime,inter_op_thread_count=1",
+            )
+        )
     command.extend(f"--load-model={name}" for name in model_names(backend, model_count))
     return tuple(command)
+
+
+def _cpu_count(value: str) -> int:
+    cpus: set[int] = set()
+    try:
+        for part in value.split(","):
+            bounds = part.strip().split("-", maxsplit=1)
+            start = int(bounds[0])
+            end = int(bounds[-1])
+            if start < 0 or end < start:
+                raise ValueError
+            cpus.update(range(start, end + 1))
+    except (ValueError, IndexError) as error:
+        raise BenchmarkConfigurationError(
+            f"invalid server CPU list: {value!r}"
+        ) from error
+    if not cpus:
+        raise BenchmarkConfigurationError("server CPU list must not be empty")
+    return len(cpus)
 
 
 class TritonServer:

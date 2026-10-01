@@ -299,3 +299,34 @@ Build the reproducible load generator and formal matrix runner before renting an
 ### Next step
 
 Deploy one fresh L4 Pod from the verified `0.1.2` digest and run the five-second preflight before starting the formal matrix.
+
+## 2026-10-01 - Session 12
+
+### Goal
+
+Run the live L4 preflight and formal ONNX benchmark matrix.
+
+### Deployment
+
+- Live read found zero existing Pods and zero network volumes.
+- Secure Cloud NVIDIA L4 stock was low at US$0.49/hour in `EUR-IS-2` and `US-MO-2` with CUDA 13.0/13.2.
+- Created Pod `8ngraqlu5uc7v1` in `US-MO-2` at `2026-10-01T06:13:12.278Z`.
+- Used one NVIDIA L4, verified image `0.1.2` by immutable digest, a 20 GB disposable disk, no network volume, and SSH only.
+- Manual termination deadline: `2026-10-01T12:13:12Z` (20:13:12 Singapore time).
+
+### Result
+
+- Verified the live NVIDIA L4 (23,034 MiB), driver 595.91.07, Python runtime, 20 GB disk, and disjoint CPU affinity support.
+- Measured a 13.6-core cgroup quota despite the 16-vCPU API label; changed the live partition to Triton CPUs `0-7` and load-generator CPUs `8-12` so the combined affinity covers only 13 cores.
+- Generated and validated all 100 ONNX/FIL model pairs on the Pod.
+- Passed the five-second preflight at 51.4 achieved QPS with zero failed requests, complete request/GPU/CPU telemetry, and no Triton error lines.
+- Preserved 18 complete and valid 10-model diagnostic runs before the first 100-model group.
+- Triton aborted while loading `onnx_model_069` with `std::system_error: Resource temporarily unavailable`.
+- Root cause: ONNX Runtime's default per-session thread pools size themselves from the 128 visible host CPUs; 100 model sessions exhaust process threads.
+- Added the official ONNX Runtime shared global thread pool with eight intra-op threads and one inter-op thread, plus four Triton model-load threads.
+- Copied and verified the complete 34 MB diagnostic result set. Local archive SHA-256: `4d524f6593759afbfe4807468b3ffba4420b8640a05c1c774e63222ff75894ee`.
+- Terminated Pod `8ngraqlu5uc7v1`; follow-up reads returned HTTP 404, zero Pods, and zero network volumes.
+
+### Next step
+
+Publish the bounded-thread fix as image `0.1.3`, verify 100 models load in a live preflight, and restart the entire 81-run matrix under one consistent configuration.

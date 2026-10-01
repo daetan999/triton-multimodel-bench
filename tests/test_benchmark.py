@@ -224,6 +224,7 @@ def test_triton_command_loads_only_the_requested_backend_and_model_count(
     assert "/opt/tritonserver/bin/tritonserver" in command
     assert f"--model-repository={tmp_path / 'models'}" in command
     assert "--model-control-mode=explicit" in command
+    assert "--model-load-thread-count=4" in command
     assert [
         argument for argument in command if argument.startswith("--load-model=")
     ] == [
@@ -231,6 +232,19 @@ def test_triton_command_loads_only_the_requested_backend_and_model_count(
         "--load-model=fil_model_001",
         "--load-model=fil_model_002",
     ]
+
+
+def test_onnx_command_uses_one_bounded_global_thread_pool(tmp_path: Path) -> None:
+    command = build_triton_command(
+        repository=tmp_path / "models",
+        backend="onnx",
+        model_count=100,
+        server_cpus="0-7",
+    )
+
+    assert "--backend-config=onnxruntime,enable-global-threadpool=1" in command
+    assert "--backend-config=onnxruntime,intra_op_thread_count=8" in command
+    assert "--backend-config=onnxruntime,inter_op_thread_count=1" in command
 
 
 def test_result_store_resumes_only_complete_valid_runs(tmp_path: Path) -> None:

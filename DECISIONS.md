@@ -90,3 +90,12 @@ At current published rates, 20 GB of standard network storage would cost about U
 Record a manual cutoff no later than six hours after each Pod creation and terminate the Pod explicitly at the end of the session. Keep automatic payments disabled so the prepaid balance is the account-level funding boundary.
 
 RunPod removed its `--terminate-after` and `--stop-after` controls after confirming that the backend accepted but did not enforce them. The current Pod API exposes no reliable automatic deadline, so the runbook must not present one as a safety mechanism.
+
+## D012 - Use a bounded global ONNX Runtime thread pool
+
+**Status:** Accepted
+**Date:** 2026-10-01
+
+Launch Triton's ONNX Runtime backend with one shared global thread pool, eight intra-op threads, one inter-op thread, and four model-loading threads. Apply the same launch settings to every ONNX model-count condition.
+
+The first formal attempt used ONNX Runtime's defaults, which created a per-session pool based on 128 visible host CPUs. Triton aborted while loading model 69 of 100 with `std::system_error: Resource temporarily unavailable`. NVIDIA's ONNX Runtime backend documents the global pool specifically for multi-session deployments. Bounding both execution and loading threads allows the 100-model configuration to fit the Pod while keeping Triton pinned to CPUs 0–7.

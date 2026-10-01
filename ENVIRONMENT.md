@@ -17,11 +17,11 @@ Do not fill fields from memory. Copy values from the commands in `RUNBOOK.md`.
 
 | Field | Value |
 |---|---|
-| Pod ID | `1fp0q1qajk3f0t` |
+| Pod ID | `8ngraqlu5uc7v1` |
 | Cloud type | Secure Cloud |
-| Data center | `EU-RO-1` |
+| Data center | `US-MO-2` |
 | GPU | NVIDIA L4, 23,034 MiB usable VRAM |
-| Host CPU | 18 vCPUs reported by RunPod; cgroup quota 15.3 cores; host cpuset exposes CPUs 0-127 |
+| Host CPU | Session 12: 16 vCPUs reported by RunPod; cgroup quota 13.6 cores; host cpuset exposed CPUs 0-127 |
 | Host RAM | 71 GB reported by RunPod; cgroup limit 70,999,998,464 bytes (66.1 GiB) |
 | GPU price and retrieval date | US$0.49/hour; low stock; retrieved 2026-10-01 |
 | Live L4 data centers | `EU-RO-1`, `EUR-IS-1`, `EUR-IS-2`, `US-GA-2`, `US-MO-2` at retrieval time |
@@ -29,10 +29,10 @@ Do not fill fields from memory. Copy values from the commands in `RUNBOOK.md`.
 | Network volume | None; account verified empty 2026-10-01 |
 | Prepaid funding | Maximum US$10; user-confirmed 2026-10-01 |
 | Automatic payments | Disabled; user-confirmed 2026-10-01 |
-| Pod created at | `2026-10-01T04:14:30.678Z` (12:14:30 Singapore time) |
-| Manual termination target | By `2026-10-01T10:00:00Z` (18:00 Singapore time) |
+| Pod created at | `2026-10-01T06:13:12.278Z` (14:13:12 Singapore time) |
+| Manual termination target | By `2026-10-01T12:13:12Z` (20:13:12 Singapore time) |
 | Automatic termination | Unavailable; current RunPod backend does not enforce Pod deadlines |
-| Pod status | Terminated 2026-10-01 after evidence transfer; follow-up lookup returned HTTP 404 |
+| Pod status | Terminated after verified diagnostic evidence transfer; follow-up lookup returned HTTP 404 |
 
 ## Triton server
 
