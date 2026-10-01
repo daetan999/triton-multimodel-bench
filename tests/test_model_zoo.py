@@ -52,6 +52,24 @@ def test_generate_repository_is_deterministic(tmp_path: Path) -> None:
     assert first == second
 
 
+def test_generate_repository_serializes_the_booster_directly(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    def reject_estimator_serialization(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("XGBRegressor.save_model must not be used")
+
+    monkeypatch.setattr(
+        "triton_benchmark.model_zoo.XGBRegressor.save_model",
+        reject_estimator_serialization,
+    )
+
+    repository = tmp_path / "models"
+    generate_repository(repository, count=1, seed=20260805)
+
+    assert (repository / "fil_model_000" / "1" / "xgboost.ubj").is_file()
+
+
 def test_validate_repository_rejects_modified_artifact(tmp_path: Path) -> None:
     repository = tmp_path / "models"
     generate_repository(repository, count=1, seed=20260805)
