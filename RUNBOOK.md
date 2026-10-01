@@ -22,8 +22,10 @@ This is the operating guide for the whole project. Work from top to bottom. Do n
 - [x] Live Secure Cloud L4 stock and price checked on 2026-10-01.
 - [x] Paid L4 Pod deployed and its real CUDA, GPU, CPU, RAM, disk, and SSH environment verified.
 - [x] Ten-pair Triton smoke gate passed after the live FIL compatibility fixes.
+- [x] Smoke-test evidence copied locally and the first paid Pod terminated.
+- [x] Corrected image `0.1.1` built, smoke-tested, published, and anonymously verified by digest.
 
-The next step is to push the compatibility commits and publish image `0.1.1`. Do not start a formal benchmark from the hot-patched `0.1.0` Pod.
+The next step is to deploy a fresh Pod from the immutable `0.1.1` digest and run the formal 100-pair benchmark.
 
 ## How to use this runbook
 
@@ -253,7 +255,7 @@ After the current changes have been pushed:
 2. Select **Actions**.
 3. Select **Publish Pod image**.
 4. Select **Run workflow**.
-5. Leave the image tag as `0.1.0`, then run it.
+5. Enter the intended semantic release tag (current release: `0.1.1`), then run it.
 6. Wait for the workflow to finish with a green check.
 7. Open the workflow summary and copy the complete `ghcr.io/...@sha256:...` reference.
 8. Open the new package's **Package settings** and change its visibility to **Public**. Do not add registry credentials to RunPod.
@@ -265,7 +267,13 @@ For image `0.1.0`, the build, smoke test, and registry push succeeded in run `36
 ghcr.io/daetan999/triton-multimodel-bench@sha256:b49adeeea3707504067b80f360af03952dc59286e5af3771baee7610321b566c
 ```
 
-**Success looks like:** the package is public and the digest above appears on its package page. Future workflow runs should also end green and print the digest in their summary.
+Image `0.1.1` was built, smoke-tested, and published in run `36816708070`. Its final reporting command initially selected the word `digest:` rather than the following SHA; the parser now extracts the complete SHA-256 value directly. Anonymous registry access returned HTTP 200, 42 layers, and this immutable digest:
+
+```text
+ghcr.io/daetan999/triton-multimodel-bench@sha256:ad62d0e0006825b741238007ef364ed63a80a51bc4bd2b27499e8f5e1eaf5ad7
+```
+
+**Success looks like:** the package is public and the intended digest above appears on its package page. Future workflow runs should also end green and print the digest in their summary.
 
 If the build fails, do not create a Pod. Copy the failed step and its complete log into the working chat.
 

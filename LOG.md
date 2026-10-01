@@ -240,3 +240,29 @@ Preserve the live L4 smoke-test evidence and end the paid Pod session safely.
 ### Next step
 
 Push the complete change set and publish the corrected Pod image as `0.1.1`.
+
+## 2026-10-01 - Session 10
+
+### Goal
+
+Publish the corrected, reproducible Pod image as `0.1.1`.
+
+### Result
+
+- Pushed the seven local compatibility and evidence commits to `main` at
+  `15325f3` after all 11 tests passed.
+- GitHub Actions run `36816708070` built the Linux AMD64 image and passed the
+  Triton, Python, missing-key, and live SSH smoke checks.
+- GHCR published `0.1.1` with digest
+  `sha256:ad62d0e0006825b741238007ef364ed63a80a51bc4bd2b27499e8f5e1eaf5ad7`.
+- An anonymous registry request returned HTTP 200 and a 42-layer manifest with
+  the same digest, confirming that RunPod can pull it without credentials.
+- The workflow's final reporting check failed because its `awk` expression read
+  the word `digest:` instead of the following SHA. Added a failing regression
+  assertion, replaced the positional parser with direct SHA-256 extraction, and
+  returned the full suite to green.
+
+### Next step
+
+Deploy a fresh L4 Pod from the immutable `0.1.1` digest and run the formal
+100-pair benchmark.

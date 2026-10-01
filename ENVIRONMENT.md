@@ -32,20 +32,21 @@ Do not fill fields from memory. Copy values from the commands in `RUNBOOK.md`.
 | Pod created at | `2026-10-01T04:14:30.678Z` (12:14:30 Singapore time) |
 | Manual termination target | By `2026-10-01T10:00:00Z` (18:00 Singapore time) |
 | Automatic termination | Unavailable; current RunPod backend does not enforce Pod deadlines |
+| Pod status | Terminated 2026-10-01 after evidence transfer; follow-up lookup returned HTTP 404 |
 
 ## Triton server
 
 | Field | Value |
 |---|---|
 | Container tag | `nvcr.io/nvidia/tritonserver:25.06-py3` |
-| Project image tag | `ghcr.io/daetan999/triton-multimodel-bench:0.1.0` |
-| Project image digest | `sha256:b49adeeea3707504067b80f360af03952dc59286e5af3771baee7610321b566c` |
-| Live Pod hotfix | Commit `63d0be3` copied into the Pod; not yet baked into the published image |
+| Project image tag | `ghcr.io/daetan999/triton-multimodel-bench:0.1.1` |
+| Project image digest | `sha256:ad62d0e0006825b741238007ef364ed63a80a51bc4bd2b27499e8f5e1eaf5ad7` |
+| Live Pod hotfix | Baked into published image `0.1.1` |
 | Triton server | 2.59.0 |
 | CUDA in container | 12.9.1 |
 | ONNX Runtime backend | 1.22.0 |
 | FIL backend | Included |
-| XGBoost | 3.0.2 on the live Pod; `0.1.0` originally contained incompatible 3.4.0 |
+| XGBoost | 3.0.2 in published image `0.1.1`; `0.1.0` contained incompatible 3.4.0 |
 | NVIDIA driver | 595.91.07; host CUDA 13.2 |
 | ONNX opset | 15 |
 

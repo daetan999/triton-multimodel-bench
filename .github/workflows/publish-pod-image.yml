@@ -84,7 +84,7 @@ jobs:
         run: |
           set -euo pipefail
           docker push "${IMAGE_REFERENCE}" 2>&1 | tee /tmp/docker-push.log
-          digest="$(awk '/digest: sha256:/ {print $2}' /tmp/docker-push.log | tail -1)"
+          digest="$(grep -Eo 'sha256:[0-9a-f]{64}' /tmp/docker-push.log | tail -1)"
           if [[ ! "${digest}" =~ ^sha256:[0-9a-f]{64}$ ]]; then
             echo "Could not read the published image digest" >&2
             exit 1
