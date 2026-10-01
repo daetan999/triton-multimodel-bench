@@ -39,12 +39,12 @@ Use ONNX opset 15 for both scikit-learn and LightGBM exports. The installed Ligh
 
 ## D006 - Switch the execution provider from Google Cloud to RunPod
 
-**Status:** Accepted
+**Status:** Accepted; cost-guard clause superseded by D011
 **Date:** 2026-08-06
 
 Use one on-demand RunPod L4 Pod instead of Google Cloud. RunPod avoids the unavailable new-account L4 quota, uses prepaid credit, and preserves the project-defining Triton, CUDA, ONNX, and L4 stack.
 
-Prefer Secure Cloud, read availability and price immediately before launch, add no more than US$10 prepaid credit, disable automatic payments, and create every Pod with a six-hour termination deadline.
+Prefer Secure Cloud, read availability and price immediately before launch, add no more than US$10 prepaid credit, and disable automatic payments.
 
 ## D007 - Use a CPU-isolated single-node load generator
 
@@ -72,3 +72,21 @@ The local validator checks artifact hashes, Triton configurations, ONNX validity
 Derive a Linux AMD64 image from `nvcr.io/nvidia/tritonserver:25.06-py3`, add only key-authenticated SSH and pinned project runtime dependencies, and publish versioned images to GitHub Container Registry. Never publish `latest`.
 
 The Mac does not have Docker installed. A manually triggered GitHub Actions workflow therefore builds and smoke-tests the image before publishing it. RunPod must use the resulting immutable digest, not the mutable semantic tag. Triton ports remain unexposed.
+
+## D010 - Use disposable Pod storage instead of a network volume
+
+**Status:** Accepted
+**Date:** 2026-10-01
+
+Use a 20 GB container disk and no network volume. The model repository is reproducible, the benchmark runs on one Pod, and results will be copied to the Mac before termination. Removing persistent storage avoids an independently billed resource and lets RunPod place the low-stock L4 in any available Secure Cloud data center.
+
+At current published rates, 20 GB of standard network storage would cost about US$1.40 per month until deleted. Disposable Pod storage is sufficient for this workload and disappears with the Pod.
+
+## D011 - Use a recorded manual Pod cutoff
+
+**Status:** Accepted
+**Date:** 2026-10-01
+
+Record a manual cutoff no later than six hours after each Pod creation and terminate the Pod explicitly at the end of the session. Keep automatic payments disabled so the prepaid balance is the account-level funding boundary.
+
+RunPod removed its `--terminate-after` and `--stop-after` controls after confirming that the backend accepted but did not enforce them. The current Pod API exposes no reliable automatic deadline, so the runbook must not present one as a safety mechanism.

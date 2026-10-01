@@ -18,8 +18,12 @@ This is the operating guide for the whole project. Work from top to bottom. Do n
 - [x] Full 100-pair model repository generated and validated locally.
 - [x] Project-specific Triton Pod image and publish workflow prepared locally.
 - [x] Image `0.1.0` built, smoke-tested, and pushed to GHCR by digest.
+- [x] GHCR image verified publicly pullable by immutable digest.
+- [x] Live Secure Cloud L4 stock and price checked on 2026-10-01.
+- [x] Paid L4 Pod deployed and its real CUDA, GPU, CPU, RAM, disk, and SSH environment verified.
+- [x] Ten-pair Triton smoke gate passed after the live FIL compatibility fixes.
 
-The next user-only step is **Phase 3.2 - Make the GHCR package public**. Do not create a Pod yet.
+The next step is to push the compatibility commits and publish image `0.1.1`. Do not start a formal benchmark from the hot-patched `0.1.0` Pod.
 
 ## How to use this runbook
 
@@ -28,7 +32,7 @@ The next user-only step is **Phase 3.2 - Make the GHCR package public**. Do not 
 - Compare your output with **Success looks like** before continuing.
 - If a command fails, copy the complete command and complete error into the working chat.
 - Never substitute invented benchmark values for missing measurements.
-- Never create a paid Pod without a six-hour termination deadline.
+- Never create a paid Pod without recording a manual cutoff and confirming automatic payments are disabled.
 - Terminate Pods when a session ends; stopping a Pod can leave storage charges running.
 
 ## Fixed project choices
@@ -36,14 +40,14 @@ The next user-only step is **Phase 3.2 - Make the GHCR package public**. Do not 
 | Item | Choice |
 |---|---|
 | Cloud | RunPod, on-demand; Secure Cloud preferred |
-| Data center | Chosen immediately before launch from live L4 availability |
+| Data center | Any live Secure Cloud L4 location; do not pin without a storage or residency need |
 | GPU server | One NVIDIA L4 with 24 GB VRAM |
 | Load generator | Same Pod, pinned to reserved CPU cores |
 | CPU baseline | Same Pod CPU, with GPU execution disabled |
-| Persistent storage | 20 GB network volume mounted at `/workspace` |
+| Working storage | 20 GB disposable container disk; copy results home before termination |
 | Triton container | `nvcr.io/nvidia/tritonserver:25.06-py3` |
 | ONNX opset | 15 |
-| Maximum Pod run | Six hours per creation |
+| Maximum Pod run | Six hours per creation; terminate manually |
 | Maximum project funding | US$10 prepaid credit; automatic payments off |
 
 ---
@@ -229,6 +233,8 @@ In a fresh Codex task, ask:
 
 Choose one L4. Prefer Secure Cloud when available at a reasonable price. Record the exact GPU name, cloud type, data center, hourly price, and retrieval date in `ENVIRONMENT.md`.
 
+Live check on 2026-10-01: one 24 GB L4 in Secure Cloud was low-stock at **US$0.49/hour**. CUDA 13.0-compatible stock was available. Do not pin a data center because the benchmark is single-node and uses no network volume; allowing all Secure Cloud locations improves the chance of obtaining the exact GPU.
+
 Do not substitute an RTX 4090 or another GPU without adding a new decision record. Hardware identity is part of the experiment.
 
 ## 3.2 Build the project-specific Pod image
@@ -263,11 +269,11 @@ ghcr.io/daetan999/triton-multimodel-bench@sha256:b49adeeea3707504067b80f360af039
 
 If the build fails, do not create a Pod. Copy the failed step and its complete log into the working chat.
 
-## 3.3 Create persistent storage first
+## 3.3 Use disposable Pod storage
 
-Create one **20 GB standard network volume** in the selected data center. Name it `triton-benchmark`. It will mount at `/workspace` and hold the checked-out repository, logs, and raw results.
+Do not create a network volume. The generated models are reproducible, and this project does not share data across Pods. A 20 GB standard network volume would cost about US$1.40 per month until explicitly deleted.
 
-Record the volume ID in `ENVIRONMENT.md`. Do not store credentials in the volume or repository.
+Use a 20 GB container disk for generated models, logs, and raw results. It is deleted with the Pod, so copy every result to the Mac before termination. Do not store credentials in the Pod filesystem or repository.
 
 ## 3.4 Create the L4 Pod
 
@@ -277,17 +283,18 @@ Use these fixed settings:
 |---|---|
 | Name | `triton-l4` |
 | Compute | 1× NVIDIA L4, on-demand |
-| Cloud | Secure preferred; record actual value |
+| Cloud | Secure Cloud |
+| CUDA host floor | 13.0 |
 | Image | Project image tag and digest from Phase 3.2 |
-| Container disk | 30 GB |
-| Network volume | `triton-benchmark`, mounted at `/workspace` |
+| Container disk | 20 GB, disposable |
+| Network volume | None |
 | HTTP ports | None |
 | TCP ports | SSH only |
-| Automatic guard | Terminate after six hours |
+| Cost guard | Manual termination within six hours; RunPod currently has no working automatic Pod deadline |
 
 Create no public Triton port. Triton HTTP, gRPC, and metrics stay inside the Pod on ports 8000, 8001, and 8002.
 
-Immediately record the Pod ID, creation timestamp, and automatic termination timestamp in `ENVIRONMENT.md` and `LOG.md`.
+Immediately record the Pod ID, creation timestamp, and manual termination target in `ENVIRONMENT.md` and `LOG.md`.
 
 ## 3.5 Verify the real environment
 
@@ -295,14 +302,14 @@ Connect over SSH and run:
 
 ```bash
 nvidia-smi
-tritonserver --version
+test -x /opt/tritonserver/bin/tritonserver
 git --version
 python3 --version
 ```
 
 Then record the immutable container digest and the complete `nvidia-smi` output. Do not infer versions from the tag.
 
-**Success looks like:** the GPU is exactly `NVIDIA L4`, Triton reports 2.59.0, and the repository volume is mounted at `/workspace`.
+**Success looks like:** the GPU is exactly `NVIDIA L4`, the Triton executable exists, and the project can create `/workspace/model_repository`. Record Triton 2.59.0 from its startup log during Phase 4; its CLI does not return success for `--version` or `--help`.
 
 ## 3.6 End every paid session safely
 
@@ -310,9 +317,9 @@ Then record the immutable container digest and the complete `nvidia-smi` output.
 2. Commit only reviewed, non-secret project artifacts.
 3. **Terminate** the Pod; do not merely stop it.
 4. List Pods again and verify `triton-l4` is absent.
-5. Keep the network volume only while another paid session is planned; otherwise delete it too.
+5. List network volumes and confirm the list is still empty.
 
-The six-hour deadline is only a backstop. Manual termination is still required at the end of each session.
+There is no automatic termination backstop. Manual termination is required at the end of each session and no later than the recorded cutoff.
 
 ---
 
@@ -322,14 +329,21 @@ Do not scale to 100 models until this phase passes.
 
 ## Required checks
 
-- [ ] Ten ONNX models report `READY`.
-- [ ] Ten FIL models report `READY`.
-- [ ] One inference request succeeds against each backend.
-- [ ] Tensor names match the exported model files.
-- [ ] The Triton container digest is recorded.
-- [ ] Server logs contain no hidden model-load failures.
+- [x] Ten ONNX models report `READY`.
+- [x] Ten FIL models report `READY`.
+- [x] One inference request succeeds against each backend.
+- [x] Tensor names match the exported model files.
+- [x] The Triton container digest is recorded.
+- [x] Server logs contain no hidden model-load failures in the final launch.
 
-The exact model configuration and launch commands will be added after the local model zoo fixes the real tensor names and shapes.
+FIL compatibility requirements discovered on the first L4 smoke run:
+
+- Use `output_class: false` for regression models; Triton 2.59 rejects the older `is_classifier` parameter.
+- Pin XGBoost 3.0.2. XGBoost 3.4.0 writes JSON/UBJSON that Triton 25.06's embedded Treelite parser cannot load.
+- Serialize `model.get_booster()` directly rather than `XGBRegressor.save_model()` so newer scikit-learn estimator metadata does not affect the serving artifact.
+- Compare backend outputs after flattening. ONNX returns shape `[batch, 1]`, while FIL returns `[batch]` for this regressor; the scalar values must still satisfy `rtol=1e-5` and `atol=1e-5`.
+
+Do not run a formal benchmark from an image that lacks these fixes. The first live Pod was hot-patched for diagnosis; publish a new immutable image before the measured run.
 
 ---
 
@@ -337,7 +351,7 @@ The exact model configuration and launch commands will be added after the local 
 
 Every measured condition follows the same order.
 
-1. Confirm the Pod ID, GPU identity, data center, image digest, model config, and termination deadline.
+1. Confirm the Pod ID, GPU identity, data center, image digest, model config, and manual cutoff.
 2. Pin Triton and the load generator to disjoint CPU sets.
 3. Verify Triton with one real request before measuring.
 4. Warm up without recording results.
@@ -390,9 +404,8 @@ If you are unsure whether anything is still running:
 
 1. Open the RunPod **Pods** page.
 2. If `triton-l4` exists, click **Terminate** and confirm.
-3. Open **Storage** and inspect `triton-benchmark`.
-4. Delete the network volume if no further paid session is planned.
-5. Confirm the Pods list is empty.
+3. Confirm the Pods list is empty.
+4. Open **Storage** and confirm no network volume was created.
 
 Stopping is not the emergency action: terminate the Pod so retained Pod storage cannot continue billing.
 

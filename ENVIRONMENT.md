@@ -17,19 +17,21 @@ Do not fill fields from memory. Copy values from the commands in `RUNBOOK.md`.
 
 | Field | Value |
 |---|---|
-| Pod ID | Pending |
-| Cloud type | Secure preferred; pending actual value |
-| Data center | Pending live availability check |
-| GPU | NVIDIA L4, 24 GB |
-| Host CPU | Pending actual Pod value |
-| Host RAM | Pending actual Pod value |
-| GPU price and retrieval date | Pending |
-| Network volume ID | Pending |
-| Network volume | 20 GB standard, mounted at `/workspace` |
+| Pod ID | `1fp0q1qajk3f0t` |
+| Cloud type | Secure Cloud |
+| Data center | `EU-RO-1` |
+| GPU | NVIDIA L4, 23,034 MiB usable VRAM |
+| Host CPU | 18 vCPUs reported by RunPod; cgroup quota 15.3 cores; host cpuset exposes CPUs 0-127 |
+| Host RAM | 71 GB reported by RunPod; cgroup limit 70,999,998,464 bytes (66.1 GiB) |
+| GPU price and retrieval date | US$0.49/hour; low stock; retrieved 2026-10-01 |
+| Live L4 data centers | `EU-RO-1`, `EUR-IS-1`, `EUR-IS-2`, `US-GA-2`, `US-MO-2` at retrieval time |
+| Container disk | 20 GB disposable; confirmed on Pod |
+| Network volume | None; account verified empty 2026-10-01 |
 | Prepaid funding | Maximum US$10; user-confirmed 2026-10-01 |
 | Automatic payments | Disabled; user-confirmed 2026-10-01 |
-| Pod created at | Pending |
-| Automatic termination at | Pending; maximum six hours after creation |
+| Pod created at | `2026-10-01T04:14:30.678Z` (12:14:30 Singapore time) |
+| Manual termination target | By `2026-10-01T10:00:00Z` (18:00 Singapore time) |
+| Automatic termination | Unavailable; current RunPod backend does not enforce Pod deadlines |
 
 ## Triton server
 
@@ -38,11 +40,13 @@ Do not fill fields from memory. Copy values from the commands in `RUNBOOK.md`.
 | Container tag | `nvcr.io/nvidia/tritonserver:25.06-py3` |
 | Project image tag | `ghcr.io/daetan999/triton-multimodel-bench:0.1.0` |
 | Project image digest | `sha256:b49adeeea3707504067b80f360af03952dc59286e5af3771baee7610321b566c` |
+| Live Pod hotfix | Commit `63d0be3` copied into the Pod; not yet baked into the published image |
 | Triton server | 2.59.0 |
 | CUDA in container | 12.9.1 |
 | ONNX Runtime backend | 1.22.0 |
 | FIL backend | Included |
-| NVIDIA driver | Pending `nvidia-smi` output |
+| XGBoost | 3.0.2 on the live Pod; `0.1.0` originally contained incompatible 3.4.0 |
+| NVIDIA driver | 595.91.07; host CUDA 13.2 |
 | ONNX opset | 15 |
 
 ## Benchmark policy

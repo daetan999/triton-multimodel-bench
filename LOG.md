@@ -159,3 +159,64 @@ Complete image publication and diagnose the final workflow-reporting failure in 
 ### Fix
 
 Redirect Docker push stderr into stdout before `tee`, and add a contract-test assertion for that behavior. The already-tested and published image does not need to be rebuilt.
+
+## 2026-10-01 - Session 7
+
+### Goal
+
+Verify public image access and prepare the exact paid deployment boundary.
+
+### Verification
+
+- An anonymous GHCR token fetched the `0.1.0` manifest successfully.
+- The public manifest contains 42 layers and exactly matches digest `sha256:b49adeeea3707504067b80f360af03952dc59286e5af3771baee7610321b566c`.
+- RunPod reported one Secure Cloud L4 at US$0.49/hour with low stock and CUDA 12.8, 13.0, and 13.2 availability.
+- L4 stock appeared in `EU-RO-1`, `EUR-IS-1`, `US-GA-2`, and `US-MO-2`.
+- The RunPod account still contains zero Pods and zero network volumes.
+
+### Decision
+
+Use no network volume. Allow all Secure Cloud locations, require an L4 with a CUDA 13.0 host floor, and use a 20 GB disposable container disk. The six-hour maximum compute cost is US$2.94 before the small temporary-disk charge.
+
+## 2026-10-01 - Session 8
+
+### Goal
+
+Deploy and verify the first paid Secure Cloud L4 Pod.
+
+### Result
+
+- Created Pod `1fp0q1qajk3f0t` in `EU-RO-1` from the immutable project image digest.
+- Allocated one NVIDIA L4 at US$0.49/hour with a 20 GB disposable container disk and no network volume.
+- Exposed SSH only; Triton HTTP, gRPC, and metrics ports remain private.
+- Recorded a manual termination target of `2026-10-01T10:00:00Z` (18:00 Singapore time).
+- Automatic payments remain disabled by user confirmation; RunPod's MCP does not expose that billing setting for independent verification.
+
+### Verification
+
+- The container pulled successfully and SSH became reachable.
+- `nvidia-smi` reported NVIDIA L4, 23,034 MiB VRAM, driver 595.91.07, and host CUDA 13.2.
+- `/opt/tritonserver/bin/tritonserver` exists and is executable.
+- ONNX, ONNX Runtime, Triton client, and XGBoost imports passed.
+- `/workspace/model_repository`, `/workspace/results`, and `/workspace/logs` were created and are writable.
+- RunPod reports 18 vCPUs and 71 GB RAM; the observed cgroup limits are 15.3 CPU cores and 70,999,998,464 bytes of memory.
+- The first Triton launch rejected every FIL config because Triton 2.59 requires `output_class`; replaced the obsolete `is_classifier` parameter with `output_class: false`.
+- The second launch reached artifact loading but rejected XGBoost 3.4.0 UBJSON and JSON with the embedded Treelite parser.
+- Pinned XGBoost 3.0.2 and changed artifact creation from `XGBRegressor.save_model()` to direct Booster serialization.
+- The final launch reported 20 of 20 models READY: 10 ONNX Runtime and 10 FIL.
+- Real HTTP inference succeeded against `onnx_model_000` and `fil_model_000`; outputs `3.1630466` and `3.1630468` matched within `rtol=1e-5` and `atol=1e-5`.
+- ONNX returned shape `[1, 1]` while FIL returned `[1]`; comparison therefore normalizes both outputs to one dimension.
+- The live Pod was hot-patched with commit `63d0be3`; published image `0.1.0` does not contain these fixes.
+
+### TDD evidence
+
+- RED: `test_generate_repository_creates_one_complete_model_pair` failed because `output_class` was absent.
+- GREEN: the same test passed after replacing `is_classifier`; checkpoint commits `abe9687` and `17a67e1`.
+- RED: `test_generate_repository_serializes_the_booster_directly` failed because the generator called `XGBRegressor.save_model()`.
+- RED: `test_pod_dependencies_match_the_triton_release` failed while `requirements-pod.txt` still pinned XGBoost 3.4.0.
+- GREEN: all 11 tests passed under XGBoost 3.0.2 with 84% package coverage; checkpoint commits `d9f92b9`, `07bcdab`, and `63d0be3`.
+- `pip check` passed and `pip-audit` found no known vulnerabilities in the pinned local and Pod requirements.
+
+### Next step
+
+Push the compatibility commits and publish image `0.1.1`. Verify its immutable digest before any formal 100-pair benchmark run.
