@@ -268,7 +268,7 @@ parameters [
     value: {{ string_value: "xgboost_ubj" }}
   }},
   {{
-    key: "is_classifier"
+    key: "output_class"
     value: {{ string_value: "false" }}
   }}
 ]
