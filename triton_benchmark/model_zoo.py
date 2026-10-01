@@ -60,7 +60,7 @@ def generate_repository(
         onnx_model.graph.name = onnx_name
         onnx.checker.check_model(onnx_model)
         onnx.save_model(onnx_model, onnx_path)
-        model.save_model(fil_path)
+        model.get_booster().save_model(fil_path)
 
         onnx_input = onnx_model.graph.input[0].name
         onnx_output = onnx_model.graph.output[0].name
