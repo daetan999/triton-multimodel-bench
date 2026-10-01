@@ -273,6 +273,9 @@ Image `0.1.1` was built, smoke-tested, and published in run `36816708070`. Its f
 ghcr.io/daetan999/triton-multimodel-bench@sha256:ad62d0e0006825b741238007ef364ed63a80a51bc4bd2b27499e8f5e1eaf5ad7
 ```
 
+Corrected workflow run `36818347526` then completed green and reported the
+same digest.
+
 **Success looks like:** the package is public and the intended digest above appears on its package page. Future workflow runs should also end green and print the digest in their summary.
 
 If the build fails, do not create a Pod. Copy the failed step and its complete log into the working chat.

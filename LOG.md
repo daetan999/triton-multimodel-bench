@@ -261,6 +261,8 @@ Publish the corrected, reproducible Pod image as `0.1.1`.
   the word `digest:` instead of the following SHA. Added a failing regression
   assertion, replaced the positional parser with direct SHA-256 extraction, and
   returned the full suite to green.
+- Corrected workflow run `36818347526` completed green and reported the same
+  immutable digest.
 
 ### Next step
 
