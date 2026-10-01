@@ -22,6 +22,11 @@ def test_generate_repository_creates_one_complete_model_pair(tmp_path: Path) -> 
     assert (repository / "fil_model_000" / "1" / "xgboost.ubj").is_file()
     assert (repository / "fil_model_000" / "config.pbtxt").is_file()
 
+    fil_config = (repository / "fil_model_000" / "config.pbtxt").read_text()
+    assert 'key: "output_class"' in fil_config
+    assert 'value: { string_value: "false" }' in fil_config
+    assert 'key: "is_classifier"' not in fil_config
+
     stored_manifest = json.loads((repository / "manifest.json").read_text())
     assert stored_manifest == manifest
 
