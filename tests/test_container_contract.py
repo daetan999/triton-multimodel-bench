@@ -23,7 +23,7 @@ def test_pod_dependencies_match_the_triton_release() -> None:
     requirements = (ROOT / "requirements-pod.txt").read_text(encoding="utf-8")
 
     assert "tritonclient[grpc,http]==2.59.0" in requirements
-    assert "xgboost==3.4.0" in requirements
+    assert "xgboost==3.0.2" in requirements
     assert "onnx==1.22.0" in requirements
 
 
