@@ -11,6 +11,7 @@ def test_pod_image_uses_the_pinned_triton_base_and_secure_ssh() -> None:
 
     assert dockerfile.startswith("FROM nvcr.io/nvidia/tritonserver:25.06-py3\n")
     assert 'ENTRYPOINT ["/usr/local/bin/start-pod"]' in dockerfile
+    assert "\n        rsync" in dockerfile
     assert "PasswordAuthentication no" in ssh_config
     assert "KbdInteractiveAuthentication no" in ssh_config
     assert "PermitRootLogin prohibit-password" in ssh_config
@@ -56,9 +57,6 @@ def test_image_publish_workflow_is_manual_amd64_and_versioned() -> None:
     assert "tritonserver --help" not in workflow
     assert "tritonserver --version" not in workflow
     assert 'docker push "${IMAGE_REFERENCE}" 2>&1 | tee' in workflow
-    assert (
-        "grep -Eo 'sha256:[0-9a-f]{64}' /tmp/docker-push.log | tail -1"
-        in workflow
-    )
+    assert "grep -Eo 'sha256:[0-9a-f]{64}' /tmp/docker-push.log | tail -1" in workflow
     assert "awk '/digest: sha256:/ {print $2}'" not in workflow
     assert "uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262" in workflow

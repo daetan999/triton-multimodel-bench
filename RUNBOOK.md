@@ -26,8 +26,12 @@ This is the operating guide for the whole project. Work from top to bottom. Do n
 - [x] Corrected image `0.1.1` built, smoke-tested, published, and anonymously verified by digest.
 - [x] Asynchronous Poisson gRPC load generator implemented and tested.
 - [x] Crash-safe 81-run matrix runner implemented with per-request, GPU, CPU, and summary artifacts.
+- [x] Image `0.1.3` published with bounded ONNX Runtime thread pools.
+- [x] A 100-model L40S preflight completed successfully with zero failed requests.
+- [x] All RunPod Pods and network volumes terminated; billing is stopped.
+- [x] Continuous off-Pod result mirroring implemented and tested locally.
 
-The next step is to publish image `0.1.2`, deploy it by immutable digest, pass a five-second live preflight, and run the formal 100-pair ONNX experiment.
+The 81-run L40S attempt was not retained before its disposable Pod was terminated. The project is therefore switching to an 18-run portfolio benchmark. The next step is to publish image `0.1.4`, which adds Pod-side `rsync`, and quote the complete cost of one short GPU session. No paid resource may be created without explicit approval of that quote.
 
 ## How to use this runbook
 
@@ -36,7 +40,7 @@ The next step is to publish image `0.1.2`, deploy it by immutable digest, pass a
 - Compare your output with **Success looks like** before continuing.
 - If a command fails, copy the complete command and complete error into the working chat.
 - Never substitute invented benchmark values for missing measurements.
-- Never create a paid Pod without recording a manual cutoff and confirming automatic payments are disabled.
+- Never create a paid Pod without an independently scheduled termination check, a tested live result mirror, and explicit approval of the maximum quoted cost.
 - Terminate Pods when a session ends; stopping a Pod can leave storage charges running.
 
 ## Fixed project choices
@@ -45,14 +49,14 @@ The next step is to publish image `0.1.2`, deploy it by immutable digest, pass a
 |---|---|
 | Cloud | RunPod, on-demand; Secure Cloud preferred |
 | Data center | Any live Secure Cloud L4 location; do not pin without a storage or residency need |
-| GPU server | One NVIDIA L4 with 24 GB VRAM |
+| GPU server | One inference-capable NVIDIA GPU; prefer L4 for cost or L40S for availability, and record the exact device |
 | Load generator | Same Pod, pinned to reserved CPU cores |
 | CPU baseline | Same Pod CPU, with GPU execution disabled |
-| Working storage | 20 GB disposable container disk; copy results home before termination |
+| Working storage | 20 GB disposable container disk continuously mirrored to the Mac |
 | Triton container | `nvcr.io/nvidia/tritonserver:25.06-py3` |
 | ONNX opset | 15 |
-| Maximum Pod run | Six hours per creation; terminate manually |
-| Maximum project funding | US$10 prepaid credit; automatic payments off |
+| Maximum Pod run | Two hours for the compact benchmark; independently scheduled termination check required |
+| Additional project funding | None unless the user explicitly approves a new quoted amount |
 
 ---
 
@@ -229,17 +233,17 @@ Generated model files, manifests, and `config.pbtxt` files are reproducible buil
 
 Do this only after Phase 2 has ten validated model pairs.
 
-## 3.1 Read live L4 availability and price
+## 3.1 Read live GPU availability and price
 
 In a fresh Codex task, ask:
 
-> Using RunPod, list current on-demand NVIDIA L4 availability and hourly prices by cloud and data center. Read only; do not create anything.
+> Using RunPod, list current on-demand NVIDIA L4 and L40S availability and hourly prices. Read only; do not create anything.
 
-Choose one L4. Prefer Secure Cloud when available at a reasonable price. Record the exact GPU name, cloud type, data center, hourly price, and retrieval date in `ENVIRONMENT.md`.
+Choose the least expensive suitable GPU that can load all 100 models. Prefer L4; use L40S only if L4 is unavailable and its complete maximum cost is approved. Record the exact GPU, cloud type, data center, hourly price, and retrieval date in `ENVIRONMENT.md`.
 
 Live check on 2026-10-01: one 24 GB L4 in Secure Cloud was low-stock at **US$0.49/hour**. CUDA 13.0-compatible stock was available. Do not pin a data center because the benchmark is single-node and uses no network volume; allowing all Secure Cloud locations improves the chance of obtaining the exact GPU.
 
-Do not substitute an RTX 4090 or another GPU without adding a new decision record. Hardware identity is part of the experiment.
+Do not mix measurements from different GPU types in one result table. Hardware identity is part of the experiment.
 
 ## 3.2 Build the project-specific Pod image
 
@@ -257,7 +261,7 @@ After the current changes have been pushed:
 2. Select **Actions**.
 3. Select **Publish Pod image**.
 4. Select **Run workflow**.
-5. Enter the intended semantic release tag (current release: `0.1.2`), then run it.
+5. Enter the intended semantic release tag (next release: `0.1.4`), then run it.
 6. Wait for the workflow to finish with a green check.
 7. Open the workflow summary and copy the complete `ghcr.io/...@sha256:...` reference.
 8. Open the new package's **Package settings** and change its visibility to **Public**. Do not add registry credentials to RunPod.
@@ -278,24 +282,60 @@ ghcr.io/daetan999/triton-multimodel-bench@sha256:ad62d0e0006825b741238007ef364ed
 Corrected workflow run `36818347526` then completed green and reported the
 same digest.
 
+Image `0.1.3` added the bounded ONNX Runtime thread-pool fix. Workflow run
+`36827162657` completed green, and anonymous registry access verified this
+immutable digest:
+
+```text
+ghcr.io/daetan999/triton-multimodel-bench@sha256:20d4c4582fefe59e3ddd62fd30fe001db790e2bb1c92417324c345bc5f76efea
+```
+
+Image `0.1.4` must be built before the next Pod because it adds the remote
+`rsync` binary used by the result mirror.
+
 **Success looks like:** the package is public and the intended digest above appears on its package page. Future workflow runs should also end green and print the digest in their summary.
 
 If the build fails, do not create a Pod. Copy the failed step and its complete log into the working chat.
 
-## 3.3 Use disposable Pod storage
+## 3.3 Prepare continuous result mirroring
 
-Do not create a network volume. The generated models are reproducible, and this project does not share data across Pods. A 20 GB standard network volume would cost about US$1.40 per month until explicitly deleted.
+Use a 20 GB disposable container disk, but never leave the only copy of a measured result on it. Before starting the benchmark, create a dedicated local destination and capture the Pod's SSH host key:
 
-Use a 20 GB container disk for generated models, logs, and raw results. It is deleted with the Pod, so copy every result to the Mac before termination. Do not store credentials in the Pod filesystem or repository.
+```bash
+export POD_HOST='REPLACE_WITH_POD_IP'
+export POD_PORT='REPLACE_WITH_SSH_PORT'
+export RESULT_NAME='portfolio-benchmark'
+mkdir -p "evidence/runpod/$RESULT_NAME"
+ssh-keyscan -p "$POD_PORT" "$POD_HOST" > "evidence/runpod/$RESULT_NAME/known_hosts"
+```
 
-## 3.4 Create the L4 Pod
+Start the mirror in a second Mac terminal and keep that terminal open:
+
+```bash
+cd "/Users/dae/Documents/Codex/2026-08-05/i-w/outputs/triton-multimodel-bench"
+export POD_HOST='REPLACE_WITH_POD_IP'
+export POD_PORT='REPLACE_WITH_SSH_PORT'
+export RESULT_NAME='portfolio-benchmark'
+caffeinate -dimsu .venv/bin/python scripts/mirror_results.py \
+  --host "$POD_HOST" \
+  --port "$POD_PORT" \
+  --identity-file "$HOME/.ssh/id_ed25519_runpod" \
+  --known-hosts-file "evidence/runpod/$RESULT_NAME/known_hosts" \
+  --remote-dir "/workspace/results/$RESULT_NAME" \
+  --local-dir "evidence/runpod/$RESULT_NAME/results" \
+  --interval-seconds 30
+```
+
+Create a canary file on the Pod and confirm it appears locally before starting any measured run. The mirror never uses `--delete`, so a later remote failure cannot erase local evidence.
+
+## 3.4 Create the benchmark Pod
 
 Use these fixed settings:
 
 | Setting | Required value |
 |---|---|
-| Name | `triton-l4` |
-| Compute | 1× NVIDIA L4, on-demand |
+| Name | `triton-portfolio-benchmark` |
+| Compute | 1× approved NVIDIA GPU, on-demand |
 | Cloud | Secure Cloud |
 | CUDA host floor | 13.0 |
 | Image | Project image tag and digest from Phase 3.2 |
@@ -303,11 +343,11 @@ Use these fixed settings:
 | Network volume | None |
 | HTTP ports | None |
 | TCP ports | SSH only |
-| Cost guard | Manual termination within six hours; RunPod currently has no working automatic Pod deadline |
+| Cost guard | Approved maximum price, two-hour ceiling, and an independently scheduled termination check |
 
 Create no public Triton port. Triton HTTP, gRPC, and metrics stay inside the Pod on ports 8000, 8001, and 8002.
 
-Immediately record the Pod ID, creation timestamp, and manual termination target in `ENVIRONMENT.md` and `LOG.md`.
+Immediately record the Pod ID, creation timestamp, hourly rate, maximum quoted cost, and scheduled termination time in `ENVIRONMENT.md` and `LOG.md`. Do not describe a remembered timestamp as a hard cutoff.
 
 ## 3.5 Verify the real environment
 
@@ -326,13 +366,14 @@ Then record the immutable container digest and the complete `nvidia-smi` output.
 
 ## 3.6 End every paid session safely
 
-1. Copy all new code, raw results, telemetry, and logs off the Pod.
-2. Commit only reviewed, non-secret project artifacts.
-3. **Terminate** the Pod; do not merely stop it.
-4. List Pods again and verify `triton-l4` is absent.
-5. List network volumes and confirm the list is still empty.
+1. Confirm the continuous mirror is still reporting successful copies.
+2. Run one final mirror with `--once` and validate the expected summary count locally.
+3. Commit only reviewed, non-secret project artifacts.
+4. **Terminate** the Pod; do not merely stop it.
+5. List Pods again and verify the benchmark Pod is absent.
+6. List network volumes and confirm the list is still empty.
 
-There is no automatic termination backstop. Manual termination is required at the end of each session and no later than the recorded cutoff.
+Do not terminate while the only valid result copy is still on the Pod. The scheduled termination check is the spending backstop; continuous mirroring is the evidence backstop.
 
 ---
 
@@ -364,7 +405,7 @@ Do not run a formal benchmark from an image that lacks these fixes. The first li
 
 Every measured condition follows the same order.
 
-1. Confirm the Pod ID, GPU identity, data center, image digest, model config, and manual cutoff.
+1. Confirm the Pod ID, GPU identity, data center, image digest, model config, maximum cost, and scheduled termination time.
 2. Pin Triton and the load generator to disjoint CPU sets.
 3. Verify Triton with one real request before measuring.
 4. Record warm-up requests separately and exclude them from all measured metrics.
@@ -378,20 +419,20 @@ Every measured condition follows the same order.
 12. Copy results off the Pod and terminate it.
 13. Append the session summary to `LOG.md`.
 
-## Experiment matrix
+## Portfolio experiment matrix
 
 | Dimension | Values |
 |---|---|
 | Model count | 1, 10, 100 |
-| Batching | Off, 2 ms queue, 10 ms queue |
-| Offered load | Low, medium, high; fixed after calibration |
-| Repetitions | At least 3 |
+| Batching | Off, 10 ms queue |
+| Offered load | 200 requests/second |
+| Repetitions | 3 |
 | Primary metrics | Throughput, p50, p95, p99, error rate |
 | Supporting metrics | GPU utilisation/memory/power, client scheduler delay/CPU, Triton process CPU/RSS |
 
 Never compare conditions produced by different code versions without explicitly recording that difference.
 
-The formal ONNX matrix contains 81 runs: 3 model counts × 3 batching policies × 3 target loads × 3 repetitions. Each run uses 10 seconds of warm-up and 60 seconds of measurement, so the raw traffic windows take 94.5 minutes before model restarts and validation.
+The portfolio ONNX matrix contains 18 runs: 3 model counts × 2 batching policies × 1 target load × 3 repetitions. Each run uses 5 seconds of warm-up and 30 seconds of measurement. This is enough to show the model-count and batching trade-offs without claiming to be an exhaustive performance study.
 
 ## 5.1 Generate and validate the 100-pair repository on the Pod
 
@@ -414,67 +455,69 @@ python3 /opt/triton-benchmark/scripts/validate_models.py \
 
 ```bash
 taskset --cpu-list 0-7 true
-taskset --cpu-list 8-15 true
+taskset --cpu-list 8-12 true
 ```
 
-Both commands must return silently with exit code zero. Triton uses CPUs 0–7; the runner itself must be launched with `taskset` on CPUs 8–15. Do not continue if either CPU set is unavailable.
+Both commands must return silently with exit code zero. Triton uses CPUs 0–7; the runner uses CPUs 8–12. If the new host has a different CPU quota, choose two disjoint sets that fit inside that quota and record them before running.
 
 ## 5.3 Run the five-second live preflight
 
-Use the exact `0.1.2` image digest and Git commit recorded for this release:
+Use the exact `0.1.4` image digest and Git commit produced after the result-mirroring change. Replace both placeholders before running:
 
 ```bash
-export BENCH_IMAGE_DIGEST='ghcr.io/daetan999/triton-multimodel-bench@sha256:7e62be24c47db9f9fdab8ed217ed93048f8c9a01dca23ec9df58e4661215a8ca'
-export BENCH_GIT_COMMIT='7b881b5bc9039d1462cf07feb0f9348df2794024'
-taskset --cpu-list 8-15 python3 /opt/triton-benchmark/scripts/run_matrix.py \
+export BENCH_IMAGE_DIGEST='REPLACE_WITH_0.1.4_IMMUTABLE_DIGEST'
+export BENCH_GIT_COMMIT='REPLACE_WITH_0.1.4_SOURCE_COMMIT'
+taskset --cpu-list 8-12 python3 /opt/triton-benchmark/scripts/run_matrix.py \
   --repository /workspace/model_repository \
   --results-dir /workspace/results/preflight \
   --backend onnx \
-  --model-counts 1 \
+  --model-counts 100 \
   --queue-delays-us off \
   --target-qps 50 \
   --repetitions 1 \
   --warmup-seconds 2 \
   --duration-seconds 5 \
   --server-cpus 0-7 \
-  --loadgen-cpus 8-15 \
+  --loadgen-cpus 8-12 \
   --image-digest "$BENCH_IMAGE_DIGEST" \
   --git-commit "$BENCH_GIT_COMMIT"
 ```
 
 **Success looks like:** the final report says one run completed and the preflight directory contains raw request CSV, GPU CSV, Triton CPU/RSS CSV, JSON summary, matrix manifest, and server log. The JSON summary must say `"status": "valid"` and `"failed_requests": 0`.
 
-## 5.4 Start the formal ONNX matrix
+## 5.4 Start the compact ONNX matrix
+
+First complete the canary mirror check from Phase 3.3. Do not launch the matrix until the canary exists on the Mac.
 
 Run it detached so an SSH disconnect does not stop the experiment:
 
 ```bash
-mkdir -p /workspace/results/onnx-experiment-a
-setsid taskset --cpu-list 8-15 \
+mkdir -p /workspace/results/portfolio-benchmark
+setsid taskset --cpu-list 8-12 \
   python3 /opt/triton-benchmark/scripts/run_matrix.py \
   --repository /workspace/model_repository \
-  --results-dir /workspace/results/onnx-experiment-a \
+  --results-dir /workspace/results/portfolio-benchmark \
   --backend onnx \
   --model-counts 1,10,100 \
-  --queue-delays-us off,2000,10000 \
-  --target-qps 50,200,500 \
+  --queue-delays-us off,10000 \
+  --target-qps 200 \
   --repetitions 3 \
-  --warmup-seconds 10 \
-  --duration-seconds 60 \
+  --warmup-seconds 5 \
+  --duration-seconds 30 \
   --base-seed 20260805 \
   --server-cpus 0-7 \
-  --loadgen-cpus 8-15 \
+  --loadgen-cpus 8-12 \
   --image-digest "$BENCH_IMAGE_DIGEST" \
   --git-commit "$BENCH_GIT_COMMIT" \
-  > /workspace/results/onnx-experiment-a/runner.log 2>&1 \
+  > /workspace/results/portfolio-benchmark/runner.log 2>&1 \
   < /dev/null &
-echo $! > /workspace/results/onnx-experiment-a/runner.pid
+echo $! > /workspace/results/portfolio-benchmark/runner.pid
 ```
 
 Monitor without altering the run:
 
 ```bash
-tail -f /workspace/results/onnx-experiment-a/runner.log
+tail -f /workspace/results/portfolio-benchmark/runner.log
 ```
 
 The runner randomizes server-configuration groups and the runs inside each group deterministically. It refuses to overwrite artifacts. If the process ends between runs, repeat the command with `--resume`. If it stops during a run, preserve the partial files for diagnosis and use a new results directory; do not delete evidence to force a resume.
@@ -482,12 +525,15 @@ The runner randomizes server-configuration groups and the runs inside each group
 ## 5.5 Validate and copy results before teardown
 
 ```bash
-test "$(find /workspace/results/onnx-experiment-a/summaries -name '*.json' | wc -l)" -eq 81
-grep -R '"status": "invalid"' /workspace/results/onnx-experiment-a/summaries && exit 1 || true
-sha256sum $(find /workspace/results -type f | sort) > /workspace/results/SHA256SUMS
+test "$(find /workspace/results/portfolio-benchmark/summaries -name '*.json' | wc -l)" -eq 18
+grep -R '"status": "invalid"' /workspace/results/portfolio-benchmark/summaries && exit 1 || true
+find /workspace/results/portfolio-benchmark -type f -print0 \
+  | sort -z \
+  | xargs -0 sha256sum \
+  > /workspace/results/portfolio-benchmark/SHA256SUMS
 ```
 
-Copy `/workspace/results` and the generated model manifest to the Mac. Verify `SHA256SUMS` locally before terminating the Pod. Never terminate first: the 20 GB container disk is disposable.
+Run the mirror once more with `--once`, confirm all 18 summaries and `SHA256SUMS` exist on the Mac, and only then terminate the Pod.
 
 ---
 
@@ -514,7 +560,7 @@ Do not make a performance claim until all boxes are checked.
 If you are unsure whether anything is still running:
 
 1. Open the RunPod **Pods** page.
-2. If `triton-l4` exists, click **Terminate** and confirm.
+2. If the benchmark Pod exists, click **Terminate** and confirm.
 3. Confirm the Pods list is empty.
 4. Open **Storage** and confirm no network volume was created.
 

@@ -330,3 +330,40 @@ Run the live L4 preflight and formal ONNX benchmark matrix.
 ### Next step
 
 Publish the bounded-thread fix as image `0.1.3`, verify 100 models load in a live preflight, and restart the entire 81-run matrix under one consistent configuration.
+
+## 2026-10-02 - Session 13
+
+### Goal
+
+Audit the L40S retry, stop all billing, preserve an accurate project record, and reduce the remaining work to what is needed for a credible GitHub and resume project.
+
+### Result
+
+- Published image `0.1.3` from commit `1e9a52390ec1047a0f10e7cc75a99365a15b7379` in successful workflow run `36827162657`.
+- Independently verified the public 42-layer GHCR image digest as `sha256:20d4c4582fefe59e3ddd62fd30fe001db790e2bb1c92417324c345bc5f76efea`.
+- Deployed L40S Pod `jfzwlzxfxxfa8o` in Secure Cloud `US-TX-4` at US$1.09/hour after L4 capacity was unavailable.
+- Passed the critical 100-model preflight: 257 measured requests, 51.4 achieved QPS, zero failures, and no Triton server errors.
+- Observed at least 32 valid summaries from the 81-run matrix before monitoring was interrupted.
+- The stated six-hour manual cutoff was not enforced. The Pod ran for about 8.68 hours and its disposable result disk was deleted before the matrix was copied locally.
+- Audited the L40S Pod at US$9.46550393011421 and the earlier diagnostic L4 Pod at US$0.30107052775565535. The audited project period total was US$10.011994372005574, including an earlier smoke Pod event.
+- Verified that the account now contains zero Pods and zero network volumes. There is no ongoing RunPod resource charge.
+- No final performance claim will use the unretained L40S measurements.
+
+### Corrective work
+
+- Added a local result mirror that uses strict SSH host checking and non-destructive `rsync`; it never uses `--delete`.
+- Restricted the remote source to a child of `/workspace/results` and invoked `rsync` with an argument list rather than a shell.
+- Added Pod-side `rsync` to the next container image.
+- Replaced the 81-run plan with an 18-run portfolio matrix covering 1, 10, and 100 models, batching off/on, and three repetitions.
+- Superseded disposable-only evidence handling and remembered manual cutoffs with a canary-tested continuous mirror and an independently scheduled termination check.
+
+### TDD evidence
+
+- RED: `tests/test_result_mirror.py` failed to import the intentionally absent `triton_benchmark.result_mirror` module.
+- GREEN: all six focused mirror tests passed after adding the implementation.
+- RED: the container contract failed because the Pod image lacked `rsync`.
+- GREEN: the contract passed after adding `rsync` to the image package list.
+
+### Next step
+
+Verify the complete local test suite, publish image `0.1.4`, then obtain explicit approval for the maximum quoted cost of one short GPU session. Start no paid resource before the live mirror canary and scheduled termination check are ready.

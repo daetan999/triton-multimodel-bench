@@ -13,6 +13,7 @@ RUN apt-get update \
         numactl \
         openssh-server \
         procps \
+        rsync \
     && rm -rf /var/lib/apt/lists/* \
     && install -d -m 0755 /run/sshd
 

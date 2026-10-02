@@ -13,7 +13,7 @@ Do not fill fields from memory. Copy values from the commands in `RUNBOOK.md`.
 | Codex RunPod MCP | OAuth authenticated; verify again in a fresh task |
 | RunPod SSH key | `runpod-triton-benchmark`, fingerprint `SHA256:NPwsxwH8UOyjYMu6rgf9f3HbZV0yT/EDmtBrXQklddQ` |
 
-## RunPod
+## Diagnostic L4 Pod (terminated)
 
 | Field | Value |
 |---|---|
@@ -34,20 +34,41 @@ Do not fill fields from memory. Copy values from the commands in `RUNBOOK.md`.
 | Automatic termination | Unavailable; current RunPod backend does not enforce Pod deadlines |
 | Pod status | Terminated after verified diagnostic evidence transfer; follow-up lookup returned HTTP 404 |
 
+## L40S retry (terminated; measured matrix not retained)
+
+| Field | Value |
+|---|---|
+| Pod ID | `jfzwlzxfxxfa8o` |
+| Cloud type | Secure Cloud |
+| Data center | `US-TX-4` |
+| GPU | NVIDIA L40S, 46,068 MiB usable VRAM |
+| GPU price | US$1.09/hour |
+| Host CPU | 16 vCPUs reported by RunPod; cgroup quota 13.6 cores; cpuset exposed CPUs 0-127 |
+| CPU split | Triton CPUs 0-7; load generator CPUs 8-12 |
+| NVIDIA driver | 595.91.07 |
+| Container disk | 20 GB disposable |
+| Network volume | None |
+| Pod created at | `2026-10-01T07:13:36.868Z` |
+| Verified preflight | 100 models loaded; 257 measured requests; 51.4 achieved QPS; zero failures |
+| Full-matrix observation | At least 32 of 81 summaries observed valid before monitoring was interrupted |
+| Retained result status | Not retained; the disposable disk was deleted with the Pod |
+| Audited Pod cost | US$9.46550393011421 |
+| Current account resources | Zero Pods and zero network volumes, verified 2026-10-02 |
+
 ## Triton server
 
 | Field | Value |
 |---|---|
 | Container tag | `nvcr.io/nvidia/tritonserver:25.06-py3` |
-| Project image tag | `ghcr.io/daetan999/triton-multimodel-bench:0.1.2` |
-| Project image digest | `sha256:7e62be24c47db9f9fdab8ed217ed93048f8c9a01dca23ec9df58e4661215a8ca` |
-| Image source commit | `7b881b5bc9039d1462cf07feb0f9348df2794024` |
-| Live Pod hotfix | Baked into published image `0.1.1`; benchmark harness added in `0.1.2` |
+| Project image tag | `ghcr.io/daetan999/triton-multimodel-bench:0.1.3` |
+| Project image digest | `sha256:20d4c4582fefe59e3ddd62fd30fe001db790e2bb1c92417324c345bc5f76efea` |
+| Image source commit | `1e9a52390ec1047a0f10e7cc75a99365a15b7379` |
+| Release history | FIL compatibility in `0.1.1`; benchmark harness in `0.1.2`; bounded ONNX thread pools in `0.1.3` |
 | Triton server | 2.59.0 |
 | CUDA in container | 12.9.1 |
 | ONNX Runtime backend | 1.22.0 |
 | FIL backend | Included |
-| XGBoost | 3.0.2 in published images `0.1.1` and `0.1.2`; `0.1.0` contained incompatible 3.4.0 |
+| XGBoost | 3.0.2 from image `0.1.1` onward; `0.1.0` contained incompatible 3.4.0 |
 | NVIDIA driver | 595.91.07; host CUDA 13.2 |
 | ONNX opset | 15 |
 
@@ -56,12 +77,14 @@ Do not fill fields from memory. Copy values from the commands in `RUNBOOK.md`.
 | Field | Value |
 |---|---|
 | Model counts | 1, 10, 100 |
-| Batching conditions | Off, 2 ms, 10 ms |
-| Repetitions | At least 3 per condition |
+| Batching conditions | Off, 10 ms |
+| Offered load | 200 requests/second |
+| Repetitions | 3 per condition |
 | Warm-up | Recorded separately; excluded from measured window |
 | Raw data | One row per request |
 | Load generator | Same Pod, disjoint CPU affinity from Triton |
 | Network path | Loopback (`127.0.0.1`); not a network benchmark |
+| Final matrix size | 18 runs: 3 model counts × 2 batching policies × 3 repetitions |
 
 ## Generated model repository
 

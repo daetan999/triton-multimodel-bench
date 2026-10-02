@@ -39,7 +39,7 @@ Use ONNX opset 15 for both scikit-learn and LightGBM exports. The installed Ligh
 
 ## D006 - Switch the execution provider from Google Cloud to RunPod
 
-**Status:** Accepted; cost-guard clause superseded by D011
+**Status:** Accepted; cost-guard clause superseded by D013
 **Date:** 2026-08-06
 
 Use one on-demand RunPod L4 Pod instead of Google Cloud. RunPod avoids the unavailable new-account L4 quota, uses prepaid credit, and preserves the project-defining Triton, CUDA, ONNX, and L4 stack.
@@ -75,7 +75,7 @@ The Mac does not have Docker installed. A manually triggered GitHub Actions work
 
 ## D010 - Use disposable Pod storage instead of a network volume
 
-**Status:** Accepted
+**Status:** Superseded by D013
 **Date:** 2026-10-01
 
 Use a 20 GB container disk and no network volume. The model repository is reproducible, the benchmark runs on one Pod, and results will be copied to the Mac before termination. Removing persistent storage avoids an independently billed resource and lets RunPod place the low-stock L4 in any available Secure Cloud data center.
@@ -84,7 +84,7 @@ At current published rates, 20 GB of standard network storage would cost about U
 
 ## D011 - Use a recorded manual Pod cutoff
 
-**Status:** Accepted
+**Status:** Superseded by D013
 **Date:** 2026-10-01
 
 Record a manual cutoff no later than six hours after each Pod creation and terminate the Pod explicitly at the end of the session. Keep automatic payments disabled so the prepaid balance is the account-level funding boundary.
@@ -99,3 +99,21 @@ RunPod removed its `--terminate-after` and `--stop-after` controls after confirm
 Launch Triton's ONNX Runtime backend with one shared global thread pool, eight intra-op threads, one inter-op thread, and four model-loading threads. Apply the same launch settings to every ONNX model-count condition.
 
 The first formal attempt used ONNX Runtime's defaults, which created a per-session pool based on 128 visible host CPUs. Triton aborted while loading model 69 of 100 with `std::system_error: Resource temporarily unavailable`. NVIDIA's ONNX Runtime backend documents the global pool specifically for multi-session deployments. Bounding both execution and loading threads allows the 100-model configuration to fit the Pod while keeping Triton pinned to CPUs 0–7.
+
+## D013 - Mirror results continuously and schedule an external termination check
+
+**Status:** Accepted
+**Date:** 2026-10-02
+
+Keep the reproducible models on disposable Pod storage, but continuously mirror every benchmark artifact to the Mac while a run is active. A canary copy must succeed before measurement begins, and the local mirror must never delete previously copied files.
+
+Before creating a paid Pod, record the maximum quoted cost and arrange an independently scheduled termination check. A remembered or verbally stated timestamp is not a hard cutoff. These controls replace the disposable-only and manual-cutoff assumptions in D010 and D011.
+
+## D014 - Reduce the final experiment to a portfolio-sized matrix
+
+**Status:** Accepted
+**Date:** 2026-10-02
+
+Run 18 ONNX measurements: 1, 10, and 100 loaded models; batching off and a 10 ms batching window; 200 requests per second; and three repetitions. Use five seconds of warm-up and 30 seconds of measured traffic.
+
+The earlier 81-run plan was broader than needed for the GitHub and resume goal. The smaller matrix retains repeated measurements of the two project questions—model-count overhead and the latency/throughput effect of batching—while reducing paid GPU time. It must not be described as an exhaustive Triton performance study.

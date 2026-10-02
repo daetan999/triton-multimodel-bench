@@ -28,15 +28,23 @@ def test_rsync_command_is_strict_and_never_deletes_local_results(
 
     assert command[:4] == ("rsync", "--archive", "--partial", "--safe-links")
     assert "--delete" not in command
-    assert "StrictHostKeyChecking=yes" in command
-    assert "BatchMode=yes" in command
+    ssh_transport = command[command.index("-e") + 1]
+    assert "StrictHostKeyChecking=yes" in ssh_transport
+    assert "BatchMode=yes" in ssh_transport
     assert command[-2] == "root@203.0.113.10:/workspace/results/portfolio-benchmark/"
     assert command[-1] == f"{tmp_path / 'results'}/"
 
 
 @pytest.mark.parametrize(
     "remote_dir",
-    ("results/run", "/workspace", "/workspace/results", "/etc/results"),
+    (
+        "results/run",
+        "/workspace",
+        "/workspace/results",
+        "/workspace/results/../etc",
+        "/workspace/results/run;touch-pwned",
+        "/etc/results",
+    ),
 )
 def test_configuration_rejects_unsafe_remote_directory(
     tmp_path: Path, remote_dir: str
@@ -71,4 +79,3 @@ def test_mirror_once_uses_argument_list_and_creates_destination(
     assert config.local_dir.is_dir()
     assert isinstance(observed["command"], tuple)
     assert observed["check"] is True
-
