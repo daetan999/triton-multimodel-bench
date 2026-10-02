@@ -31,7 +31,7 @@ This is the operating guide for the whole project. Work from top to bottom. Do n
 - [x] All RunPod Pods and network volumes terminated; billing is stopped.
 - [x] Continuous off-Pod result mirroring implemented and tested locally.
 
-The 81-run L40S attempt was not retained before its disposable Pod was terminated. The project is therefore switching to an 18-run portfolio benchmark. The next step is to publish image `0.1.4`, which adds Pod-side `rsync`, and quote the complete cost of one short GPU session. No paid resource may be created without explicit approval of that quote.
+The 81-run L40S attempt was not retained before its disposable Pod was terminated. The project is therefore switching to an 18-run portfolio benchmark. Image `0.1.4`, which adds Pod-side `rsync`, is published and verified. The next step is to quote the complete cost of one short GPU session. No paid resource may be created without explicit approval of that quote.
 
 ## How to use this runbook
 
@@ -290,8 +290,13 @@ immutable digest:
 ghcr.io/daetan999/triton-multimodel-bench@sha256:20d4c4582fefe59e3ddd62fd30fe001db790e2bb1c92417324c345bc5f76efea
 ```
 
-Image `0.1.4` must be built before the next Pod because it adds the remote
-`rsync` binary used by the result mirror.
+Image `0.1.4` added the remote `rsync` binary used by the result mirror.
+Workflow run `36950090842` completed green, and anonymous registry access
+verified 42 layers at this immutable digest:
+
+```text
+ghcr.io/daetan999/triton-multimodel-bench@sha256:50087af8c9182b01fd1d45c6c4c7d77fffe0c321f2e6829b49d48a0add3cccbb
+```
 
 **Success looks like:** the package is public and the intended digest above appears on its package page. Future workflow runs should also end green and print the digest in their summary.
 
@@ -462,11 +467,11 @@ Both commands must return silently with exit code zero. Triton uses CPUs 0–7; 
 
 ## 5.3 Run the five-second live preflight
 
-Use the exact `0.1.4` image digest and Git commit produced after the result-mirroring change. Replace both placeholders before running:
+Use the exact `0.1.4` image digest and source commit:
 
 ```bash
-export BENCH_IMAGE_DIGEST='REPLACE_WITH_0.1.4_IMMUTABLE_DIGEST'
-export BENCH_GIT_COMMIT='REPLACE_WITH_0.1.4_SOURCE_COMMIT'
+export BENCH_IMAGE_DIGEST='ghcr.io/daetan999/triton-multimodel-bench@sha256:50087af8c9182b01fd1d45c6c4c7d77fffe0c321f2e6829b49d48a0add3cccbb'
+export BENCH_GIT_COMMIT='0c40a1fda6bc6bd2989f07d8daada8906fdd3efc'
 taskset --cpu-list 8-12 python3 /opt/triton-benchmark/scripts/run_matrix.py \
   --repository /workspace/model_repository \
   --results-dir /workspace/results/preflight \

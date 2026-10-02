@@ -55,15 +55,28 @@ Do not fill fields from memory. Copy values from the commands in `RUNBOOK.md`.
 | Audited Pod cost | US$9.46550393011421 |
 | Current account resources | Zero Pods and zero network volumes, verified 2026-10-02 |
 
+## Compact rerun candidate (not deployed)
+
+| Field | Value |
+|---|---|
+| Preferred GPU | NVIDIA L4, Secure Cloud, 24 GB |
+| Live availability | Low stock with CUDA 13.0 |
+| Live data centers | `EU-RO-1`, `EUR-IS-1`, `EUR-IS-2`, `US-GA-2`, `US-MO-2` |
+| Live GPU price | US$0.49/hour, retrieved 2026-10-02 |
+| Maximum session | Two hours |
+| Maximum compute charge | US$0.98, plus approximately US$0.006 for the 20 GB temporary disk |
+| Fallback policy | Do not substitute L40 or L40S without a new quote and approval |
+| Deployment status | Not created; explicit approval still required |
+
 ## Triton server
 
 | Field | Value |
 |---|---|
 | Container tag | `nvcr.io/nvidia/tritonserver:25.06-py3` |
-| Project image tag | `ghcr.io/daetan999/triton-multimodel-bench:0.1.3` |
-| Project image digest | `sha256:20d4c4582fefe59e3ddd62fd30fe001db790e2bb1c92417324c345bc5f76efea` |
-| Image source commit | `1e9a52390ec1047a0f10e7cc75a99365a15b7379` |
-| Release history | FIL compatibility in `0.1.1`; benchmark harness in `0.1.2`; bounded ONNX thread pools in `0.1.3` |
+| Project image tag | `ghcr.io/daetan999/triton-multimodel-bench:0.1.4` |
+| Project image digest | `sha256:50087af8c9182b01fd1d45c6c4c7d77fffe0c321f2e6829b49d48a0add3cccbb` |
+| Image source commit | `0c40a1fda6bc6bd2989f07d8daada8906fdd3efc` |
+| Release history | FIL compatibility in `0.1.1`; harness in `0.1.2`; bounded ONNX threads in `0.1.3`; result mirroring support in `0.1.4` |
 | Triton server | 2.59.0 |
 | CUDA in container | 12.9.1 |
 | ONNX Runtime backend | 1.22.0 |

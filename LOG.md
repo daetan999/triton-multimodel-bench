@@ -364,6 +364,12 @@ Audit the L40S retry, stop all billing, preserve an accurate project record, and
 - RED: the container contract failed because the Pod image lacked `rsync`.
 - GREEN: the contract passed after adding `rsync` to the image package list.
 
+### Release `0.1.4`
+
+- Pushed source commit `0c40a1fda6bc6bd2989f07d8daada8906fdd3efc` after the pre-push hook passed all 40 tests.
+- GitHub Actions run `36950090842` built the Linux AMD64 image, passed every container smoke test, and published `0.1.4` successfully.
+- Anonymous GHCR access returned a 42-layer manifest at digest `sha256:50087af8c9182b01fd1d45c6c4c7d77fffe0c321f2e6829b49d48a0add3cccbb`, matching the workflow output.
+
 ### Next step
 
-Verify the complete local test suite, publish image `0.1.4`, then obtain explicit approval for the maximum quoted cost of one short GPU session. Start no paid resource before the live mirror canary and scheduled termination check are ready.
+Read live GPU availability and obtain explicit approval for the maximum quoted cost of one short session. Start no paid resource before the live mirror canary and scheduled termination check are ready.
