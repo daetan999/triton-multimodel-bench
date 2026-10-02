@@ -55,18 +55,26 @@ Do not fill fields from memory. Copy values from the commands in `RUNBOOK.md`.
 | Audited Pod cost | US$9.46550393011421 |
 | Current account resources | Zero Pods and zero network volumes, verified 2026-10-02 |
 
-## Compact rerun candidate (not deployed)
+## Final L4 portfolio benchmark (terminated)
 
 | Field | Value |
 |---|---|
-| Preferred GPU | NVIDIA L4, Secure Cloud, 24 GB |
-| Live availability | Low stock with CUDA 13.0 |
-| Live data centers | `EU-RO-1`, `EUR-IS-1`, `EUR-IS-2`, `US-GA-2`, `US-MO-2` |
-| Live GPU price | US$0.49/hour, retrieved 2026-10-02 |
-| Maximum session | Two hours |
-| Maximum compute charge | US$0.98, plus approximately US$0.006 for the 20 GB temporary disk |
-| Fallback policy | Do not substitute L40 or L40S without a new quote and approval |
-| Deployment status | Not created; explicit approval still required |
+| Pod ID | `2xaiz7x6p3dybr` |
+| Cloud / data center | Secure Cloud / `EUR-IS-1` |
+| GPU | NVIDIA L4, 23,034 MiB usable VRAM |
+| NVIDIA driver / RunPod CUDA | 580.159.04 / 13.0 |
+| Host CPU | AMD EPYC 7713; 128 logical CPUs visible; cgroup quota 15.3 cores |
+| CPU split | Triton CPUs 0–7; load generator CPUs 8–12 |
+| Live price | US$0.49/hour, retrieved 2026-10-02 |
+| Container disk / network volume | 20 GB disposable / none |
+| Pod created at | `2026-10-02T01:46:42.191Z` |
+| Container-ready uptime at final read | 989 seconds; image download time preceded container readiness |
+| Approved maximum | Two hours; US$0.98 compute plus the temporary disk charge |
+| Approximate wall-clock compute cost | About US$0.30 at the quoted hourly rate |
+| Preflight | 100 models; 257 measured requests; 51.4 achieved QPS; zero failures |
+| Formal matrix | 18/18 valid; 107,988 measured requests; zero failures |
+| Evidence | 83 formal-matrix files verified against Pod-generated SHA-256 checksums |
+| Final resource state | Pod terminated; zero Pods and zero network volumes verified 2026-10-02 |
 
 ## Triton server
 
@@ -82,7 +90,7 @@ Do not fill fields from memory. Copy values from the commands in `RUNBOOK.md`.
 | ONNX Runtime backend | 1.22.0 |
 | FIL backend | Included |
 | XGBoost | 3.0.2 from image `0.1.1` onward; `0.1.0` contained incompatible 3.4.0 |
-| NVIDIA driver | 595.91.07; host CUDA 13.2 |
+| Final benchmark driver | 580.159.04; RunPod CUDA 13.0 |
 | ONNX opset | 15 |
 
 ## Benchmark policy

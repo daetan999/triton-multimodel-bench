@@ -1,0 +1,150 @@
+
+=== launch 2026-10-02T02:15:45Z ===
+Warning: '--strict-model-config' has been deprecated! Please use '--disable-auto-complete-config' instead.
+I1002 02:15:46.110424 15222 pinned_memory_manager.cc:277] "Pinned memory pool is created at '0x754612000000' with size 268435456"
+I1002 02:15:46.112584 15222 cuda_memory_manager.cc:107] "CUDA memory pool is created on device 0 with size 67108864"
+I1002 02:15:46.118553 15222 model_lifecycle.cc:473] "loading: onnx_model_001:1"
+I1002 02:15:46.118609 15222 model_lifecycle.cc:473] "loading: onnx_model_002:1"
+I1002 02:15:46.118649 15222 model_lifecycle.cc:473] "loading: onnx_model_003:1"
+I1002 02:15:46.118689 15222 model_lifecycle.cc:473] "loading: onnx_model_000:1"
+I1002 02:15:46.118724 15222 model_lifecycle.cc:473] "loading: onnx_model_004:1"
+I1002 02:15:46.118769 15222 model_lifecycle.cc:473] "loading: onnx_model_005:1"
+I1002 02:15:46.118810 15222 model_lifecycle.cc:473] "loading: onnx_model_006:1"
+I1002 02:15:46.118844 15222 model_lifecycle.cc:473] "loading: onnx_model_007:1"
+I1002 02:15:46.118879 15222 model_lifecycle.cc:473] "loading: onnx_model_008:1"
+I1002 02:15:46.118920 15222 model_lifecycle.cc:473] "loading: onnx_model_009:1"
+I1002 02:15:46.120857 15222 onnxruntime.cc:2914] "TRITONBACKEND_Initialize: onnxruntime"
+I1002 02:15:46.120875 15222 onnxruntime.cc:2924] "Triton TRITONBACKEND API version: 1.19"
+I1002 02:15:46.120882 15222 onnxruntime.cc:2930] "'onnxruntime' TRITONBACKEND API version: 1.19"
+I1002 02:15:46.120887 15222 onnxruntime.cc:2960] "backend configuration:\n{\"cmdline\":{\"auto-complete-config\":\"false\",\"backend-directory\":\"/opt/tritonserver/backends\",\"enable-global-threadpool\":\"1\",\"inter_op_thread_count\":\"1\",\"intra_op_thread_count\":\"8\",\"min-compute-capability\":\"6.000000\",\"default-max-batch-size\":\"4\"}}"
+I1002 02:15:46.149813 15222 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_001 (version 1)"
+I1002 02:15:46.150446 15222 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_001_0_0 (GPU device 0)"
+I1002 02:15:46.152824 15222 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_002 (version 1)"
+I1002 02:15:46.153266 15222 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_002_0_0 (GPU device 0)"
+I1002 02:15:46.154620 15222 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_003 (version 1)"
+I1002 02:15:46.154972 15222 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_000 (version 1)"
+I1002 02:15:46.161702 15222 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_003_0_0 (GPU device 0)"
+I1002 02:15:46.161725 15222 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_000_0_0 (GPU device 0)"
+I1002 02:15:46.294526 15222 model_lifecycle.cc:849] "successfully loaded 'onnx_model_001'"
+I1002 02:15:46.300071 15222 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_004 (version 1)"
+I1002 02:15:46.300567 15222 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_004_0_0 (GPU device 0)"
+I1002 02:15:46.311117 15222 model_lifecycle.cc:849] "successfully loaded 'onnx_model_003'"
+I1002 02:15:46.323372 15222 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_005 (version 1)"
+I1002 02:15:46.324096 15222 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_005_0_0 (GPU device 0)"
+I1002 02:15:46.327997 15222 model_lifecycle.cc:849] "successfully loaded 'onnx_model_000'"
+I1002 02:15:46.331808 15222 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_006 (version 1)"
+I1002 02:15:46.332164 15222 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_006_0_0 (GPU device 0)"
+I1002 02:15:46.336008 15222 model_lifecycle.cc:849] "successfully loaded 'onnx_model_002'"
+I1002 02:15:46.340204 15222 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_007 (version 1)"
+I1002 02:15:46.340639 15222 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_007_0_0 (GPU device 0)"
+I1002 02:15:46.343234 15222 model_lifecycle.cc:849] "successfully loaded 'onnx_model_004'"
+I1002 02:15:46.346700 15222 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_008 (version 1)"
+I1002 02:15:46.347043 15222 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_008_0_0 (GPU device 0)"
+I1002 02:15:46.350406 15222 model_lifecycle.cc:849] "successfully loaded 'onnx_model_005'"
+I1002 02:15:46.353559 15222 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_009 (version 1)"
+I1002 02:15:46.353913 15222 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_009_0_0 (GPU device 0)"
+I1002 02:15:46.358250 15222 model_lifecycle.cc:849] "successfully loaded 'onnx_model_006'"
+I1002 02:15:46.362305 15222 model_lifecycle.cc:849] "successfully loaded 'onnx_model_007'"
+I1002 02:15:46.366455 15222 model_lifecycle.cc:849] "successfully loaded 'onnx_model_008'"
+I1002 02:15:46.370623 15222 model_lifecycle.cc:849] "successfully loaded 'onnx_model_009'"
+I1002 02:15:46.370733 15222 server.cc:611] 
++------------------+------+
+| Repository Agent | Path |
++------------------+------+
++------------------+------+
+
+I1002 02:15:46.370767 15222 server.cc:638] 
++-------------+-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Backend     | Path                                                            | Config                                                                                                                                                                                                                                                |
++-------------+-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| onnxruntime | /opt/tritonserver/backends/onnxruntime/libtriton_onnxruntime.so | {"cmdline":{"auto-complete-config":"false","backend-directory":"/opt/tritonserver/backends","enable-global-threadpool":"1","inter_op_thread_count":"1","intra_op_thread_count":"8","min-compute-capability":"6.000000","default-max-batch-size":"4"}} |
++-------------+-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I1002 02:15:46.370825 15222 server.cc:681] 
++----------------+---------+--------+
+| Model          | Version | Status |
++----------------+---------+--------+
+| onnx_model_000 | 1       | READY  |
+| onnx_model_001 | 1       | READY  |
+| onnx_model_002 | 1       | READY  |
+| onnx_model_003 | 1       | READY  |
+| onnx_model_004 | 1       | READY  |
+| onnx_model_005 | 1       | READY  |
+| onnx_model_006 | 1       | READY  |
+| onnx_model_007 | 1       | READY  |
+| onnx_model_008 | 1       | READY  |
+| onnx_model_009 | 1       | READY  |
++----------------+---------+--------+
+
+I1002 02:15:46.398536 15222 metrics.cc:890] "Collecting metrics for GPU 0: NVIDIA L4"
+I1002 02:15:46.401410 15222 metrics.cc:783] "Collecting CPU metrics"
+I1002 02:15:46.401554 15222 tritonserver.cc:2598] 
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Option                           | Value                                                                                                                                                                                                           |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| server_id                        | triton                                                                                                                                                                                                          |
+| server_version                   | 2.59.0                                                                                                                                                                                                          |
+| server_extensions                | classification sequence model_repository model_repository(unload_dependents) schedule_policy model_configuration system_shared_memory cuda_shared_memory binary_tensor_data parameters statistics trace logging |
+| model_repository_path[0]         | /workspace/model_repository                                                                                                                                                                                     |
+| model_control_mode               | MODE_EXPLICIT                                                                                                                                                                                                   |
+| startup_models_0                 | onnx_model_000                                                                                                                                                                                                  |
+| startup_models_1                 | onnx_model_001                                                                                                                                                                                                  |
+| startup_models_2                 | onnx_model_002                                                                                                                                                                                                  |
+| startup_models_3                 | onnx_model_003                                                                                                                                                                                                  |
+| startup_models_4                 | onnx_model_004                                                                                                                                                                                                  |
+| startup_models_5                 | onnx_model_005                                                                                                                                                                                                  |
+| startup_models_6                 | onnx_model_006                                                                                                                                                                                                  |
+| startup_models_7                 | onnx_model_007                                                                                                                                                                                                  |
+| startup_models_8                 | onnx_model_008                                                                                                                                                                                                  |
+| startup_models_9                 | onnx_model_009                                                                                                                                                                                                  |
+| strict_model_config              | 1                                                                                                                                                                                                               |
+| model_config_name                |                                                                                                                                                                                                                 |
+| rate_limit                       | OFF                                                                                                                                                                                                             |
+| pinned_memory_pool_byte_size     | 268435456                                                                                                                                                                                                       |
+| cuda_memory_pool_byte_size{0}    | 67108864                                                                                                                                                                                                        |
+| min_supported_compute_capability | 6.0                                                                                                                                                                                                             |
+| strict_readiness                 | 1                                                                                                                                                                                                               |
+| exit_timeout                     | 30                                                                                                                                                                                                              |
+| cache_enabled                    | 0                                                                                                                                                                                                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I1002 02:15:46.404778 15222 grpc_server.cc:2562] "Started GRPCInferenceService at 0.0.0.0:8001"
+I1002 02:15:46.404980 15222 http_server.cc:4832] "Started HTTPService at 0.0.0.0:8000"
+I1002 02:15:46.462736 15222 http_server.cc:358] "Started Metrics Service at 0.0.0.0:8002"
+Signal (15) received.
+I1002 02:17:34.960460 15222 grpc_server.cc:2640] "Timeout 30: Found 3 gRPC service connections and inference handlers"
+I1002 02:17:35.960601 15222 server.cc:312] "Waiting for in-flight requests to complete."
+I1002 02:17:35.960646 15222 server.cc:328] "Timeout 29: Found 0 model versions that have in-flight inferences"
+I1002 02:17:35.961179 15222 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:17:35.961233 15222 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:17:35.961281 15222 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:17:35.961363 15222 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:17:35.961387 15222 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:17:35.961435 15222 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:17:35.961586 15222 server.cc:343] "All models are stopped, unloading models"
+I1002 02:17:35.961629 15222 server.cc:352] "Timeout 29: Found 10 live models and 0 in-flight non-inference requests"
+I1002 02:17:35.961643 15222 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:17:35.961874 15222 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:17:35.961886 15222 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:17:35.961950 15222 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:17:35.965449 15222 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:17:35.965489 15222 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_004' version 1"
+I1002 02:17:35.966427 15222 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:17:35.966460 15222 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_003' version 1"
+I1002 02:17:35.966593 15222 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:17:35.966628 15222 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_001' version 1"
+I1002 02:17:35.966836 15222 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:17:35.966866 15222 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_002' version 1"
+I1002 02:17:35.967598 15222 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:17:35.967626 15222 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_007' version 1"
+I1002 02:17:35.967854 15222 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:17:35.967888 15222 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_005' version 1"
+I1002 02:17:35.968267 15222 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:17:35.968289 15222 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:17:35.968296 15222 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_000' version 1"
+I1002 02:17:35.968318 15222 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_009' version 1"
+I1002 02:17:35.968343 15222 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:17:35.968374 15222 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_006' version 1"
+I1002 02:17:35.969283 15222 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:17:35.969320 15222 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_008' version 1"
+I1002 02:17:36.961813 15222 server.cc:352] "Timeout 28: Found 0 live models and 0 in-flight non-inference requests"

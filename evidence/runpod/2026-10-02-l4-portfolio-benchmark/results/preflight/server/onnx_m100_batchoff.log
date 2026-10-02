@@ -1,0 +1,960 @@
+
+=== launch 2026-10-02T02:07:29Z ===
+Warning: '--strict-model-config' has been deprecated! Please use '--disable-auto-complete-config' instead.
+I1002 02:07:29.627061 13159 pinned_memory_manager.cc:277] "Pinned memory pool is created at '0x70352a000000' with size 268435456"
+I1002 02:07:29.629242 13159 cuda_memory_manager.cc:107] "CUDA memory pool is created on device 0 with size 67108864"
+I1002 02:07:29.649888 13159 model_lifecycle.cc:473] "loading: onnx_model_000:1"
+I1002 02:07:29.649944 13159 model_lifecycle.cc:473] "loading: onnx_model_001:1"
+I1002 02:07:29.649981 13159 model_lifecycle.cc:473] "loading: onnx_model_002:1"
+I1002 02:07:29.650019 13159 model_lifecycle.cc:473] "loading: onnx_model_003:1"
+I1002 02:07:29.650057 13159 model_lifecycle.cc:473] "loading: onnx_model_004:1"
+I1002 02:07:29.650090 13159 model_lifecycle.cc:473] "loading: onnx_model_005:1"
+I1002 02:07:29.650125 13159 model_lifecycle.cc:473] "loading: onnx_model_006:1"
+I1002 02:07:29.650163 13159 model_lifecycle.cc:473] "loading: onnx_model_007:1"
+I1002 02:07:29.650196 13159 model_lifecycle.cc:473] "loading: onnx_model_008:1"
+I1002 02:07:29.650241 13159 model_lifecycle.cc:473] "loading: onnx_model_009:1"
+I1002 02:07:29.650275 13159 model_lifecycle.cc:473] "loading: onnx_model_010:1"
+I1002 02:07:29.650309 13159 model_lifecycle.cc:473] "loading: onnx_model_011:1"
+I1002 02:07:29.650343 13159 model_lifecycle.cc:473] "loading: onnx_model_012:1"
+I1002 02:07:29.650388 13159 model_lifecycle.cc:473] "loading: onnx_model_013:1"
+I1002 02:07:29.650427 13159 model_lifecycle.cc:473] "loading: onnx_model_014:1"
+I1002 02:07:29.650467 13159 model_lifecycle.cc:473] "loading: onnx_model_015:1"
+I1002 02:07:29.650502 13159 model_lifecycle.cc:473] "loading: onnx_model_016:1"
+I1002 02:07:29.650534 13159 model_lifecycle.cc:473] "loading: onnx_model_017:1"
+I1002 02:07:29.650569 13159 model_lifecycle.cc:473] "loading: onnx_model_018:1"
+I1002 02:07:29.650604 13159 model_lifecycle.cc:473] "loading: onnx_model_019:1"
+I1002 02:07:29.650636 13159 model_lifecycle.cc:473] "loading: onnx_model_020:1"
+I1002 02:07:29.650671 13159 model_lifecycle.cc:473] "loading: onnx_model_021:1"
+I1002 02:07:29.650707 13159 model_lifecycle.cc:473] "loading: onnx_model_022:1"
+I1002 02:07:29.650746 13159 model_lifecycle.cc:473] "loading: onnx_model_023:1"
+I1002 02:07:29.650784 13159 model_lifecycle.cc:473] "loading: onnx_model_024:1"
+I1002 02:07:29.650823 13159 model_lifecycle.cc:473] "loading: onnx_model_025:1"
+I1002 02:07:29.650865 13159 model_lifecycle.cc:473] "loading: onnx_model_026:1"
+I1002 02:07:29.650900 13159 model_lifecycle.cc:473] "loading: onnx_model_027:1"
+I1002 02:07:29.650935 13159 model_lifecycle.cc:473] "loading: onnx_model_028:1"
+I1002 02:07:29.650966 13159 model_lifecycle.cc:473] "loading: onnx_model_029:1"
+I1002 02:07:29.651004 13159 model_lifecycle.cc:473] "loading: onnx_model_030:1"
+I1002 02:07:29.651038 13159 model_lifecycle.cc:473] "loading: onnx_model_031:1"
+I1002 02:07:29.651070 13159 model_lifecycle.cc:473] "loading: onnx_model_032:1"
+I1002 02:07:29.651108 13159 model_lifecycle.cc:473] "loading: onnx_model_033:1"
+I1002 02:07:29.651149 13159 model_lifecycle.cc:473] "loading: onnx_model_034:1"
+I1002 02:07:29.651184 13159 model_lifecycle.cc:473] "loading: onnx_model_035:1"
+I1002 02:07:29.651215 13159 model_lifecycle.cc:473] "loading: onnx_model_036:1"
+I1002 02:07:29.651253 13159 model_lifecycle.cc:473] "loading: onnx_model_037:1"
+I1002 02:07:29.651290 13159 model_lifecycle.cc:473] "loading: onnx_model_038:1"
+I1002 02:07:29.651323 13159 model_lifecycle.cc:473] "loading: onnx_model_039:1"
+I1002 02:07:29.651357 13159 model_lifecycle.cc:473] "loading: onnx_model_040:1"
+I1002 02:07:29.651394 13159 model_lifecycle.cc:473] "loading: onnx_model_041:1"
+I1002 02:07:29.651426 13159 model_lifecycle.cc:473] "loading: onnx_model_042:1"
+I1002 02:07:29.651460 13159 model_lifecycle.cc:473] "loading: onnx_model_043:1"
+I1002 02:07:29.651495 13159 model_lifecycle.cc:473] "loading: onnx_model_044:1"
+I1002 02:07:29.651527 13159 model_lifecycle.cc:473] "loading: onnx_model_045:1"
+I1002 02:07:29.651561 13159 model_lifecycle.cc:473] "loading: onnx_model_046:1"
+I1002 02:07:29.651610 13159 model_lifecycle.cc:473] "loading: onnx_model_047:1"
+I1002 02:07:29.651642 13159 model_lifecycle.cc:473] "loading: onnx_model_048:1"
+I1002 02:07:29.651673 13159 model_lifecycle.cc:473] "loading: onnx_model_049:1"
+I1002 02:07:29.651714 13159 model_lifecycle.cc:473] "loading: onnx_model_050:1"
+I1002 02:07:29.651753 13159 model_lifecycle.cc:473] "loading: onnx_model_051:1"
+I1002 02:07:29.651793 13159 model_lifecycle.cc:473] "loading: onnx_model_052:1"
+I1002 02:07:29.651837 13159 model_lifecycle.cc:473] "loading: onnx_model_053:1"
+I1002 02:07:29.651870 13159 model_lifecycle.cc:473] "loading: onnx_model_054:1"
+I1002 02:07:29.651905 13159 model_lifecycle.cc:473] "loading: onnx_model_055:1"
+I1002 02:07:29.651940 13159 model_lifecycle.cc:473] "loading: onnx_model_056:1"
+I1002 02:07:29.651973 13159 model_lifecycle.cc:473] "loading: onnx_model_057:1"
+I1002 02:07:29.652007 13159 model_lifecycle.cc:473] "loading: onnx_model_058:1"
+I1002 02:07:29.652042 13159 model_lifecycle.cc:473] "loading: onnx_model_059:1"
+I1002 02:07:29.652074 13159 model_lifecycle.cc:473] "loading: onnx_model_060:1"
+I1002 02:07:29.652106 13159 model_lifecycle.cc:473] "loading: onnx_model_061:1"
+I1002 02:07:29.652141 13159 model_lifecycle.cc:473] "loading: onnx_model_062:1"
+I1002 02:07:29.652176 13159 model_lifecycle.cc:473] "loading: onnx_model_063:1"
+I1002 02:07:29.652211 13159 model_lifecycle.cc:473] "loading: onnx_model_064:1"
+I1002 02:07:29.652245 13159 model_lifecycle.cc:473] "loading: onnx_model_065:1"
+I1002 02:07:29.652277 13159 model_lifecycle.cc:473] "loading: onnx_model_066:1"
+I1002 02:07:29.652311 13159 model_lifecycle.cc:473] "loading: onnx_model_067:1"
+I1002 02:07:29.652346 13159 model_lifecycle.cc:473] "loading: onnx_model_068:1"
+I1002 02:07:29.652378 13159 model_lifecycle.cc:473] "loading: onnx_model_069:1"
+I1002 02:07:29.652412 13159 model_lifecycle.cc:473] "loading: onnx_model_070:1"
+I1002 02:07:29.652448 13159 model_lifecycle.cc:473] "loading: onnx_model_071:1"
+I1002 02:07:29.652446 13159 onnxruntime.cc:2914] "TRITONBACKEND_Initialize: onnxruntime"
+I1002 02:07:29.652476 13159 onnxruntime.cc:2924] "Triton TRITONBACKEND API version: 1.19"
+I1002 02:07:29.652483 13159 model_lifecycle.cc:473] "loading: onnx_model_072:1"
+I1002 02:07:29.652484 13159 onnxruntime.cc:2930] "'onnxruntime' TRITONBACKEND API version: 1.19"
+I1002 02:07:29.652498 13159 onnxruntime.cc:2960] "backend configuration:\n{\"cmdline\":{\"auto-complete-config\":\"false\",\"backend-directory\":\"/opt/tritonserver/backends\",\"enable-global-threadpool\":\"1\",\"inter_op_thread_count\":\"1\",\"intra_op_thread_count\":\"8\",\"min-compute-capability\":\"6.000000\",\"default-max-batch-size\":\"4\"}}"
+I1002 02:07:29.652516 13159 model_lifecycle.cc:473] "loading: onnx_model_073:1"
+I1002 02:07:29.652553 13159 model_lifecycle.cc:473] "loading: onnx_model_074:1"
+I1002 02:07:29.652591 13159 model_lifecycle.cc:473] "loading: onnx_model_075:1"
+I1002 02:07:29.652629 13159 model_lifecycle.cc:473] "loading: onnx_model_076:1"
+I1002 02:07:29.652668 13159 model_lifecycle.cc:473] "loading: onnx_model_077:1"
+I1002 02:07:29.652705 13159 model_lifecycle.cc:473] "loading: onnx_model_078:1"
+I1002 02:07:29.652748 13159 model_lifecycle.cc:473] "loading: onnx_model_079:1"
+I1002 02:07:29.652794 13159 model_lifecycle.cc:473] "loading: onnx_model_080:1"
+I1002 02:07:29.652831 13159 model_lifecycle.cc:473] "loading: onnx_model_081:1"
+I1002 02:07:29.652867 13159 model_lifecycle.cc:473] "loading: onnx_model_082:1"
+I1002 02:07:29.652902 13159 model_lifecycle.cc:473] "loading: onnx_model_083:1"
+I1002 02:07:29.652934 13159 model_lifecycle.cc:473] "loading: onnx_model_084:1"
+I1002 02:07:29.652966 13159 model_lifecycle.cc:473] "loading: onnx_model_085:1"
+I1002 02:07:29.652998 13159 model_lifecycle.cc:473] "loading: onnx_model_086:1"
+I1002 02:07:29.653035 13159 model_lifecycle.cc:473] "loading: onnx_model_087:1"
+I1002 02:07:29.653072 13159 model_lifecycle.cc:473] "loading: onnx_model_088:1"
+I1002 02:07:29.653107 13159 model_lifecycle.cc:473] "loading: onnx_model_089:1"
+I1002 02:07:29.653145 13159 model_lifecycle.cc:473] "loading: onnx_model_090:1"
+I1002 02:07:29.653180 13159 model_lifecycle.cc:473] "loading: onnx_model_091:1"
+I1002 02:07:29.653214 13159 model_lifecycle.cc:473] "loading: onnx_model_092:1"
+I1002 02:07:29.653247 13159 model_lifecycle.cc:473] "loading: onnx_model_093:1"
+I1002 02:07:29.653283 13159 model_lifecycle.cc:473] "loading: onnx_model_094:1"
+I1002 02:07:29.653321 13159 model_lifecycle.cc:473] "loading: onnx_model_095:1"
+I1002 02:07:29.653353 13159 model_lifecycle.cc:473] "loading: onnx_model_096:1"
+I1002 02:07:29.653388 13159 model_lifecycle.cc:473] "loading: onnx_model_097:1"
+I1002 02:07:29.653420 13159 model_lifecycle.cc:473] "loading: onnx_model_098:1"
+I1002 02:07:29.653452 13159 model_lifecycle.cc:473] "loading: onnx_model_099:1"
+I1002 02:07:29.679170 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_000 (version 1)"
+I1002 02:07:29.679840 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_000_0_0 (GPU device 0)"
+I1002 02:07:29.685248 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_001 (version 1)"
+I1002 02:07:29.686970 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_002 (version 1)"
+I1002 02:07:29.687087 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_003 (version 1)"
+I1002 02:07:29.690017 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_002_0_0 (GPU device 0)"
+I1002 02:07:29.690023 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_001_0_0 (GPU device 0)"
+I1002 02:07:29.690040 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_003_0_0 (GPU device 0)"
+I1002 02:07:29.798650 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_000'"
+I1002 02:07:29.801929 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_004 (version 1)"
+I1002 02:07:29.802375 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_004_0_0 (GPU device 0)"
+I1002 02:07:29.806639 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_001'"
+I1002 02:07:29.810208 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_005 (version 1)"
+I1002 02:07:29.810594 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_005_0_0 (GPU device 0)"
+I1002 02:07:29.814681 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_002'"
+I1002 02:07:29.818097 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_006 (version 1)"
+I1002 02:07:29.818470 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_006_0_0 (GPU device 0)"
+I1002 02:07:29.823140 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_003'"
+I1002 02:07:29.827062 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_007 (version 1)"
+I1002 02:07:29.827431 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_007_0_0 (GPU device 0)"
+I1002 02:07:29.830645 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_004'"
+I1002 02:07:29.834422 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_008 (version 1)"
+I1002 02:07:29.834778 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_008_0_0 (GPU device 0)"
+I1002 02:07:29.837812 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_005'"
+I1002 02:07:29.841133 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_009 (version 1)"
+I1002 02:07:29.841485 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_009_0_0 (GPU device 0)"
+I1002 02:07:29.845825 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_006'"
+I1002 02:07:29.848767 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_010 (version 1)"
+I1002 02:07:29.849126 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_010_0_0 (GPU device 0)"
+I1002 02:07:29.852812 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_007'"
+I1002 02:07:29.855946 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_011 (version 1)"
+I1002 02:07:29.856284 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_011_0_0 (GPU device 0)"
+I1002 02:07:29.859979 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_008'"
+I1002 02:07:29.863253 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_012 (version 1)"
+I1002 02:07:29.863584 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_012_0_0 (GPU device 0)"
+I1002 02:07:29.867277 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_009'"
+I1002 02:07:29.870798 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_013 (version 1)"
+I1002 02:07:29.871146 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_013_0_0 (GPU device 0)"
+I1002 02:07:29.875365 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_010'"
+I1002 02:07:29.879370 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_014 (version 1)"
+I1002 02:07:29.879744 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_014_0_0 (GPU device 0)"
+I1002 02:07:29.882532 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_011'"
+I1002 02:07:29.886543 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_015 (version 1)"
+I1002 02:07:29.886891 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_015_0_0 (GPU device 0)"
+I1002 02:07:29.890584 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_012'"
+I1002 02:07:29.893698 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_016 (version 1)"
+I1002 02:07:29.894052 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_016_0_0 (GPU device 0)"
+I1002 02:07:29.897752 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_013'"
+I1002 02:07:29.901174 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_017 (version 1)"
+I1002 02:07:29.901544 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_017_0_0 (GPU device 0)"
+I1002 02:07:29.905869 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_014'"
+I1002 02:07:29.909487 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_018 (version 1)"
+I1002 02:07:29.909857 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_018_0_0 (GPU device 0)"
+I1002 02:07:29.913155 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_015'"
+I1002 02:07:29.917357 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_019 (version 1)"
+I1002 02:07:29.917743 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_019_0_0 (GPU device 0)"
+I1002 02:07:29.920328 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_016'"
+I1002 02:07:29.923703 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_020 (version 1)"
+I1002 02:07:29.924062 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_020_0_0 (GPU device 0)"
+I1002 02:07:29.927793 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_017'"
+I1002 02:07:29.931560 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_021 (version 1)"
+I1002 02:07:29.931916 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_021_0_0 (GPU device 0)"
+I1002 02:07:29.935716 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_018'"
+I1002 02:07:29.938536 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_022 (version 1)"
+I1002 02:07:29.938903 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_022_0_0 (GPU device 0)"
+I1002 02:07:29.942784 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_019'"
+I1002 02:07:29.946519 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_023 (version 1)"
+I1002 02:07:29.946872 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_023_0_0 (GPU device 0)"
+I1002 02:07:29.950200 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_020'"
+I1002 02:07:29.953520 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_024 (version 1)"
+I1002 02:07:29.953871 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_024_0_0 (GPU device 0)"
+I1002 02:07:29.957629 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_021'"
+I1002 02:07:29.961187 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_025 (version 1)"
+I1002 02:07:29.961533 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_025_0_0 (GPU device 0)"
+I1002 02:07:29.965919 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_022'"
+I1002 02:07:29.969897 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_026 (version 1)"
+I1002 02:07:29.970274 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_026_0_0 (GPU device 0)"
+I1002 02:07:29.972958 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_023'"
+I1002 02:07:29.979796 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_027 (version 1)"
+I1002 02:07:29.980142 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_027_0_0 (GPU device 0)"
+I1002 02:07:29.988695 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_024'"
+I1002 02:07:30.000164 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_028 (version 1)"
+I1002 02:07:30.000573 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_028_0_0 (GPU device 0)"
+I1002 02:07:30.022100 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_025'"
+I1002 02:07:30.032181 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_029 (version 1)"
+I1002 02:07:30.032568 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_029_0_0 (GPU device 0)"
+I1002 02:07:30.046089 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_026'"
+I1002 02:07:30.055365 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_030 (version 1)"
+I1002 02:07:30.055818 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_030_0_0 (GPU device 0)"
+I1002 02:07:30.056865 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_027'"
+I1002 02:07:30.063289 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_031 (version 1)"
+I1002 02:07:30.063718 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_031_0_0 (GPU device 0)"
+I1002 02:07:30.068802 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_028'"
+I1002 02:07:30.072594 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_032 (version 1)"
+I1002 02:07:30.072974 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_032_0_0 (GPU device 0)"
+I1002 02:07:30.093279 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_029'"
+I1002 02:07:30.100864 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_033 (version 1)"
+I1002 02:07:30.101225 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_033_0_0 (GPU device 0)"
+I1002 02:07:30.105362 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_030'"
+I1002 02:07:30.108873 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_034 (version 1)"
+I1002 02:07:30.109255 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_034_0_0 (GPU device 0)"
+I1002 02:07:30.113474 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_031'"
+I1002 02:07:30.116952 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_035 (version 1)"
+I1002 02:07:30.117316 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_035_0_0 (GPU device 0)"
+I1002 02:07:30.120640 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_032'"
+I1002 02:07:30.124142 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_036 (version 1)"
+I1002 02:07:30.124488 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_036_0_0 (GPU device 0)"
+I1002 02:07:30.128947 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_033'"
+I1002 02:07:30.132179 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_037 (version 1)"
+I1002 02:07:30.132551 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_037_0_0 (GPU device 0)"
+I1002 02:07:30.136945 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_034'"
+I1002 02:07:30.140171 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_038 (version 1)"
+I1002 02:07:30.140545 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_038_0_0 (GPU device 0)"
+I1002 02:07:30.144071 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_035'"
+I1002 02:07:30.148178 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_039 (version 1)"
+I1002 02:07:30.148535 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_039_0_0 (GPU device 0)"
+I1002 02:07:30.151025 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_036'"
+I1002 02:07:30.154375 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_040 (version 1)"
+I1002 02:07:30.154728 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_040_0_0 (GPU device 0)"
+I1002 02:07:30.158811 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_037'"
+I1002 02:07:30.162626 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_041 (version 1)"
+I1002 02:07:30.163011 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_041_0_0 (GPU device 0)"
+I1002 02:07:30.166634 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_038'"
+I1002 02:07:30.170218 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_042 (version 1)"
+I1002 02:07:30.170594 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_042_0_0 (GPU device 0)"
+I1002 02:07:30.174392 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_039'"
+I1002 02:07:30.178471 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_043 (version 1)"
+I1002 02:07:30.178860 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_043_0_0 (GPU device 0)"
+I1002 02:07:30.182132 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_040'"
+I1002 02:07:30.185279 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_044 (version 1)"
+I1002 02:07:30.185657 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_044_0_0 (GPU device 0)"
+I1002 02:07:30.190098 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_041'"
+I1002 02:07:30.193370 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_045 (version 1)"
+I1002 02:07:30.193744 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_045_0_0 (GPU device 0)"
+I1002 02:07:30.197681 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_042'"
+I1002 02:07:30.201263 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_046 (version 1)"
+I1002 02:07:30.201641 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_046_0_0 (GPU device 0)"
+I1002 02:07:30.205711 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_043'"
+I1002 02:07:30.209079 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_047 (version 1)"
+I1002 02:07:30.209443 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_047_0_0 (GPU device 0)"
+I1002 02:07:30.213648 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_044'"
+I1002 02:07:30.217537 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_048 (version 1)"
+I1002 02:07:30.217925 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_048_0_0 (GPU device 0)"
+I1002 02:07:30.220548 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_045'"
+I1002 02:07:30.224014 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_049 (version 1)"
+I1002 02:07:30.224411 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_049_0_0 (GPU device 0)"
+I1002 02:07:30.228388 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_046'"
+I1002 02:07:30.231892 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_050 (version 1)"
+I1002 02:07:30.232361 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_050_0_0 (GPU device 0)"
+I1002 02:07:30.236284 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_047'"
+I1002 02:07:30.239834 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_051 (version 1)"
+I1002 02:07:30.240184 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_051_0_0 (GPU device 0)"
+I1002 02:07:30.243999 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_048'"
+I1002 02:07:30.247380 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_052 (version 1)"
+I1002 02:07:30.247731 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_052_0_0 (GPU device 0)"
+I1002 02:07:30.251527 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_049'"
+I1002 02:07:30.255204 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_053 (version 1)"
+I1002 02:07:30.255559 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_053_0_0 (GPU device 0)"
+I1002 02:07:30.258829 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_050'"
+I1002 02:07:30.262137 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_054 (version 1)"
+I1002 02:07:30.262505 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_054_0_0 (GPU device 0)"
+I1002 02:07:30.266320 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_051'"
+I1002 02:07:30.269541 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_055 (version 1)"
+I1002 02:07:30.269903 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_055_0_0 (GPU device 0)"
+I1002 02:07:30.274204 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_052'"
+I1002 02:07:30.277892 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_056 (version 1)"
+I1002 02:07:30.278225 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_056_0_0 (GPU device 0)"
+I1002 02:07:30.281567 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_053'"
+I1002 02:07:30.285259 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_057 (version 1)"
+I1002 02:07:30.285621 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_057_0_0 (GPU device 0)"
+I1002 02:07:30.289673 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_054'"
+I1002 02:07:30.293006 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_058 (version 1)"
+I1002 02:07:30.293388 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_058_0_0 (GPU device 0)"
+I1002 02:07:30.297668 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_055'"
+I1002 02:07:30.301396 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_059 (version 1)"
+I1002 02:07:30.301766 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_059_0_0 (GPU device 0)"
+I1002 02:07:30.305163 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_056'"
+I1002 02:07:30.308824 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_060 (version 1)"
+I1002 02:07:30.309150 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_060_0_0 (GPU device 0)"
+I1002 02:07:30.312644 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_057'"
+I1002 02:07:30.316048 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_061 (version 1)"
+I1002 02:07:30.316402 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_061_0_0 (GPU device 0)"
+I1002 02:07:30.320326 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_058'"
+I1002 02:07:30.323779 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_062 (version 1)"
+I1002 02:07:30.324373 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_062_0_0 (GPU device 0)"
+I1002 02:07:30.328716 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_059'"
+I1002 02:07:30.331621 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_063 (version 1)"
+I1002 02:07:30.332117 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_063_0_0 (GPU device 0)"
+I1002 02:07:30.335933 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_060'"
+I1002 02:07:30.339603 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_064 (version 1)"
+I1002 02:07:30.340020 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_064_0_0 (GPU device 0)"
+I1002 02:07:30.343201 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_061'"
+I1002 02:07:30.347099 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_065 (version 1)"
+I1002 02:07:30.347462 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_065_0_0 (GPU device 0)"
+I1002 02:07:30.350007 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_062'"
+I1002 02:07:30.353411 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_066 (version 1)"
+I1002 02:07:30.353793 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_066_0_0 (GPU device 0)"
+I1002 02:07:30.358026 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_063'"
+I1002 02:07:30.361423 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_067 (version 1)"
+I1002 02:07:30.361855 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_067_0_0 (GPU device 0)"
+I1002 02:07:30.365716 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_064'"
+I1002 02:07:30.368955 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_068 (version 1)"
+I1002 02:07:30.369315 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_068_0_0 (GPU device 0)"
+I1002 02:07:30.373067 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_065'"
+I1002 02:07:30.376315 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_069 (version 1)"
+I1002 02:07:30.376703 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_069_0_0 (GPU device 0)"
+I1002 02:07:30.380507 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_066'"
+I1002 02:07:30.383980 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_070 (version 1)"
+I1002 02:07:30.384348 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_070_0_0 (GPU device 0)"
+I1002 02:07:30.388580 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_067'"
+I1002 02:07:30.392082 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_071 (version 1)"
+I1002 02:07:30.392416 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_071_0_0 (GPU device 0)"
+I1002 02:07:30.396174 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_068'"
+I1002 02:07:30.399466 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_072 (version 1)"
+I1002 02:07:30.399835 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_072_0_0 (GPU device 0)"
+I1002 02:07:30.403529 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_069'"
+I1002 02:07:30.406624 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_073 (version 1)"
+I1002 02:07:30.406977 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_073_0_0 (GPU device 0)"
+I1002 02:07:30.410864 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_070'"
+I1002 02:07:30.414524 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_074 (version 1)"
+I1002 02:07:30.414895 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_074_0_0 (GPU device 0)"
+I1002 02:07:30.418203 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_071'"
+I1002 02:07:30.421801 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_075 (version 1)"
+I1002 02:07:30.422148 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_075_0_0 (GPU device 0)"
+I1002 02:07:30.425304 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_072'"
+I1002 02:07:30.428584 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_076 (version 1)"
+I1002 02:07:30.428933 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_076_0_0 (GPU device 0)"
+I1002 02:07:30.432673 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_073'"
+I1002 02:07:30.435723 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_077 (version 1)"
+I1002 02:07:30.436094 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_077_0_0 (GPU device 0)"
+I1002 02:07:30.440481 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_074'"
+I1002 02:07:30.443646 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_078 (version 1)"
+I1002 02:07:30.444026 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_078_0_0 (GPU device 0)"
+I1002 02:07:30.447852 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_075'"
+I1002 02:07:30.451610 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_079 (version 1)"
+I1002 02:07:30.451967 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_079_0_0 (GPU device 0)"
+I1002 02:07:30.455229 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_076'"
+I1002 02:07:30.458453 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_080 (version 1)"
+I1002 02:07:30.458792 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_080_0_0 (GPU device 0)"
+I1002 02:07:30.462137 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_077'"
+I1002 02:07:30.465216 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_081 (version 1)"
+I1002 02:07:30.465571 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_081_0_0 (GPU device 0)"
+I1002 02:07:30.469733 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_078'"
+I1002 02:07:30.473476 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_082 (version 1)"
+I1002 02:07:30.473842 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_082_0_0 (GPU device 0)"
+I1002 02:07:30.477100 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_079'"
+I1002 02:07:30.480931 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_083 (version 1)"
+I1002 02:07:30.481287 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_083_0_0 (GPU device 0)"
+I1002 02:07:30.484605 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_080'"
+I1002 02:07:30.488200 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_084 (version 1)"
+I1002 02:07:30.488533 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_084_0_0 (GPU device 0)"
+I1002 02:07:30.492482 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_081'"
+I1002 02:07:30.495996 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_085 (version 1)"
+I1002 02:07:30.496345 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_085_0_0 (GPU device 0)"
+I1002 02:07:30.500702 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_082'"
+I1002 02:07:30.503768 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_086 (version 1)"
+I1002 02:07:30.504152 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_086_0_0 (GPU device 0)"
+I1002 02:07:30.507654 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_083'"
+I1002 02:07:30.510734 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_087 (version 1)"
+I1002 02:07:30.511075 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_087_0_0 (GPU device 0)"
+I1002 02:07:30.514239 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_084'"
+I1002 02:07:30.517546 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_088 (version 1)"
+I1002 02:07:30.517910 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_088_0_0 (GPU device 0)"
+I1002 02:07:30.521463 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_085'"
+I1002 02:07:30.525174 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_089 (version 1)"
+I1002 02:07:30.525524 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_089_0_0 (GPU device 0)"
+I1002 02:07:30.529384 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_086'"
+I1002 02:07:30.532553 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_090 (version 1)"
+I1002 02:07:30.532938 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_090_0_0 (GPU device 0)"
+I1002 02:07:30.536981 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_087'"
+I1002 02:07:30.540697 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_091 (version 1)"
+I1002 02:07:30.541045 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_091_0_0 (GPU device 0)"
+I1002 02:07:30.544203 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_088'"
+I1002 02:07:30.547571 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_092 (version 1)"
+I1002 02:07:30.547937 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_092_0_0 (GPU device 0)"
+I1002 02:07:30.552396 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_089'"
+I1002 02:07:30.556340 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_093 (version 1)"
+I1002 02:07:30.556707 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_093_0_0 (GPU device 0)"
+I1002 02:07:30.560113 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_090'"
+I1002 02:07:30.563301 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_094 (version 1)"
+I1002 02:07:30.563680 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_094_0_0 (GPU device 0)"
+I1002 02:07:30.567409 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_091'"
+I1002 02:07:30.571400 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_095 (version 1)"
+I1002 02:07:30.571750 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_095_0_0 (GPU device 0)"
+I1002 02:07:30.574446 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_092'"
+I1002 02:07:30.590020 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_096 (version 1)"
+I1002 02:07:30.590374 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_096_0_0 (GPU device 0)"
+I1002 02:07:30.606564 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_093'"
+I1002 02:07:30.611964 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_097 (version 1)"
+I1002 02:07:30.612336 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_097_0_0 (GPU device 0)"
+I1002 02:07:30.634057 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_094'"
+I1002 02:07:30.639755 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_098 (version 1)"
+I1002 02:07:30.640134 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_098_0_0 (GPU device 0)"
+I1002 02:07:30.651174 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_095'"
+I1002 02:07:30.658624 13159 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: onnx_model_099 (version 1)"
+I1002 02:07:30.659003 13159 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: onnx_model_099_0_0 (GPU device 0)"
+I1002 02:07:30.668029 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_096'"
+I1002 02:07:30.683677 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_097'"
+I1002 02:07:30.687954 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_098'"
+I1002 02:07:30.692569 13159 model_lifecycle.cc:849] "successfully loaded 'onnx_model_099'"
+I1002 02:07:30.693233 13159 server.cc:611] 
++------------------+------+
+| Repository Agent | Path |
++------------------+------+
++------------------+------+
+
+I1002 02:07:30.693298 13159 server.cc:638] 
++-------------+-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Backend     | Path                                                            | Config                                                                                                                                                                                                                                                |
++-------------+-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| onnxruntime | /opt/tritonserver/backends/onnxruntime/libtriton_onnxruntime.so | {"cmdline":{"auto-complete-config":"false","backend-directory":"/opt/tritonserver/backends","enable-global-threadpool":"1","inter_op_thread_count":"1","intra_op_thread_count":"8","min-compute-capability":"6.000000","default-max-batch-size":"4"}} |
++-------------+-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I1002 02:07:30.693788 13159 server.cc:681] 
++----------------+---------+--------+
+| Model          | Version | Status |
++----------------+---------+--------+
+| onnx_model_000 | 1       | READY  |
+| onnx_model_001 | 1       | READY  |
+| onnx_model_002 | 1       | READY  |
+| onnx_model_003 | 1       | READY  |
+| onnx_model_004 | 1       | READY  |
+| onnx_model_005 | 1       | READY  |
+| onnx_model_006 | 1       | READY  |
+| onnx_model_007 | 1       | READY  |
+| onnx_model_008 | 1       | READY  |
+| onnx_model_009 | 1       | READY  |
+| onnx_model_010 | 1       | READY  |
+| onnx_model_011 | 1       | READY  |
+| onnx_model_012 | 1       | READY  |
+| onnx_model_013 | 1       | READY  |
+| onnx_model_014 | 1       | READY  |
+| onnx_model_015 | 1       | READY  |
+| onnx_model_016 | 1       | READY  |
+| onnx_model_017 | 1       | READY  |
+| onnx_model_018 | 1       | READY  |
+| onnx_model_019 | 1       | READY  |
+| onnx_model_020 | 1       | READY  |
+| onnx_model_021 | 1       | READY  |
+| onnx_model_022 | 1       | READY  |
+| onnx_model_023 | 1       | READY  |
+| onnx_model_024 | 1       | READY  |
+| onnx_model_025 | 1       | READY  |
+| onnx_model_026 | 1       | READY  |
+| onnx_model_027 | 1       | READY  |
+| onnx_model_028 | 1       | READY  |
+| onnx_model_029 | 1       | READY  |
+| onnx_model_030 | 1       | READY  |
+| onnx_model_031 | 1       | READY  |
+| onnx_model_032 | 1       | READY  |
+| onnx_model_033 | 1       | READY  |
+| onnx_model_034 | 1       | READY  |
+| onnx_model_035 | 1       | READY  |
+| onnx_model_036 | 1       | READY  |
+| onnx_model_037 | 1       | READY  |
+| onnx_model_038 | 1       | READY  |
+| onnx_model_039 | 1       | READY  |
+| onnx_model_040 | 1       | READY  |
+| onnx_model_041 | 1       | READY  |
+| onnx_model_042 | 1       | READY  |
+| onnx_model_043 | 1       | READY  |
+| onnx_model_044 | 1       | READY  |
+| onnx_model_045 | 1       | READY  |
+| onnx_model_046 | 1       | READY  |
+| onnx_model_047 | 1       | READY  |
+| onnx_model_048 | 1       | READY  |
+| onnx_model_049 | 1       | READY  |
+| onnx_model_050 | 1       | READY  |
+| onnx_model_051 | 1       | READY  |
+| onnx_model_052 | 1       | READY  |
+| onnx_model_053 | 1       | READY  |
+| onnx_model_054 | 1       | READY  |
+| onnx_model_055 | 1       | READY  |
+| onnx_model_056 | 1       | READY  |
+| onnx_model_057 | 1       | READY  |
+| onnx_model_058 | 1       | READY  |
+| onnx_model_059 | 1       | READY  |
+| onnx_model_060 | 1       | READY  |
+| onnx_model_061 | 1       | READY  |
+| onnx_model_062 | 1       | READY  |
+| onnx_model_063 | 1       | READY  |
+| onnx_model_064 | 1       | READY  |
+| onnx_model_065 | 1       | READY  |
+| onnx_model_066 | 1       | READY  |
+| onnx_model_067 | 1       | READY  |
+| onnx_model_068 | 1       | READY  |
+| onnx_model_069 | 1       | READY  |
+| onnx_model_070 | 1       | READY  |
+| onnx_model_071 | 1       | READY  |
+| onnx_model_072 | 1       | READY  |
+| onnx_model_073 | 1       | READY  |
+| onnx_model_074 | 1       | READY  |
+| onnx_model_075 | 1       | READY  |
+| onnx_model_076 | 1       | READY  |
+| onnx_model_077 | 1       | READY  |
+| onnx_model_078 | 1       | READY  |
+| onnx_model_079 | 1       | READY  |
+| onnx_model_080 | 1       | READY  |
+| onnx_model_081 | 1       | READY  |
+| onnx_model_082 | 1       | READY  |
+| onnx_model_083 | 1       | READY  |
+| onnx_model_084 | 1       | READY  |
+| onnx_model_085 | 1       | READY  |
+| onnx_model_086 | 1       | READY  |
+| onnx_model_087 | 1       | READY  |
+| onnx_model_088 | 1       | READY  |
+| onnx_model_089 | 1       | READY  |
+| onnx_model_090 | 1       | READY  |
+| onnx_model_091 | 1       | READY  |
+| onnx_model_092 | 1       | READY  |
+| onnx_model_093 | 1       | READY  |
+| onnx_model_094 | 1       | READY  |
+| onnx_model_095 | 1       | READY  |
+| onnx_model_096 | 1       | READY  |
+| onnx_model_097 | 1       | READY  |
+| onnx_model_098 | 1       | READY  |
+| onnx_model_099 | 1       | READY  |
++----------------+---------+--------+
+
+I1002 02:07:30.727038 13159 metrics.cc:890] "Collecting metrics for GPU 0: NVIDIA L4"
+I1002 02:07:30.729970 13159 metrics.cc:783] "Collecting CPU metrics"
+I1002 02:07:30.730163 13159 tritonserver.cc:2598] 
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Option                           | Value                                                                                                                                                                                                           |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| server_id                        | triton                                                                                                                                                                                                          |
+| server_version                   | 2.59.0                                                                                                                                                                                                          |
+| server_extensions                | classification sequence model_repository model_repository(unload_dependents) schedule_policy model_configuration system_shared_memory cuda_shared_memory binary_tensor_data parameters statistics trace logging |
+| model_repository_path[0]         | /workspace/model_repository                                                                                                                                                                                     |
+| model_control_mode               | MODE_EXPLICIT                                                                                                                                                                                                   |
+| startup_models_0                 | onnx_model_000                                                                                                                                                                                                  |
+| startup_models_1                 | onnx_model_001                                                                                                                                                                                                  |
+| startup_models_2                 | onnx_model_002                                                                                                                                                                                                  |
+| startup_models_3                 | onnx_model_003                                                                                                                                                                                                  |
+| startup_models_4                 | onnx_model_004                                                                                                                                                                                                  |
+| startup_models_5                 | onnx_model_005                                                                                                                                                                                                  |
+| startup_models_6                 | onnx_model_006                                                                                                                                                                                                  |
+| startup_models_7                 | onnx_model_007                                                                                                                                                                                                  |
+| startup_models_8                 | onnx_model_008                                                                                                                                                                                                  |
+| startup_models_9                 | onnx_model_009                                                                                                                                                                                                  |
+| startup_models_10                | onnx_model_010                                                                                                                                                                                                  |
+| startup_models_11                | onnx_model_011                                                                                                                                                                                                  |
+| startup_models_12                | onnx_model_012                                                                                                                                                                                                  |
+| startup_models_13                | onnx_model_013                                                                                                                                                                                                  |
+| startup_models_14                | onnx_model_014                                                                                                                                                                                                  |
+| startup_models_15                | onnx_model_015                                                                                                                                                                                                  |
+| startup_models_16                | onnx_model_016                                                                                                                                                                                                  |
+| startup_models_17                | onnx_model_017                                                                                                                                                                                                  |
+| startup_models_18                | onnx_model_018                                                                                                                                                                                                  |
+| startup_models_19                | onnx_model_019                                                                                                                                                                                                  |
+| startup_models_20                | onnx_model_020                                                                                                                                                                                                  |
+| startup_models_21                | onnx_model_021                                                                                                                                                                                                  |
+| startup_models_22                | onnx_model_022                                                                                                                                                                                                  |
+| startup_models_23                | onnx_model_023                                                                                                                                                                                                  |
+| startup_models_24                | onnx_model_024                                                                                                                                                                                                  |
+| startup_models_25                | onnx_model_025                                                                                                                                                                                                  |
+| startup_models_26                | onnx_model_026                                                                                                                                                                                                  |
+| startup_models_27                | onnx_model_027                                                                                                                                                                                                  |
+| startup_models_28                | onnx_model_028                                                                                                                                                                                                  |
+| startup_models_29                | onnx_model_029                                                                                                                                                                                                  |
+| startup_models_30                | onnx_model_030                                                                                                                                                                                                  |
+| startup_models_31                | onnx_model_031                                                                                                                                                                                                  |
+| startup_models_32                | onnx_model_032                                                                                                                                                                                                  |
+| startup_models_33                | onnx_model_033                                                                                                                                                                                                  |
+| startup_models_34                | onnx_model_034                                                                                                                                                                                                  |
+| startup_models_35                | onnx_model_035                                                                                                                                                                                                  |
+| startup_models_36                | onnx_model_036                                                                                                                                                                                                  |
+| startup_models_37                | onnx_model_037                                                                                                                                                                                                  |
+| startup_models_38                | onnx_model_038                                                                                                                                                                                                  |
+| startup_models_39                | onnx_model_039                                                                                                                                                                                                  |
+| startup_models_40                | onnx_model_040                                                                                                                                                                                                  |
+| startup_models_41                | onnx_model_041                                                                                                                                                                                                  |
+| startup_models_42                | onnx_model_042                                                                                                                                                                                                  |
+| startup_models_43                | onnx_model_043                                                                                                                                                                                                  |
+| startup_models_44                | onnx_model_044                                                                                                                                                                                                  |
+| startup_models_45                | onnx_model_045                                                                                                                                                                                                  |
+| startup_models_46                | onnx_model_046                                                                                                                                                                                                  |
+| startup_models_47                | onnx_model_047                                                                                                                                                                                                  |
+| startup_models_48                | onnx_model_048                                                                                                                                                                                                  |
+| startup_models_49                | onnx_model_049                                                                                                                                                                                                  |
+| startup_models_50                | onnx_model_050                                                                                                                                                                                                  |
+| startup_models_51                | onnx_model_051                                                                                                                                                                                                  |
+| startup_models_52                | onnx_model_052                                                                                                                                                                                                  |
+| startup_models_53                | onnx_model_053                                                                                                                                                                                                  |
+| startup_models_54                | onnx_model_054                                                                                                                                                                                                  |
+| startup_models_55                | onnx_model_055                                                                                                                                                                                                  |
+| startup_models_56                | onnx_model_056                                                                                                                                                                                                  |
+| startup_models_57                | onnx_model_057                                                                                                                                                                                                  |
+| startup_models_58                | onnx_model_058                                                                                                                                                                                                  |
+| startup_models_59                | onnx_model_059                                                                                                                                                                                                  |
+| startup_models_60                | onnx_model_060                                                                                                                                                                                                  |
+| startup_models_61                | onnx_model_061                                                                                                                                                                                                  |
+| startup_models_62                | onnx_model_062                                                                                                                                                                                                  |
+| startup_models_63                | onnx_model_063                                                                                                                                                                                                  |
+| startup_models_64                | onnx_model_064                                                                                                                                                                                                  |
+| startup_models_65                | onnx_model_065                                                                                                                                                                                                  |
+| startup_models_66                | onnx_model_066                                                                                                                                                                                                  |
+| startup_models_67                | onnx_model_067                                                                                                                                                                                                  |
+| startup_models_68                | onnx_model_068                                                                                                                                                                                                  |
+| startup_models_69                | onnx_model_069                                                                                                                                                                                                  |
+| startup_models_70                | onnx_model_070                                                                                                                                                                                                  |
+| startup_models_71                | onnx_model_071                                                                                                                                                                                                  |
+| startup_models_72                | onnx_model_072                                                                                                                                                                                                  |
+| startup_models_73                | onnx_model_073                                                                                                                                                                                                  |
+| startup_models_74                | onnx_model_074                                                                                                                                                                                                  |
+| startup_models_75                | onnx_model_075                                                                                                                                                                                                  |
+| startup_models_76                | onnx_model_076                                                                                                                                                                                                  |
+| startup_models_77                | onnx_model_077                                                                                                                                                                                                  |
+| startup_models_78                | onnx_model_078                                                                                                                                                                                                  |
+| startup_models_79                | onnx_model_079                                                                                                                                                                                                  |
+| startup_models_80                | onnx_model_080                                                                                                                                                                                                  |
+| startup_models_81                | onnx_model_081                                                                                                                                                                                                  |
+| startup_models_82                | onnx_model_082                                                                                                                                                                                                  |
+| startup_models_83                | onnx_model_083                                                                                                                                                                                                  |
+| startup_models_84                | onnx_model_084                                                                                                                                                                                                  |
+| startup_models_85                | onnx_model_085                                                                                                                                                                                                  |
+| startup_models_86                | onnx_model_086                                                                                                                                                                                                  |
+| startup_models_87                | onnx_model_087                                                                                                                                                                                                  |
+| startup_models_88                | onnx_model_088                                                                                                                                                                                                  |
+| startup_models_89                | onnx_model_089                                                                                                                                                                                                  |
+| startup_models_90                | onnx_model_090                                                                                                                                                                                                  |
+| startup_models_91                | onnx_model_091                                                                                                                                                                                                  |
+| startup_models_92                | onnx_model_092                                                                                                                                                                                                  |
+| startup_models_93                | onnx_model_093                                                                                                                                                                                                  |
+| startup_models_94                | onnx_model_094                                                                                                                                                                                                  |
+| startup_models_95                | onnx_model_095                                                                                                                                                                                                  |
+| startup_models_96                | onnx_model_096                                                                                                                                                                                                  |
+| startup_models_97                | onnx_model_097                                                                                                                                                                                                  |
+| startup_models_98                | onnx_model_098                                                                                                                                                                                                  |
+| startup_models_99                | onnx_model_099                                                                                                                                                                                                  |
+| strict_model_config              | 1                                                                                                                                                                                                               |
+| model_config_name                |                                                                                                                                                                                                                 |
+| rate_limit                       | OFF                                                                                                                                                                                                             |
+| pinned_memory_pool_byte_size     | 268435456                                                                                                                                                                                                       |
+| cuda_memory_pool_byte_size{0}    | 67108864                                                                                                                                                                                                        |
+| min_supported_compute_capability | 6.0                                                                                                                                                                                                             |
+| strict_readiness                 | 1                                                                                                                                                                                                               |
+| exit_timeout                     | 30                                                                                                                                                                                                              |
+| cache_enabled                    | 0                                                                                                                                                                                                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I1002 02:07:30.734411 13159 grpc_server.cc:2562] "Started GRPCInferenceService at 0.0.0.0:8001"
+I1002 02:07:30.734685 13159 http_server.cc:4832] "Started HTTPService at 0.0.0.0:8000"
+I1002 02:07:30.794900 13159 http_server.cc:358] "Started Metrics Service at 0.0.0.0:8002"
+Signal (15) received.
+I1002 02:07:38.283481 13159 grpc_server.cc:2640] "Timeout 30: Found 3 gRPC service connections and inference handlers"
+I1002 02:07:39.283606 13159 server.cc:312] "Waiting for in-flight requests to complete."
+I1002 02:07:39.283689 13159 server.cc:328] "Timeout 29: Found 0 model versions that have in-flight inferences"
+I1002 02:07:39.284970 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.284997 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.285055 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.285080 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.285097 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.285182 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.285256 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.285354 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.285392 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.285569 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.285587 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.285607 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.285666 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.285758 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.285774 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.285829 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.285851 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.285972 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.286013 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.286056 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.286098 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.286211 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.286222 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.286312 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.286325 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.286343 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.286422 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.286485 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.286578 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.286590 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.286581 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.286689 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.286773 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.286814 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.286838 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.286871 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.286925 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.287000 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.287018 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.287021 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.287149 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.287153 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.287203 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.287302 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.287347 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.287377 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.287396 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.287538 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.287547 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.287604 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.287651 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.287712 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.287795 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.287889 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.287902 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288020 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288048 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288083 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288124 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288155 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288213 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288249 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288269 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288370 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288381 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288438 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288481 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288540 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288604 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288612 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288637 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288709 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288735 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288832 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.288853 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.289050 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.289049 13159 server.cc:343] "All models are stopped, unloading models"
+I1002 02:07:39.289106 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.289123 13159 server.cc:352] "Timeout 29: Found 100 live models and 0 in-flight non-inference requests"
+I1002 02:07:39.289132 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.289230 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.289259 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.289303 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.289387 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.289411 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.289429 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.289529 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.289606 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.289659 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.289786 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.290018 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.290042 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.290068 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.290101 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.290129 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.290172 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.290193 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.290226 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.290251 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.290293 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.290325 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.290343 13159 onnxruntime.cc:3142] "TRITONBACKEND_ModelInstanceFinalize: delete instance state"
+I1002 02:07:39.321355 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.321448 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_005' version 1"
+I1002 02:07:39.343079 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.343140 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.343200 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_025' version 1"
+I1002 02:07:39.343203 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_003' version 1"
+I1002 02:07:39.343880 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.343918 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_084' version 1"
+I1002 02:07:39.344691 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.344761 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_004' version 1"
+I1002 02:07:39.347261 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.347312 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_074' version 1"
+I1002 02:07:39.348694 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.348754 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_000' version 1"
+I1002 02:07:39.351934 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.351973 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_078' version 1"
+I1002 02:07:39.353411 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.353469 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_083' version 1"
+I1002 02:07:39.353522 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.353568 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_077' version 1"
+I1002 02:07:39.354921 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.354968 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_017' version 1"
+I1002 02:07:39.355068 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.355107 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_043' version 1"
+I1002 02:07:39.355388 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.355460 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_051' version 1"
+I1002 02:07:39.356152 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.356191 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_064' version 1"
+I1002 02:07:39.357296 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.357329 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_081' version 1"
+I1002 02:07:39.357379 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.357408 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_085' version 1"
+I1002 02:07:39.357580 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.357614 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_002' version 1"
+I1002 02:07:39.358389 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.358424 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_015' version 1"
+I1002 02:07:39.359229 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.359278 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_008' version 1"
+I1002 02:07:39.359859 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.359868 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.359885 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.359916 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_094' version 1"
+I1002 02:07:39.359927 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_009' version 1"
+I1002 02:07:39.359932 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_097' version 1"
+I1002 02:07:39.361853 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.361903 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_028' version 1"
+I1002 02:07:39.362840 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.362886 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_018' version 1"
+I1002 02:07:39.363075 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.363123 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_037' version 1"
+I1002 02:07:39.363411 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.363442 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.363448 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_072' version 1"
+I1002 02:07:39.363486 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_023' version 1"
+I1002 02:07:39.365037 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.365080 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_065' version 1"
+I1002 02:07:39.365171 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.365218 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_046' version 1"
+I1002 02:07:39.365252 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.365287 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.365295 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_024' version 1"
+I1002 02:07:39.365341 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_020' version 1"
+I1002 02:07:39.365406 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.365435 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.365442 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_063' version 1"
+I1002 02:07:39.365475 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_012' version 1"
+I1002 02:07:39.365884 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.365930 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_021' version 1"
+I1002 02:07:39.366175 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.366216 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_053' version 1"
+I1002 02:07:39.366777 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.366819 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_057' version 1"
+I1002 02:07:39.367012 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.367049 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_076' version 1"
+I1002 02:07:39.367433 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.367463 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_092' version 1"
+I1002 02:07:39.367723 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.367774 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_039' version 1"
+I1002 02:07:39.368310 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.368341 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_016' version 1"
+I1002 02:07:39.369078 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.369115 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_022' version 1"
+I1002 02:07:39.369862 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.369871 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.369913 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_073' version 1"
+I1002 02:07:39.369931 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_049' version 1"
+I1002 02:07:39.370036 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.370085 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_070' version 1"
+I1002 02:07:39.370263 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.370302 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_067' version 1"
+I1002 02:07:39.370937 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.370943 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.371004 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_089' version 1"
+I1002 02:07:39.371024 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_050' version 1"
+I1002 02:07:39.371231 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.371269 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_011' version 1"
+I1002 02:07:39.371276 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.371312 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_058' version 1"
+I1002 02:07:39.371423 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.371462 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_014' version 1"
+I1002 02:07:39.371471 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.371512 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_026' version 1"
+I1002 02:07:39.372875 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.372883 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.372910 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_082' version 1"
+I1002 02:07:39.372925 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_001' version 1"
+I1002 02:07:39.373671 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.373701 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_054' version 1"
+I1002 02:07:39.373825 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.373831 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.373864 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_038' version 1"
+I1002 02:07:39.373878 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_034' version 1"
+I1002 02:07:39.374270 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.374307 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_044' version 1"
+I1002 02:07:39.374452 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.374481 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_030' version 1"
+I1002 02:07:39.374545 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.374581 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_071' version 1"
+I1002 02:07:39.375075 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.375125 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_029' version 1"
+I1002 02:07:39.375979 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.376022 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_035' version 1"
+I1002 02:07:39.376150 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.376173 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_099' version 1"
+I1002 02:07:39.376367 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.376396 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_062' version 1"
+I1002 02:07:39.376610 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.376638 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_098' version 1"
+I1002 02:07:39.377212 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.377252 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_041' version 1"
+I1002 02:07:39.378376 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.378385 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.378418 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_019' version 1"
+I1002 02:07:39.378428 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_010' version 1"
+I1002 02:07:39.379074 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.379085 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.379112 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_031' version 1"
+I1002 02:07:39.379122 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.379127 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_080' version 1"
+I1002 02:07:39.379167 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_055' version 1"
+I1002 02:07:39.379359 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.379357 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.379383 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_068' version 1"
+I1002 02:07:39.379399 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_042' version 1"
+I1002 02:07:39.379783 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.379814 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_069' version 1"
+I1002 02:07:39.379864 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.379886 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.379891 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_047' version 1"
+I1002 02:07:39.379919 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_027' version 1"
+I1002 02:07:39.380360 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.380385 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_075' version 1"
+I1002 02:07:39.380596 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.380630 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_096' version 1"
+I1002 02:07:39.380764 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.380791 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_091' version 1"
+I1002 02:07:39.380805 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.380831 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_066' version 1"
+I1002 02:07:39.381026 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.381058 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_088' version 1"
+I1002 02:07:39.381275 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.381300 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_086' version 1"
+I1002 02:07:39.381477 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.381502 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_013' version 1"
+I1002 02:07:39.381529 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.381560 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_007' version 1"
+I1002 02:07:39.381622 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.381631 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.381626 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.381652 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_093' version 1"
+I1002 02:07:39.381664 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_095' version 1"
+I1002 02:07:39.381673 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_036' version 1"
+I1002 02:07:39.381711 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.381745 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_061' version 1"
+I1002 02:07:39.381845 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.381870 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_056' version 1"
+I1002 02:07:39.381940 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.381969 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_048' version 1"
+I1002 02:07:39.382389 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.382418 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_033' version 1"
+I1002 02:07:39.382564 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.382591 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_032' version 1"
+I1002 02:07:39.382596 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.382617 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_090' version 1"
+I1002 02:07:39.382860 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.382890 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_006' version 1"
+I1002 02:07:39.383309 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.383331 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_060' version 1"
+I1002 02:07:39.383524 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.383527 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.383547 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_052' version 1"
+I1002 02:07:39.383559 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_079' version 1"
+I1002 02:07:39.383781 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.383807 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.383810 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_045' version 1"
+I1002 02:07:39.383830 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_040' version 1"
+I1002 02:07:39.384040 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.384065 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_059' version 1"
+I1002 02:07:39.384928 13159 onnxruntime.cc:3066] "TRITONBACKEND_ModelFinalize: delete model state"
+I1002 02:07:39.384957 13159 model_lifecycle.cc:636] "successfully unloaded 'onnx_model_087' version 1"
+I1002 02:07:40.289270 13159 server.cc:352] "Timeout 28: Found 0 live models and 0 in-flight non-inference requests"

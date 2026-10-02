@@ -1,0 +1,4 @@
+# Preserve the checksum-verified request archives exactly as produced on Linux.
+# Treating them as binary also prevents Git from normalizing their CRLF records.
+evidence/runpod/**/raw/*.csv binary
+evidence/runpod/**/server/*.log binary

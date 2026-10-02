@@ -117,3 +117,12 @@ Before creating a paid Pod, record the maximum quoted cost and arrange an indepe
 Run 18 ONNX measurements: 1, 10, and 100 loaded models; batching off and a 10 ms batching window; 200 requests per second; and three repetitions. Use five seconds of warm-up and 30 seconds of measured traffic.
 
 The earlier 81-run plan was broader than needed for the GitHub and resume goal. The smaller matrix retains repeated measurements of the two project questions—model-count overhead and the latency/throughput effect of batching—while reducing paid GPU time. It must not be described as an exhaustive Triton performance study.
+
+## D015 - Treat the retained L4 matrix as the portfolio completion boundary
+
+**Status:** Accepted
+**Date:** 2026-10-02
+
+Publish the validated 18-run L4 matrix as the final portfolio result. Report the 200-QPS operating point, repeated latency measurements, zero failures, model-count comparison, and batching trade-off. Preserve the raw records, telemetry, server logs, environment, immutable provenance, and checksums in the repository.
+
+Do not claim maximum L4 throughput, internet-facing latency, broad model generality, or a completed ONNX-versus-FIL/CPU cost comparison. Those are possible follow-up studies rather than requirements for this project's GitHub and resume goal.

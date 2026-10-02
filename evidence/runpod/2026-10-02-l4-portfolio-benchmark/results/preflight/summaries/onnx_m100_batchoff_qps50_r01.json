@@ -1,0 +1,43 @@
+{
+  "achieved_qps": 51.4,
+  "artifacts": {
+    "cpu": "/workspace/results/preflight/cpu/onnx_m100_batchoff_qps50_r01.csv",
+    "gpu": "/workspace/results/preflight/gpu/onnx_m100_batchoff_qps50_r01.csv",
+    "raw": "/workspace/results/preflight/raw/onnx_m100_batchoff_qps50_r01.csv",
+    "server_log": "/workspace/results/preflight/server/onnx_m100_batchoff.log"
+  },
+  "backend": "onnx",
+  "client_cpu_scope": "whole run including warmup",
+  "client_cpu_utilization_percent": 1.2356168879999996,
+  "duration_seconds": 5.0,
+  "error_rate": 0.0,
+  "failed_requests": 0,
+  "finished_at_utc": "2026-10-02T02:07:38.278305+00:00",
+  "git_commit": "0c40a1fda6bc6bd2989f07d8daada8906fdd3efc",
+  "image_digest": "ghcr.io/daetan999/triton-multimodel-bench@sha256:50087af8c9182b01fd1d45c6c4c7d77fffe0c321f2e6829b49d48a0add3cccbb",
+  "latency_ms": {
+    "mean": 1.667978937813744,
+    "p50": 1.0344460606575012,
+    "p95": 5.6072612293064585,
+    "p99": 9.460258316248643
+  },
+  "loadgen_cpus": "8-12",
+  "max_in_flight": 3,
+  "measurement_elapsed_seconds": 5.0,
+  "measurement_requests": 257,
+  "model_count": 100,
+  "queue_delay_microseconds": null,
+  "repetition": 1,
+  "run_id": "onnx_m100_batchoff_qps50_r01",
+  "scheduler_delay_p95_ms": 1.816399976961769,
+  "seed": 20260805,
+  "server_cpus": "0-7",
+  "started_at_utc": "2026-10-02T02:07:31.218144+00:00",
+  "status": "valid",
+  "successful_requests": 257,
+  "target_qps": 50.0,
+  "total_requests": 348,
+  "warmup_requests": 91,
+  "warmup_seconds": 2.0,
+  "warnings": []
+}

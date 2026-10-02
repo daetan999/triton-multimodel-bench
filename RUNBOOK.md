@@ -30,8 +30,14 @@ This is the operating guide for the whole project. Work from top to bottom. Do n
 - [x] A 100-model L40S preflight completed successfully with zero failed requests.
 - [x] All RunPod Pods and network volumes terminated; billing is stopped.
 - [x] Continuous off-Pod result mirroring implemented and tested locally.
+- [x] Image `0.1.4` published and verified by immutable digest.
+- [x] Compact L4 preflight passed with 100 loaded models and zero failures.
+- [x] Final 18-run portfolio matrix completed with 18 valid summaries and zero failed measured requests.
+- [x] All 83 mirrored result files verified against Pod-generated SHA-256 checksums.
+- [x] Final L4 Pod terminated; account re-verified at zero Pods and zero network volumes.
+- [x] Results, chart, beginner-friendly explanation, evidence links, and resume bullets published in the README.
 
-The 81-run L40S attempt was not retained before its disposable Pod was terminated. The project is therefore switching to an 18-run portfolio benchmark. Image `0.1.4`, which adds Pod-side `rsync`, is published and verified. The next step is to quote the complete cost of one short GPU session. No paid resource may be created without explicit approval of that quote.
+The project is complete at portfolio scope. The retained L4 matrix contains 18 valid runs, 107,988 measured requests, and zero failures. Its raw records, telemetry, logs, summaries, environment record, and checksums are committed under `evidence/runpod/2026-10-02-l4-portfolio-benchmark`. No paid RunPod resources remain.
 
 ## How to use this runbook
 

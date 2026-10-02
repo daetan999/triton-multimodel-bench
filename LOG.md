@@ -373,3 +373,48 @@ Audit the L40S retry, stop all billing, preserve an accurate project record, and
 ### Next step
 
 Read live GPU availability and obtain explicit approval for the maximum quoted cost of one short session. Start no paid resource before the live mirror canary and scheduled termination check are ready.
+
+## 2026-10-02 - Session 14
+
+### Goal
+
+Complete a retained, portfolio-sized L4 benchmark within the approved US$1 ceiling, terminate all paid resources, and publish defensible GitHub and resume results.
+
+### Deployment and safety
+
+- Refreshed the account and verified zero existing Pods and zero network volumes before creation.
+- Quoted Secure Cloud NVIDIA L4 capacity at US$0.49/hour and created exactly one Pod, `2xaiz7x6p3dybr`, in `EUR-IS-1` from the immutable `0.1.4` digest.
+- Used a 20 GB disposable disk, no network volume, SSH only, and no fallback GPU.
+- Scheduled an independent two-hour termination heartbeat before measurement began.
+- Verified strict direct SSH, the L4 identity, 23,034 MiB VRAM, driver 580.159.04, a 15.3-core cgroup quota, and Pod-side `rsync`.
+- Started continuous non-destructive result mirroring only after a canary file copied successfully to the Mac.
+
+### Measurement
+
+- Generated and validated all 100 ONNX/FIL model pairs on the Pod.
+- Passed the 100-model preflight at 51.4 achieved QPS with 257 measured requests, zero failures, and no Triton server errors.
+- Completed the compact ONNX matrix: 1/10/100 loaded models, batching off/10 ms, 200 target QPS, three repetitions, 5-second warm-up, and 30-second measured windows.
+- Produced 18 valid summaries, 18 raw request CSVs, 18 GPU traces, 18 CPU/RSS traces, and six Triton server logs.
+- Recorded 107,988 measured requests with zero failed requests.
+
+### Findings
+
+- With 100 models and batching off, mean achieved throughput was 197.6 QPS and mean p95 latency was 1.196 ms.
+- Batching-off p95 latency remained near 1.2 ms for 1, 10, and 100 loaded models.
+- Across all model counts, a 10 ms batching window raised mean p95 latency from 1.203 ms to 11.288 ms, a 9.38× increase, while the mean achieved request rate remained approximately 199.9 QPS under both policies.
+- Mean observed GPU memory was approximately 282 MiB, 475 MiB, and 2,391 MiB for 1, 10, and 100 models respectively.
+- One-second `nvidia-smi` utilization sampling read 0% for this light workload and is documented as too coarse for the short GPU work bursts.
+
+### Validation and teardown
+
+- Wrote Pod-side validation counts and SHA-256 checksums, then verified all 83 covered files locally after the final mirror.
+- Preserved the preflight, formal matrix, environment record, summaries, raw requests, telemetry, logs, manifest, and checksums under `evidence/runpod/2026-10-02-l4-portfolio-benchmark`.
+- Terminated Pod `2xaiz7x6p3dybr` and verified the RunPod account contains zero Pods and zero network volumes.
+- Paused the now-unneeded independent cutoff heartbeat.
+- The roughly 35-minute wall-clock session cost approximately US$0.30 at US$0.49/hour, below the approved ceiling.
+
+### Publication
+
+- Added the aggregate result CSV and publication-ready PNG/SVG comparison chart.
+- Rewrote the README with beginner-friendly context, result badges, the measured findings, methodology, limitations, direct evidence links, and resume-ready bullets.
+- Marked the runbook complete at portfolio scope and recorded the final environment and completion boundary.

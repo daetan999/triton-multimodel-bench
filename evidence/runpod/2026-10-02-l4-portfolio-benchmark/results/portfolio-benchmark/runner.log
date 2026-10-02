@@ -1,0 +1,47 @@
+starting group m=1 delay=None pending=3
+starting run onnx_m001_batchoff_qps200_r02
+completed run onnx_m001_batchoff_qps200_r02 status=valid achieved_qps=199.229
+starting run onnx_m001_batchoff_qps200_r03
+completed run onnx_m001_batchoff_qps200_r03 status=valid achieved_qps=197.964
+starting run onnx_m001_batchoff_qps200_r01
+completed run onnx_m001_batchoff_qps200_r01 status=valid achieved_qps=198.642
+starting group m=100 delay=None pending=3
+starting run onnx_m100_batchoff_qps200_r02
+completed run onnx_m100_batchoff_qps200_r02 status=valid achieved_qps=197.804
+starting run onnx_m100_batchoff_qps200_r03
+completed run onnx_m100_batchoff_qps200_r03 status=valid achieved_qps=198.051
+starting run onnx_m100_batchoff_qps200_r01
+completed run onnx_m100_batchoff_qps200_r01 status=valid achieved_qps=196.943
+starting group m=10 delay=10000 pending=3
+starting run onnx_m010_batch10ms_qps200_r02
+completed run onnx_m010_batch10ms_qps200_r02 status=valid achieved_qps=200.053
+starting run onnx_m010_batch10ms_qps200_r01
+completed run onnx_m010_batch10ms_qps200_r01 status=valid achieved_qps=196.111
+starting run onnx_m010_batch10ms_qps200_r03
+completed run onnx_m010_batch10ms_qps200_r03 status=valid achieved_qps=198.872
+starting group m=100 delay=10000 pending=3
+starting run onnx_m100_batch10ms_qps200_r01
+completed run onnx_m100_batch10ms_qps200_r01 status=valid achieved_qps=197.434
+starting run onnx_m100_batch10ms_qps200_r02
+completed run onnx_m100_batch10ms_qps200_r02 status=valid achieved_qps=203.420
+starting run onnx_m100_batch10ms_qps200_r03
+completed run onnx_m100_batch10ms_qps200_r03 status=valid achieved_qps=204.094
+starting group m=10 delay=None pending=3
+starting run onnx_m010_batchoff_qps200_r02
+completed run onnx_m010_batchoff_qps200_r02 status=valid achieved_qps=202.327
+starting run onnx_m010_batchoff_qps200_r01
+completed run onnx_m010_batchoff_qps200_r01 status=valid achieved_qps=205.833
+starting run onnx_m010_batchoff_qps200_r03
+completed run onnx_m010_batchoff_qps200_r03 status=valid achieved_qps=202.204
+starting group m=1 delay=10000 pending=3
+starting run onnx_m001_batch10ms_qps200_r02
+completed run onnx_m001_batch10ms_qps200_r02 status=valid achieved_qps=200.471
+starting run onnx_m001_batch10ms_qps200_r03
+completed run onnx_m001_batch10ms_qps200_r03 status=valid achieved_qps=200.781
+starting run onnx_m001_batch10ms_qps200_r01
+completed run onnx_m001_batch10ms_qps200_r01 status=valid achieved_qps=197.956
+{
+  "completed": 18,
+  "skipped": 0,
+  "total": 18
+}

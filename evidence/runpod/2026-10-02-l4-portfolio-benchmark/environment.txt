@@ -1,0 +1,25 @@
+captured_at_utc=2026-10-02T02:10:57Z
+pod_id=2xaiz7x6p3dybr
+cloud=SECURE
+datacenter=EUR-IS-1
+hourly_cost_usd=0.49
+image=ghcr.io/daetan999/triton-multimodel-bench@sha256:50087af8c9182b01fd1d45c6c4c7d77fffe0c321f2e6829b49d48a0add3cccbb
+git_commit=0c40a1fda6bc6bd2989f07d8daada8906fdd3efc
+Linux 92d0484b7d1b 6.8.0-124-generic #124~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue May 26 21:05:19 UTC  x86_64 x86_64 x86_64 GNU/Linux
+NVIDIA L4, GPU-56cadeba-6178-8504-350e-1d8d9c2a9a99, 23034 MiB, 580.159.04
+8.9, 72.00 W
+logical_cpus=128
+cpu_quota_us=1530000
+cpu_period_us=100000
+Architecture:                            x86_64
+CPU(s):                                  128
+Model name:                              AMD EPYC 7713 64-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      64
+Socket(s):                               1
+CPU(s) scaling MHz:                      44%
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-127
+Filesystem      Size  Used Avail Use% Mounted on
+overlay          20G   25M   20G   1% /
+Python 3.12.3

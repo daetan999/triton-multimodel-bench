@@ -1,0 +1,43 @@
+{
+  "achieved_qps": 198.05117116475498,
+  "artifacts": {
+    "cpu": "/workspace/results/portfolio-benchmark/cpu/onnx_m100_batchoff_qps200_r03.csv",
+    "gpu": "/workspace/results/portfolio-benchmark/gpu/onnx_m100_batchoff_qps200_r03.csv",
+    "raw": "/workspace/results/portfolio-benchmark/raw/onnx_m100_batchoff_qps200_r03.csv",
+    "server_log": "/workspace/results/portfolio-benchmark/server/onnx_m100_batchoff.log"
+  },
+  "backend": "onnx",
+  "client_cpu_scope": "whole run including warmup",
+  "client_cpu_utilization_percent": 2.9119300524046485,
+  "duration_seconds": 30.0,
+  "error_rate": 0.0,
+  "failed_requests": 0,
+  "finished_at_utc": "2026-10-02T02:11:20.723841+00:00",
+  "git_commit": "0c40a1fda6bc6bd2989f07d8daada8906fdd3efc",
+  "image_digest": "ghcr.io/daetan999/triton-multimodel-bench@sha256:50087af8c9182b01fd1d45c6c4c7d77fffe0c321f2e6829b49d48a0add3cccbb",
+  "latency_ms": {
+    "mean": 0.885145129929867,
+    "p50": 0.8845508564263582,
+    "p95": 1.186752947978675,
+    "p99": 1.458375491201877
+  },
+  "loadgen_cpus": "8-12",
+  "max_in_flight": 4,
+  "measurement_elapsed_seconds": 30.01244559697807,
+  "measurement_requests": 5944,
+  "model_count": 100,
+  "queue_delay_microseconds": null,
+  "repetition": 3,
+  "run_id": "onnx_m100_batchoff_qps200_r03",
+  "scheduler_delay_p95_ms": 1.3333583329075955,
+  "seed": 20260819,
+  "server_cpus": "0-7",
+  "started_at_utc": "2026-10-02T02:10:44.683437+00:00",
+  "status": "valid",
+  "successful_requests": 5944,
+  "target_qps": 200.0,
+  "total_requests": 6956,
+  "warmup_requests": 1012,
+  "warmup_seconds": 5.0,
+  "warnings": []
+}
