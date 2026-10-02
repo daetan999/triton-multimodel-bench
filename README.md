@@ -12,7 +12,7 @@ An AI application may need to keep many models ready at once. This project teste
 
 I built a repeatable test system, ran it on an NVIDIA L4 GPU, sent roughly 200 prediction requests per second across 1, 10, and 100 models, and compared immediate processing with a 10 ms waiting window that groups requests together. All 18 test runs passed. With 100 models and no waiting window, 95% of requests finished within **1.20 ms**, and no measured request failed.
 
-The practical finding: at this traffic level, waiting to form batches made responses about **9.4× slower** without improving the delivered request rate. The detailed method, limitations, and evidence are below.
+The practical finding: at this traffic level, waiting to form batches made responses about **9.4× slower** without a meaningful change in the delivered request rate. The detailed method, limitations, and evidence are below.
 
 ![Benchmark result: p95 latency and achieved QPS across 1, 10, and 100 models](results/charts/l4-portfolio-results.png)
 
@@ -84,7 +84,7 @@ All 83 files covered by `SHA256SUMS` were verified again after they were copied 
 
 This is a controlled single-node microbenchmark. The client and server shared the same host, so the numbers do not include internet latency. The models are small synthetic XGBoost regressors exported to ONNX; larger neural networks will behave differently. The experiment held traffic at 200 target QPS, so it measures behavior at that operating point rather than maximum throughput.
 
-The one-second `nvidia-smi` samples reported 0% utilization because the individual GPU work bursts were shorter than the sampling interval. Memory readings were stable and useful, but the utilization samples should not be interpreted as proof that the GPU did no work. A follow-up saturation study should use higher request rates and finer-grained GPU profiling.
+The one-second `nvidia-smi` samples reported 0% utilization. Short GPU work bursts can fall between samples at this interval, so those readings should not be interpreted as proof that the GPU did no work. Memory readings were stable and useful; a follow-up saturation study should use higher request rates and finer-grained GPU profiling.
 
 ## Resume-ready summary
 
