@@ -6,3 +6,5 @@ source = triton_benchmark
 fail_under = 80
 show_missing = True
 skip_covered = True
+
+# Keep the benchmark logic above the enforced coverage floor.
