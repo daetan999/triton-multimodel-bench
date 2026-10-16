@@ -1,6 +1,7 @@
 # Triton Multi-Model Benchmark
 
-![Status: complete](https://img.shields.io/badge/status-complete-2ea44f)
+![V1: complete](https://img.shields.io/badge/V1-complete-2ea44f)
+![V2: planned](https://img.shields.io/badge/V2-saturation%20study-planned-2f6feb)
 ![GPU: NVIDIA L4](https://img.shields.io/badge/GPU-NVIDIA%20L4-76B900?logo=nvidia)
 ![Triton: 25.06](https://img.shields.io/badge/Triton-25.06-76B900)
 ![Runs: 18/18 valid](https://img.shields.io/badge/runs-18%2F18%20valid-2ea44f)
@@ -85,6 +86,18 @@ All 83 files covered by `SHA256SUMS` were verified again after they were copied 
 This is a controlled single-node microbenchmark. The client and server shared the same host, so the numbers do not include internet latency. The models are small synthetic XGBoost regressors exported to ONNX; larger neural networks will behave differently. The experiment held traffic at 200 target QPS, so it measures behavior at that operating point rather than maximum throughput.
 
 The one-second `nvidia-smi` samples reported 0% utilization. Short GPU work bursts can fall between samples at this interval, so those readings should not be interpreted as proof that the GPU did no work. Memory readings were stable and useful; a follow-up saturation study should use higher request rates and finer-grained GPU profiling.
+
+## Planned V2 — saturation and batching crossover
+
+V1 answered what happens at one operating point. V2 will push the same 100-model serving case through progressively higher request rates to find **where the L4 saturates and where batching begins to earn back its queueing delay**.
+
+The planned study expands the matrix across roughly **50 → 100 → 200 → 400 → 800 → 1,200+ QPS** and compares **0, 1, 2, 5, and 10 ms** batching windows. It will retain the V1 reproducibility controls while adding finer-grained GPU telemetry and explicit saturation/crossover criteria.
+
+The main outputs will be delivered throughput, p50/p95/p99 latency, failures/timeouts, GPU memory/utilisation, and—where the pricing basis is controlled—a simple serving-efficiency view such as cost per million delivered requests.
+
+V1 evidence remains frozen. V2 will be stored as a separate experiment series inside this repository rather than as a new project.
+
+See the full [V2 experiment plan](V2_PLAN.md).
 
 ## Resume-ready summary
 
